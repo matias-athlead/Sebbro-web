@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SmartYou Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- HOME PAGE -->
+    <div id="homePage">
+      <!-- Header -->
+      <header
+        class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center py-4">
+            <div class="flex items-center">
+              <div
+                class="w-8 h-8 bg-black rounded-sm flex items-center justify-center"
+              >
+                <!-- Globe Icon -->
+                <svg
+                  class="w-4 h-4 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <circle cx="12" cy="12" r="9" stroke-width="2"></circle>
+                  <path
+                    d="M3 12h18M12 3a15 15 0 010 18M12 3a15 15 0 000 18"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <span class="ml-2 text-lg font-light tracking-tight"
+                >SmartYou</span
+              >
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6">
+              <button
+                data-scroll-target="services"
+                class="text-gray-600 hover:text-black transition-colors text-sm tracking-wide"
+              >
+                Servicios
+              </button>
+              <button
+                data-scroll-target="testimonials"
+                class="text-gray-600 hover:text-black transition-colors text-sm tracking-wide"
+              >
+                Casos
+              </button>
+              <button
+                data-scroll-target="faq"
+                class="text-gray-600 hover:text-black transition-colors text-sm tracking-wide"
+              >
+                Preguntas
+              </button>
+              <button
+                data-scroll-target="contact"
+                class="text-gray-600 hover:text-black transition-colors text-sm tracking-wide"
+              >
+                Contacto
+              </button>
+            </nav>
+
+            <!-- CTA Button -->
+            <button
+              data-go-project
+              class="hidden md:block bg-black text-white px-6 py-2 rounded-sm hover:bg-gray-900 transition-colors text-sm tracking-wide font-light"
+            >
+              Proyecto
+            </button>
+
+            <!-- Mobile Menu Button -->
+            <button
+              id="mobileMenuButton"
+              class="md:hidden"
+              aria-label="Abrir menú"
+            >
+              <!-- Menu Icon -->
+              <svg
+                id="iconMenu"
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+              <!-- X Icon -->
+              <svg
+                id="iconClose"
+                class="w-5 h-5 hidden"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Mobile Menu -->
+          <div
+            id="mobileMenu"
+            class="md:hidden pb-4 border-t border-gray-100 hidden"
+          >
+            <nav class="flex flex-col space-y-3 pt-4">
+              <button
+                data-scroll-target="services"
+                class="text-gray-600 hover:text-black transition-colors text-sm tracking-wide text-left py-1"
+              >
+                Servicios
+              </button>
+              <button
+                data-scroll-target="testimonials"
+                class="text-gray-600 hover:text-black transition-colors text-sm tracking-wide text-left py-1"
+              >
+                Casos
+              </button>
+              <button
+                data-scroll-target="faq"
+                class="text-gray-600 hover:text-black transition-colors text-sm tracking-wide text-left py-1"
+              >
+                Preguntas
+              </button>
+              <button
+                data-scroll-target="contact"
+                class="text-gray-600 hover:text-black transition-colors text-sm tracking-wide text-left py-1"
+              >
+                Contacto
+              </button>
+              <button
+                data-go-project
+                class="bg-black text-white px-6 py-2 rounded-sm hover:bg-gray-900 transition-colors text-sm tracking-wide font-light w-fit mt-2"
+              >
+                Proyecto
+              </button>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="pt-32 pb-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6"
+          >
+            Soluciones digitales <br />
+            <span class="font-normal">para negocios serios</span>
+          </h1>
+          <p
+            class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed"
+          >
+            Desarrollamos productos digitales con enfoque en resultados,
+            performance y experiencia de usuario. Transformamos desafíos
+            complejos en soluciones elegantes.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              data-go-project
+              class="bg-black text-white px-8 py-3.5 rounded-sm hover:bg-gray-900 transition-colors font-light tracking-wide flex items-center justify-center gap-2"
+            >
+              Iniciar Proyecto
+              <!-- ArrowRight Icon -->
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <p class="text-gray-600 mt-4 text-sm max-w-2xl mx-auto">
+            Agendaremos una llamada de 30 minutos gratuita para hablar más sobre
+            tu proyecto. Nos pondremos en contacto contigo mediante el email
+            que proporciones.
+          </p>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl font-light mb-4">Nuestros Servicios</h2>
+            <div class="w-16 h-px bg-gray-900 mx-auto"></div>
+          </div>
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+          >
+            <!-- Servicio 1 -->
+            <div class="group">
+              <div
+                class="border border-gray-200 p-8 hover:border-gray-900 transition-colors h-full"
+              >
+                <div class="flex items-start mb-6">
+                  <div
+                    class="w-10 h-10 bg-gray-900 rounded-sm flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <!-- Globe Icon -->
+                    <svg
+                      class="w-5 h-5 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="9"
+                        stroke-width="2"
+                      ></circle>
+                      <path
+                        d="M3 12h18M12 3a15 15 0 010 18M12 3a15 15 0 000 18"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-light mb-2">Desarrollo Web</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                      Sitios web modernos, rápidos y optimizados para
+                      conversión.
+                    </p>
+                  </div>
+                </div>
+                <ul class="mb-6 space-y-2">
+                  <li class="flex items-center text-gray-700 text-sm">
+                    <!-- Check Icon -->
+                    <svg
+                      class="w-4 h-4 text-gray-900 mr-2 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    Diseño minimalista
+                  </li>
+                  <li class="flex items-center text-gray-700 text-sm">
+                    <svg
+                      class="w-4 h-4 text-gray-900 mr-2 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    Performance optimizada
+                  </li>
+                  <li class="flex items-center text-gray-700 text-sm">
+                    <svg
+                      class="w-4 h-4 text-gray-900 mr-2 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    SEO integrado
+                  </li>
+                  <li class="flex items-center text-gray-700 text-sm">
+                    <svg
+                      class="w-4 h-4 text-gray-900 mr-2 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    Mantenimiento incluido
+                  </li>
+                </ul>
+                <div class="flex items-center justify-between">
+                  <span class="text-lg font-normal">Desde 500€</span>
+                  <button
+                    data-go-project
+                    class="text-sm text-gray-900 hover:text-black transition-colors flex items-center gap-1"
+                  >
+                    Consultar
+                    <svg
+                      class="w-3 h-3"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Servicio 2 -->
+            <div class="group">
+              <div
+                class="border border-gray-200 p-8 hover:border-gray-900 transition-colors h-full"
+              >
+                <div class="flex items-start mb-6">
+                  <div
+                    class="w-10 h-10 bg-gray-900 rounded-sm flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <!-- MessageSquare Icon -->
+                    <svg
+                      class="w-5 h-5 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-light mb-2">Automatización IA</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                      Chatbots inteligentes que resuelven el 80% de consultas
+                      recurrentes.
+                    </p>
+                  </div>
+                </div>
+                <ul class="mb-6 space-y-2">
+                  <li class="flex items-center text-gray-700 text-sm">
+                    <svg
+                      class="w-4 h-4 text-gray-900 mr-2 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    IA personalizada
+                  </li>
+                  <li class="flex items-center text-gray-700 text-sm">
+                    <svg
+                      class="w-4 h-4 text-gray-900 mr-2 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    Integración API
+                  </li>
+                  <li class="flex items-center text-gray-700 text-sm">
+                    <svg
+                      class="w-4 h-4 text-gray-900 mr-2 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    Analytics en tiempo real
+                  </li>
+                  <li class="flex items-center text-gray-700 text-sm">
+                    <svg
+                      class="w-4 h-4 text-gray-900 mr-2 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    Soporte 24/7
+                  </li>
+                </ul>
+                <div class="flex items-center justify-between">
+                  <span class="text-lg font-normal">Desde 300€</span>
+                  <button
+                    data-go-project
+                    class="text-sm text-gray-900 hover:text-black transition-colors flex items-center gap-1"
+                  >
+                    Consultar
+                    <svg
+                      class="w-3 h-3"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Servicio 3 -->
+            <div class="group">
+              <div
+                class="border border-gray-200 p-8 hover:border-gray-900 transition-colors h-full"
+              >
+                <div class="flex items-start mb-6">
+                  <div
+                    class="w-10 h-10 bg-gray-900 rounded-sm flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <!-- BarChart3 Icon -->
+                    <svg
+                      class="w-5 h-5 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-light mb-2">Estrategia Digital</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                      Planes de marketing data-driven para crecimiento
+                      sostenible.
+                    </p>
+                  </div>
+                </div>
+                <ul class="mb-6 space-y-2">
+                  <li class="flex items-center text-gray-700 text-sm">
+                    <svg
+                      class="w-4 h-4 text-gray-900 mr-2 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    Análisis competitivo
+                  </li>
+                  <li class="flex items-center text-gray-700 text-sm">
+                    <svg
+                      class="w-4 h-4 text-gray-900 mr-2 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    Automatización CRM
+                  </li>
+                  <li class="flex items-center text-gray-700 text-sm">
+                    <svg
+                      class="w-4 h-4 text-gray-900 mr-2 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    ROI medible
+                  </li>
+                  <li class="flex items-center text-gray-700 text-sm">
+                    <svg
+                      class="w-4 h-4 text-gray-900 mr-2 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    Reportes mensuales
+                  </li>
+                </ul>
+                <div class="flex items-center justify-between">
+                  <span class="text-lg font-normal">300€/campaña</span>
+                  <button
+                    data-go-project
+                    class="text-sm text-gray-900 hover:text-black transition-colors flex items-center gap-1"
+                  >
+                    Consultar
+                    <svg
+                      class="w-3 h-3"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="py-20 bg-gray-50 px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl font-light mb-4">Resultados Reales</h2>
+            <div class="w-16 h-px bg-gray-900 mx-auto"></div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Testimonio 1 -->
+            <div class="bg-white p-8 border border-gray-100">
+              <div class="text-yellow-400 mb-4">★★★★★</div>
+              <p
+                class="text-gray-700 mb-6 italic text-sm leading-relaxed"
+              >"El sitio web ha incrementado nuestras conversiones en un 140%. Profesionalismo y resultados garantizados."</p>
+              <div>
+                <p class="font-light text-gray-900">Elena Martínez</p>
+                <p class="text-gray-600 text-sm">Innovatech</p>
+              </div>
+            </div>
+
+            <!-- Testimonio 2 -->
+            <div class="bg-white p-8 border border-gray-100">
+              <div class="text-yellow-400 mb-4">★★★★★</div>
+              <p
+                class="text-gray-700 mb-6 italic text-sm leading-relaxed"
+              >"Nuestro chatbot gestiona 2000+ interacciones diarias con una satisfacción del 95%. Inversión con ROI claro."</p>
+              <div>
+                <p class="font-light text-gray-900">Miguel Torres</p>
+                <p class="text-gray-600 text-sm">Global Retail</p>
+              </div>
+            </div>
+
+            <!-- Testimonio 3 -->
+            <div class="bg-white p-8 border border-gray-100">
+              <div class="text-yellow-400 mb-4">★★★★★</div>
+              <p
+                class="text-gray-700 mb-6 italic text-sm leading-relaxed"
+              >"La estrategia digital ha triplicado nuestro pipeline de ventas en 6 meses. Expertos en crecimiento real."</p>
+              <div>
+                <p class="font-light text-gray-900">Laura Fernández</p>
+                <p class="text-gray-600 text-sm">ScaleUp Ventures</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl font-light mb-4">Preguntas Esenciales</h2>
+            <div class="w-16 h-px bg-gray-900 mx-auto"></div>
+          </div>
+
+          <div class="space-y-4">
+            <!-- FAQ 1 -->
+            <div class="border-b border-gray-200">
+              <button
+                class="w-full py-6 text-left flex justify-between items-center group"
+                data-faq-toggle
+              >
+                <span
+                  class="font-light text-lg group-hover:text-gray-900 transition-colors"
+                  >¿Cuál es su enfoque de trabajo?</span
+                >
+                <svg
+                  class="w-5 h-5 text-gray-400 transition-transform"
+                  data-faq-chevron
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                class="pb-6 text-gray-600 leading-relaxed hidden"
+                data-faq-answer
+              >
+                Metodología ágil con entregas semanales, comunicación
+                transparente y foco en resultados medibles. Cada proyecto
+                incluye análisis de métricas y optimización continua.
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="border-b border-gray-200">
+              <button
+                class="w-full py-6 text-left flex justify-between items-center group"
+                data-faq-toggle
+              >
+                <span
+                  class="font-light text-lg group-hover:text-gray-900 transition-colors"
+                  >¿Incluyen mantenimiento post-entrega?</span
+                >
+                <svg
+                  class="w-5 h-5 text-gray-400 transition-transform"
+                  data-faq-chevron
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                class="pb-6 text-gray-600 leading-relaxed hidden"
+                data-faq-answer
+              >
+                Sí, todos nuestros servicios incluyen 30 días de soporte
+                gratuito post-entrega. Ofrecemos planes de mantenimiento mensual
+                con actualizaciones de seguridad y mejoras graduales.
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="border-b border-gray-200">
+              <button
+                class="w-full py-6 text-left flex justify-between items-center group"
+                data-faq-toggle
+              >
+                <span
+                  class="font-light text-lg group-hover:text-gray-900 transition-colors"
+                  >¿Cuál es su proceso de onboarding?</span
+                >
+                <svg
+                  class="w-5 h-5 text-gray-400 transition-transform"
+                  data-faq-chevron
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                class="pb-6 text-gray-600 leading-relaxed hidden"
+                data-faq-answer
+              >
+                1) Consulta estratégica inicial, 2) Propuesta detallada con
+                timeline, 3) Kickoff con stakeholders, 4) Desarrollo iterativo,
+                5) Entrega y capacitación, 6) Soporte continuo.
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="border-b border-gray-200">
+              <button
+                class="w-full py-6 text-left flex justify-between items-center group"
+                data-faq-toggle
+              >
+                <span
+                  class="font-light text-lg group-hover:text-gray-900 transition-colors"
+                  >¿Trabajan con NDA y contratos formales?</span
+                >
+                <svg
+                  class="w-5 h-5 text-gray-400 transition-transform"
+                  data-faq-chevron
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                class="pb-6 text-gray-600 leading-relaxed hidden"
+                data-faq-answer
+              >
+                Absolutamente. Todos nuestros proyectos incluyen contrato legal
+                detallado, NDA estándar y cláusulas de propiedad intelectual. La
+                seguridad y confidencialidad son prioritarias.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-8">
+            <h2 class="text-3xl font-light mb-4">Iniciar Proyecto</h2>
+            <div class="w-16 h-px bg-gray-900 mx-auto mb-6"></div>
+          </div>
+
+          <div
+            class="bg-gray-50 p-6 rounded-sm mb-8 max-w-2xl mx-auto text-center"
+          >
+            <p class="text-gray-700 text-sm leading-relaxed">
+              <strong>¡Consulta gratuita!</strong> Agendaremos una llamada de 30
+              minutos sin compromiso para conocer mejor tu proyecto y
+              necesidades. Nos pondremos en contacto contigo mediante el email
+              que proporciones para coordinar la reunión.
+            </p>
+          </div>
+
+          <div class="text-center">
+            <button
+              data-go-project
+              class="bg-black text-white px-8 py-3.5 rounded-sm hover:bg-gray-900 transition-colors font-light tracking-wide flex items-center justify-center gap-2 inline-flex"
+            >
+              Ir al formulario
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="border-t border-gray-100 py-8 px-4">
+        <div class="max-w-7xl mx-auto">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center"
+          >
+            <div class="flex items-center mb-4 md:mb-0">
+              <div
+                class="w-6 h-6 bg-black rounded-sm flex items-center justify-center"
+              >
+                <svg
+                  class="w-3 h-3 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="9"
+                    stroke-width="2"
+                  ></circle>
+                  <path
+                    d="M3 12h18M12 3a15 15 0 010 18M12 3a15 15 0 000 18"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <span class="ml-2 text-sm font-light tracking-tight"
+                >SmartYou Studio</span
+              >
+            </div>
+            <p class="text-gray-600 text-sm">
+              © 2025 Todos los derechos reservados
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- PROJECT PAGE -->
+    <div id="projectPage" class="hidden">
+      <!-- Header -->
+      <header
+        class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center py-4">
+            <div class="flex items-center">
+              <div
+                class="w-8 h-8 bg-black rounded-sm flex items-center justify-center"
+              >
+                <svg
+                  class="w-4 h-4 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="9"
+                    stroke-width="2"
+                  ></circle>
+                  <path
+                    d="M3 12h18M12 3a15 15 0 010 18M12 3a15 15 0 000 18"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <span class="ml-2 text-lg font-light tracking-tight"
+                >SmartYou</span
+              >
+            </div>
+            <button
+              data-go-home
+              class="text-gray-600 hover:text-black transition-colors text-sm tracking-wide"
+            >
+              Volver
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Form Section -->
+      <section class="pt-32 pb-20 px-4">
+        <div class="max-w-2xl mx-auto">
+          <div class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-light mb-4">
+              Iniciar Proyecto
+            </h1>
+            <div class="w-16 h-px bg-gray-900 mx-auto mb-6"></div>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-sm mb-8 text-center">
+            <p class="text-gray-700 text-sm leading-relaxed">
+              <strong>¡Consulta gratuita!</strong> Agendaremos una llamada de 30
+              minutos sin compromiso para conocer mejor tu proyecto y
+              necesidades. Nos pondremos en contacto contigo mediante el email
+              que proporciones para coordinar la reunión.
+            </p>
+          </div>
+
+          <form id="projectForm" class="space-y-6">
+            <div>
+              <label
+                for="service"
+                class="block text-sm font-medium text-gray-900 mb-2"
+                >¿Qué servicio necesita?</label
+              >
+              <select
+                id="service"
+                name="service"
+                required
+                class="w-full px-4 py-3 border border-gray-200 focus:border-gray-900 focus:outline-none transition-colors text-sm bg-white"
+              >
+                <option value="">Selecciona un servicio</option>
+                <option value="Desarrollo Web">Desarrollo Web</option>
+                <option value="Automatización IA">Automatización IA</option>
+                <option value="Estrategia Digital">Estrategia Digital</option>
+              </select>
+            </div>
+
+            <div>
+              <label
+                for="description"
+                class="block text-sm font-medium text-gray-900 mb-2"
+                >Describa su necesidad</label
+              >
+              <textarea
+                id="description"
+                name="description"
+                placeholder="Describe brevemente qué es lo que quieres o necesitas..."
+                required
+                rows="5"
+                class="w-full px-4 py-3 border border-gray-200 focus:border-gray-900 focus:outline-none transition-colors text-sm resize-none"
+              ></textarea>
+            </div>
+
+            <div>
+              <label
+                for="name"
+                class="block text-sm font-medium text-gray-900 mb-2"
+                >Nombre o empresa</label
+              >
+              <input
+                id="name"
+                type="text"
+                name="name"
+                placeholder="Tu nombre o el nombre de tu empresa"
+                required
+                class="w-full px-4 py-3 border border-gray-200 focus:border-gray-900 focus:outline-none transition-colors text-sm"
+              />
+            </div>
+
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-gray-900 mb-2"
+                >Email</label
+              >
+              <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="tu@email.com"
+                required
+                class="w-full px-4 py-3 border border-gray-200 focus:border-gray-900 focus:outline-none transition-colors text-sm"
+              />
+            </div>
+
+            <button
+              id="submitButton"
+              type="submit"
+              class="w-full bg-black text-white py-3.5 rounded-sm hover:bg-gray-900 transition-colors text-sm tracking-wide font-light flex items-center justify-center gap-2"
+            >
+              <span id="submitButtonText">Enviar Consulta</span>
+              <!-- Send Icon -->
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 12l14-7-7 14-2-5-5-2z"
+                ></path>
+              </svg>
+            </button>
+
+            <div
+              id="submitSuccess"
+              class="p-3 bg-green-50 border border-green-200 text-green-800 text-sm rounded-sm hidden"
+            >
+              ¡Consulta enviada exitosamente! Nos contactaremos contigo en las
+              próximas 24 horas.
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="border-t border-gray-100 py-8 px-4">
+        <div class="max-w-7xl mx-auto">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center"
+          >
+            <div class="flex items-center mb-4 md:mb-0">
+              <div
+                class="w-6 h-6 bg-black rounded-sm flex items-center justify-center"
+              >
+                <svg
+                  class="w-3 h-3 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="9"
+                    stroke-width="2"
+                  ></circle>
+                  <path
+                    d="M3 12h18M12 3a15 15 0 010 18M12 3a15 15 0 000 18"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <span class="ml-2 text-sm font-light tracking-tight"
+                >SmartYou Studio</span
+              >
+            </div>
+            <p class="text-gray-600 text-sm">
+              © 2025 Todos los derechos reservados
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- JS -->
+    <script>
+      // Helper: scroll suave
+      function scrollToSection(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      // Toggle páginas
+      const homePage = document.getElementById('homePage');
+      const projectPage = document.getElementById('projectPage');
+
+      document.querySelectorAll('[data-go-project]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          homePage.classList.add('hidden');
+          projectPage.classList.remove('hidden');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+
+      document.querySelectorAll('[data-go-home]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          projectPage.classList.add('hidden');
+          homePage.classList.remove('hidden');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+
+      // Scroll de navegación
+      document.querySelectorAll('[data-scroll-target]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const target = btn.getAttribute('data-scroll-target');
+          scrollToSection(target);
+          // cerrar menú móvil si está abierto
+          if (!mobileMenu.classList.contains('hidden')) {
+            toggleMobileMenu();
+          }
+        });
+      });
+
+      // Menú móvil
+      const mobileMenuButton = document.getElementById('mobileMenuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const iconMenu = document.getElementById('iconMenu');
+      const iconClose = document.getElementById('iconClose');
+
+      function toggleMobileMenu() {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        mobileMenu.classList.toggle('hidden', !isHidden);
+        iconMenu.classList.toggle('hidden', !isHidden);
+        iconClose.classList.toggle('hidden', isHidden);
+      }
+
+      mobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+      // FAQ Accordion
+      const faqButtons = document.querySelectorAll('[data-faq-toggle]');
+
+      faqButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const answer = btn.parentElement.querySelector('[data-faq-answer]');
+          const chevron = btn.querySelector('[data-faq-chevron]');
+
+          // cerrar otros
+          document
+            .querySelectorAll('[data-faq-answer]')
+            .forEach((el) => el !== answer && el.classList.add('hidden'));
+          document
+            .querySelectorAll('[data-faq-chevron]')
+            .forEach((ch) => ch !== chevron && ch.classList.remove('rotate-180'));
+
+          // toggle actual
+          const isHidden = answer.classList.contains('hidden');
+          answer.classList.toggle('hidden', !isHidden);
+          chevron.classList.toggle('rotate-180', isHidden);
+        });
+      });
+
+      // Formulario proyecto (simulación de envío)
+      const projectForm = document.getElementById('projectForm');
+      const submitButton = document.getElementById('submitButton');
+      const submitButtonText = document.getElementById('submitButtonText');
+      const submitSuccess = document.getElementById('submitSuccess');
+
+      projectForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        submitSuccess.classList.add('hidden');
+        submitButton.disabled = true;
+        submitButtonText.textContent = 'Enviando...';
+
+        // Simulación de llamada a API
+        setTimeout(() => {
+          submitButton.disabled = false;
+          submitButtonText.textContent = 'Enviar Consulta';
+          submitSuccess.classList.remove('hidden');
+          projectForm.reset();
+        }, 1500);
+      });
+    </script>
+  </body>
+</html>
