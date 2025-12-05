@@ -45,7 +45,17 @@ header {
   background: transparent;
   border-bottom: none;
   color: #f9fafb;
+  transform: translateY(0);
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
+    /* Header oculto al hacer scroll hacia abajo */
+.header-hidden {
+  transform: translateY(-140%);
+  opacity: 0;
+  pointer-events: none; /* para que no bloquee clics cuando está oculto */
+}
+
+
 
 /* pastilla larga y fina, centrada */
 .header-inner {
@@ -218,7 +228,32 @@ header {
     text-align: left;
   }
 }
+/* ===== Ajustes de tamaño solo para escritorio ===== */
+@media (min-width: 1024px) {
+  .header-inner {
+    max-width: 1240px;        /* isla más larga */
+    padding: 0.9rem 2.2rem;   /* un poco más alta y ancha */
+    gap: 2rem;
+  }
 
+  .brand-logo {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .brand-text h1 {
+    font-size: 1.1rem;
+  }
+
+  .main-nav button {
+    font-size: 0.95rem;
+  }
+
+  .nav-search input {
+    min-width: 230px;
+  }
+}
 
     /* ================== ESTRUCTURA GENERAL ================== */
 
@@ -883,6 +918,14 @@ header {
       gap: 1rem;
       flex-wrap: wrap;
     }
+    /* === Resaltado de resultado de búsqueda === */
+.search-highlight {
+  outline: 2px solid #facc15;
+  border-radius: 18px;
+  background: rgba(250, 204, 21, 0.04);
+  transition: background 0.3s ease;
+}
+
   </style>
 <header>
   <div class="container">
@@ -904,10 +947,15 @@ header {
       </nav>
 
       <!-- buscador estilo Athlead (solo visual, no hace falta lógica) -->
-      <form class="nav-search" role="search">
-        <input type="text" placeholder="Buscar en Sebbro…" />
-      </form>
-
+      <form class="nav-search" role="search" id="nav-search-form">
+  <input
+    type="text"
+    id="nav-search-input"
+    placeholder="Buscar en Sebbro…"
+    autocomplete="off"
+  />
+</form>
+      
       <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">☰</button>
     </div>
   </div>
@@ -1302,33 +1350,166 @@ header {
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     /* ---------- NAV SCROLL / MOBILE ---------- */
-    const nav = document.getElementById("main-nav");
-    const navToggle = document.getElementById("nav-toggle");
-    const navButtons = nav.querySelectorAll("button[data-scroll]");
+ <script>
+// ================= NAV: scroll suave + menú móvil + scrollspy =================
 
-    function setActiveNav(targetSelector) {
-      navButtons.forEach((btn) => {
-        btn.classList.toggle("is-active", btn.getAttribute("data-scroll") === targetSelector);
+const navButtons = document.querySelectorAll('.main-nav button[data-scroll]');
+const nav       = document.getElementById('main-nav');
+const navToggle = document.getElementById('nav-toggle');
+    // ======= BUSCADOR INTERNO =======
+  const searchForm  = document.getElementById("nav-search-form");
+  const searchInput = document.getElementById("nav-search-input");
+
+  function handleInternalSearch(event) {
+    event.preventDefault();
+    if (!searchInput) return;
+
+    const query = searchInput.value.trim().toLowerCase();
+    if (!query) return;
+
+    // candidatos a buscar: secciones + tarjetas de marca
+    const candidates = Array.from(
+      document.querySelectorAll("section, .brand-card")
+    );
+
+    let found = null;
+    for (const el of candidates) {
+      const text = el.textContent || "";
+      if (text.toLowerCase().includes(query)) {
+        found = el;
+        break;
+      }
+    }
+
+    if (found) {
+      // quitar resaltados anteriores
+      document
+        .querySelectorAll(".search-highlight")
+        .forEach((el) => el.classList.remove("search-highlight"));
+
+      // resaltar el nuevo
+      found.classList.add("search-highlight");
+
+      // scroll suave hasta el bloque, compensando el header
+      const HEADER_OFFSET = 140;
+      const rect = found.getBoundingClientRect();
+      const offsetTop = rect.top + window.scrollY - HEADER_OFFSET;
+
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      
+        // ====== OCULTAR HEADER AL HACER SCROLL HACIA ABAJO ======
+  const headerEl = document.querySelector("header");
+  let lastScrollY = window.scrollY;
+
+  function handleHeaderOnScroll() {
+    if (!headerEl) return;
+
+    const currentY = window.scrollY;
+
+    // solo empezamos a ocultar a partir de cierto punto (por ejemplo 150px)
+    const THRESHOLD = 150;
+
+    if (currentY > lastScrollY && currentY > THRESHOLD) {
+      // desplazándose hacia abajo
+      headerEl.classList.add("header-hidden");
+    } else {
+      // hacia arriba o muy arriba de la página
+      headerEl.classList.remove("header-hidden");
+    }
+
+    lastScrollY = currentY;
+  }
+
+  window.addEventListener("scroll", handleHeaderOnScroll);
+
+      });
+
+      // cerrar menú en móvil si está abierto
+      if (window.innerWidth <= 768 && nav) {
+        nav.classList.remove("is-open");
+      }
+
+      // quitar resaltado después de unos segundos (opcional)
+      setTimeout(() => {
+        found.classList.remove("search-highlight");
+      }, 6000);
+    } else {
+      alert(`No hemos encontrado “${query}” en esta página.`);
+    }
+  }
+
+  if (searchForm) {
+    searchForm.addEventListener("submit", handleInternalSearch);
+  }
+
+
+// Scroll suave al hacer clic
+navButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const selector = btn.getAttribute('data-scroll');
+    const target   = document.querySelector(selector);
+
+    if (target) {
+      const HEADER_OFFSET = 120; // altura aproximada del header
+      const rect      = target.getBoundingClientRect();
+      const offsetTop = rect.top + window.scrollY - HEADER_OFFSET;
+
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
       });
     }
 
-    navButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const target = btn.getAttribute("data-scroll");
-        const el = document.querySelector(target);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth" });
-          setActiveNav(target);
-        }
-        if (window.innerWidth <= 768) {
-          nav.classList.remove("is-open");
-        }
-      });
-    });
+    // cerrar menú en móvil
+    if (window.innerWidth <= 768 && nav) {
+      nav.classList.remove('is-open');
+    }
+  });
+});
 
-    navToggle.addEventListener("click", () => {
-      nav.classList.toggle("is-open");
-    });
+// Botón hamburguesa (móvil)
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    nav.classList.toggle('is-open');
+  });
+}
+
+// -------- Scrollspy: mover la barra amarilla según sección visible --------
+const sectionMap = Array.from(navButtons).map(btn => {
+  const selector = btn.getAttribute('data-scroll');
+  const section  = document.querySelector(selector);
+  if (!section) return null;
+  return { btn, section };
+}).filter(Boolean);
+
+// cuanto desplazamos para compensar el header
+const SCROLLSPY_OFFSET = 140;
+
+function updateActiveNav() {
+  const scrollPos = window.scrollY + SCROLLSPY_OFFSET;
+
+  let current = sectionMap[0];
+  for (const item of sectionMap) {
+    if (item.section.offsetTop <= scrollPos) {
+      current = item;
+    }
+  }
+
+  // aplicar clase is-active al botón correspondiente
+  navButtons.forEach(b => b.classList.remove('is-active'));
+  if (current && current.btn) {
+    current.btn.classList.add('is-active');
+  }
+}
+
+// actualizar al hacer scroll, resize y al cargar
+window.addEventListener('scroll', updateActiveNav);
+window.addEventListener('resize', updateActiveNav);
+window.addEventListener('load', updateActiveNav);
+</script>
+
 
     /* ---------- DATA DE MARCAS ---------- */
 
@@ -1734,6 +1915,7 @@ header {
 </script>
 </body>
 </html>
+
 
 
 
