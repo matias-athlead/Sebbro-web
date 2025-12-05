@@ -52,12 +52,29 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.7rem 1.4rem;
+
+  /* isla más pequeña y más fina */
+  padding: 0.6rem 1.2rem;
   border-radius: 999px;
   background: #0f172a;
   border: 1px solid rgba(31, 41, 55, 0.9);
-  box-shadow: 0 22px 50px rgba(15, 23, 42, 0.5); /* sombra algo más suave */
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.45);
+
+  /* 👉 aquí es donde la hacemos “más pequeña” */
+  max-width: 820px;      /* ancho máximo de la isla */
+  width: 100%;
+  margin: 0 auto;        /* centrada dentro del header */
 }
+
+/* En móvil la dejamos ocupar todo el ancho para que no se vea rara */
+@media (max-width: 768px) {
+  .header-inner {
+    max-width: none;
+    border-radius: 18px;
+    padding: 0.65rem 0.9rem;
+  }
+}
+
 
 /* el menú interno, en forma de píldoras */
 .main-nav {
@@ -1650,5 +1667,6 @@ header {
 </script>
 </body>
 </html>
+
 
 
