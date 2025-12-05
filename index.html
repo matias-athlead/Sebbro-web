@@ -36,80 +36,136 @@
 
     a { color: inherit; text-decoration: none; }
 
-/* ================== HEADER + NAV (ISLA FLOTANTE) ================== */
+/* ============== HEADER ESTILO ATHLEAD ============== */
+
 header {
   position: sticky;
-  top: 1rem;                 /* separación con el borde superior */
+  top: 0.75rem;
   z-index: 40;
-  background: transparent;   /* nada de barra a todo lo ancho */
+  background: transparent;
   border-bottom: none;
-  color: #f9fafb;            /* <-- texto claro en toda la barra */
+  color: #f9fafb;
 }
 
-/* la “isla” centrada y más proporcionada */
+/* pastilla larga y fina, centrada */
 .header-inner {
+  margin: 0 auto;
+  margin-top: 0.25rem;
+  margin-bottom: 0.35rem;
+
+  max-width: 1100px;        /* 👉 ajusta esto para hacerla más larga o corta */
+  width: 100%;
+
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  gap: 1.5rem;
+  padding: 0.55rem 1.6rem;
 
-  /* isla más pequeña y más fina */
-  padding: 0.6rem 1.2rem;
   border-radius: 999px;
-  background: #0f172a;
-  border: 1px solid rgba(31, 41, 55, 0.9);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.45);
-
-  /* 👉 aquí es donde la hacemos “más pequeña” */
-  max-width: 820px;      /* ancho máximo de la isla */
-  width: 100%;
-  margin: 0 auto;        /* centrada dentro del header */
+  background: #020617;
+  border: 1px solid rgba(31,41,55,0.9);
+  box-shadow: 0 18px 40px rgba(15,23,42,0.6);
 }
 
-/* En móvil la dejamos ocupar todo el ancho para que no se vea rara */
-@media (max-width: 768px) {
-  .header-inner {
-    max-width: none;
-    border-radius: 18px;
-    padding: 0.65rem 0.9rem;
-  }
+/* logo + texto igual que antes */
+.brand-mark {
+  display: inline-flex;
+  gap: 0.6rem;
+  align-items: center;
+  min-width: 0;
 }
 
+.brand-logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #020617;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
 
-/* el menú interno, en forma de píldoras */
+.brand-text h1 {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.brand-text p {
+  margin: 0;
+  font-size: 0.7rem;
+  color: #9ca3af;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* nav horizontal, tipo Athlead */
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  padding: 0.15rem;
-  border-radius: 999px;
-  background: transparent;
-  border: none;
+  gap: 1.4rem;
+  margin-left: 1.5rem;
 }
 
 .main-nav button {
   border: none;
   background: transparent;
   color: #e5e7eb;
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  padding: 0;
+  font-size: 0.86rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
   cursor: pointer;
-  white-space: nowrap;
+  position: relative;
 }
 
 .main-nav button:hover {
-  background: rgba(249, 250, 251, 0.12);
+  color: #ffffff;
 }
 
 .main-nav button.is-active {
-  background: #f9fafb;
-  color: #111827;
+  color: #ffffff;
+  font-weight: 500;
 }
 
-/* botón hamburguesa */
+.main-nav button.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.35rem;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: #facc15; /* subrayado amarillo tipo indicador */
+}
+
+/* buscador a la derecha */
+.nav-search {
+  margin-left: auto;
+  display: block;
+}
+
+.nav-search input {
+  min-width: 190px;
+  border-radius: 999px;
+  border: 1px solid rgba(156,163,175,0.6);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+.nav-search input::placeholder {
+  color: #6b7280;
+}
+
+/* botón hamburguesa, oculto en desktop */
 .nav-toggle {
   display: none;
   border: none;
@@ -119,17 +175,23 @@ header {
   cursor: pointer;
 }
 
-/* Versión móvil: menú desplegable debajo de la isla */
+/* ============== VERSIÓN MÓVIL ============== */
 @media (max-width: 768px) {
   .header-inner {
+    max-width: none;
     border-radius: 18px;
-    padding: 0.65rem 0.9rem;
+    padding: 0.6rem 0.9rem;
+  }
+
+  .nav-search {
+    display: none; /* ocultamos buscador en móvil */
   }
 
   .nav-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    margin-left: auto;
   }
 
   .main-nav {
@@ -143,7 +205,7 @@ header {
     background: #111827;
     border-radius: 16px;
     border: 1px solid #374151;
-    box-shadow: 0 22px 45px rgba(15, 23, 42, 0.85);
+    box-shadow: 0 22px 45px rgba(15,23,42,0.85);
     display: none;
   }
 
@@ -822,27 +884,32 @@ header {
       flex-wrap: wrap;
     }
   </style>
-</head>
-<body>
 <header>
-  <div class="container header-inner">
-    <div class="brand-mark">
-      <div class="brand-logo">S</div>
-      <div class="brand-text">
-        <h1>Sebbro Foods</h1>
-        <p>Hand-eating franchise management</p>
+  <div class="container">
+    <div class="header-inner">
+      <div class="brand-mark">
+        <div class="brand-logo">S</div>
+        <div class="brand-text">
+          <h1>Sebbro Foods</h1>
+          <p>Hand-eating franchise management</p>
+        </div>
       </div>
+
+      <nav class="main-nav" id="main-nav">
+        <button type="button" data-scroll="#landing" class="is-active">Inicio</button>
+        <button type="button" data-scroll="#about">Sobre nosotros</button>
+        <button type="button" data-scroll="#brands">Marcas</button>
+        <button type="button" data-scroll="#map-section">Mapa</button>
+        <button type="button" data-scroll="#contact">Contacto</button>
+      </nav>
+
+      <!-- buscador estilo Athlead (solo visual, no hace falta lógica) -->
+      <form class="nav-search" role="search">
+        <input type="text" placeholder="Buscar en Sebbro…" />
+      </form>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">☰</button>
     </div>
-
-    <nav class="main-nav" id="main-nav">
-      <button type="button" data-scroll="#landing" class="is-active">Inicio</button>
-      <button type="button" data-scroll="#about">Sobre nosotros</button>
-      <button type="button" data-scroll="#brands">Marcas</button>
-      <button type="button" data-scroll="#map-section">Mapa</button>
-      <button type="button" data-scroll="#contact">Contacto</button>
-    </nav>
-
-    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">☰</button>
   </div>
 </header>
 
@@ -1667,6 +1734,7 @@ header {
 </script>
 </body>
 </html>
+
 
 
 
