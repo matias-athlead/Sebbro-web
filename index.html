@@ -842,6 +842,218 @@
         padding: 3.1rem 0;
       }
     }
+    /* ===== DETALLE DE FRANQUICIA ("NUEVA PÁGINA") ===== */
+
+.brand-detail {
+  display: none;
+  background: #ffffff;
+  padding: 4rem 0;
+}
+
+.brand-detail.is-visible {
+  display: block;
+}
+
+.brand-detail-back {
+  border: none;
+  background: transparent;
+  color: #4b5563;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+.brand-detail-back:hover {
+  color: #111827;
+}
+
+.brand-detail-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.brand-detail-tagline {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #9ca3af;
+  margin: 0 0 0.4rem;
+}
+
+.brand-detail-title {
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+  margin: 0 0 0.6rem;
+}
+
+.brand-detail-desc {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  line-height: 1.8;
+  max-width: 36rem;
+}
+
+.brand-detail-header-meta {
+  font-size: 0.85rem;
+  color: #6b7280;
+  text-align: right;
+}
+
+.brand-detail-location {
+  margin-top: 0.4rem;
+  color: #16a34a;
+}
+
+.brand-detail-postal {
+  margin-bottom: 2.3rem;
+  padding: 1.4rem 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.brand-detail-postal h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #111827;
+}
+
+.brand-detail-content {
+  margin-top: 1rem;
+}
+
+.brand-detail-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1.8fr) minmax(0, 1.1fr);
+  align-items: flex-start;
+}
+
+.brand-detail-menu h2,
+.brand-detail-box h3 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #111827;
+}
+
+.menu-list {
+  border-top: 1px solid #e5e7eb;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  gap: 1.5rem;
+}
+
+.menu-item-title {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.menu-item-desc {
+  font-size: 0.88rem;
+  color: var(--color-muted);
+}
+
+.menu-item-right {
+  text-align: right;
+  min-width: 140px;
+}
+
+.menu-item-price {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.qty-control {
+  display: inline-flex;
+  border-radius: 999px;
+  border: 1px solid #d4d4d8;
+  overflow: hidden;
+  font-size: 0.85rem;
+}
+
+.qty-control button {
+  border: none;
+  background: #ffffff;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+
+.qty-control button:hover {
+  background: #f3f4f6;
+}
+
+.qty-value {
+  padding: 0.3rem 0.7rem;
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+.brand-detail-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.brand-detail-box {
+  border-radius: var(--radius-md);
+  border: 1px solid #e5e7eb;
+  padding: 1.1rem 1.2rem;
+  background: #ffffff;
+}
+
+#bdSpecialties {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+#bdSpecialties li {
+  padding: 0.3rem 0.4rem;
+  border-radius: 0.5rem;
+  background: #f9fafb;
+}
+
+.order-summary {
+  margin: 0.7rem 0 0.9rem;
+  font-size: 0.9rem;
+  color: #111827;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 900px) {
+  .brand-detail-header {
+    flex-direction: column;
+    text-align: left;
+  }
+  .brand-detail-header-meta {
+    text-align: left;
+  }
+  .brand-detail-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
   </style>
 </head>
 <body>
@@ -1376,34 +1588,104 @@
         </div>
       </div>
     </section>
+    <!-- DETALLE DE FRANQUICIA EN "NUEVA PÁGINA" -->
+<section id="brandDetail" class="brand-detail" aria-labelledby="bdTitle">
+  <div class="container">
+    <button type="button" class="brand-detail-back" id="bdBackBtn">
+      ← Volver a todas las marcas
+    </button>
+
+    <header class="brand-detail-header">
+      <div>
+        <p id="bdTagline" class="brand-detail-tagline"></p>
+        <h1 id="bdTitle" class="brand-detail-title"></h1>
+        <p id="bdLongDesc" class="brand-detail-desc"></p>
+      </div>
+      <div class="brand-detail-header-meta">
+        <p id="bdRating"></p>
+        <p id="bdLocations"></p>
+        <p id="bdLocationLabel" class="brand-detail-location"></p>
+      </div>
+    </header>
+
+    <!-- Paso 1: código postal -->
+    <section class="brand-detail-postal" id="bdPostalPanel">
+      <h2>Introduce tu código postal</h2>
+      <p>
+        Antes de ver el menú completo y realizar un pedido, comprobamos la cobertura de la marca en tu zona.
+      </p>
+      <form id="bdPostalForm" novalidate>
+        <div class="form-group">
+          <label for="bdPostalInput">Código postal (España)</label>
+          <input id="bdPostalInput" type="text" inputmode="numeric" maxlength="5" placeholder="Ej. 08001" required>
+          <p class="helper">Solo lo usamos para localizar la franquicia más cercana.</p>
+          <p id="bdPostalError" class="helper" style="color:#b91c1c;display:none;"></p>
+        </div>
+        <button class="btn-primary btn-full" type="submit">Continuar</button>
+      </form>
+    </section>
+
+    <!-- Paso 2: menú + pedido -->
+    <section class="brand-detail-content" id="bdContent" hidden>
+      <div class="brand-detail-grid">
+        <!-- Menú -->
+        <div class="brand-detail-menu">
+          <h2>Menú</h2>
+          <div id="bdMenuList" class="menu-list"></div>
+        </div>
+
+        <!-- Lateral: especialidades + pedido -->
+        <aside class="brand-detail-sidebar">
+          <div class="brand-detail-box">
+            <h3>Especialidades</h3>
+            <ul id="bdSpecialties"></ul>
+          </div>
+
+          <div class="brand-detail-box">
+            <h3>Tu pedido</h3>
+            <form id="bdOrderForm">
+              <p class="helper">
+                Indícanos tus datos y confirmaremos el pedido por teléfono o email.
+              </p>
+
+              <div class="form-group">
+                <label for="bdName">Nombre</label>
+                <input id="bdName" type="text" required>
+              </div>
+              <div class="form-group">
+                <label for="bdPhone">Teléfono</label>
+                <input id="bdPhone" type="tel" required>
+              </div>
+              <div class="form-group">
+                <label for="bdEmail">Email</label>
+                <input id="bdEmail" type="email" required>
+              </div>
+              <div class="form-group">
+                <label for="bdAddress">Dirección de entrega</label>
+                <textarea id="bdAddress" required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="bdNotes">Comentarios adicionales</label>
+                <textarea id="bdNotes"></textarea>
+              </div>
+
+              <div class="order-summary">
+                <div>Total artículos: <span id="bdTotalItems">0</span></div>
+                <div>Total estimado: <span id="bdTotalAmount">0,00€</span></div>
+              </div>
+
+              <button class="btn-primary btn-full" type="submit">
+                Enviar pedido
+              </button>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </div>
+</section>
   </main>
 
-  <!-- MODAL DETALLE + CÓDIGO POSTAL -->
-  <div class="modal-backdrop" id="brandModalBackdrop" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal" id="brandModal">
-      <button class="modal-close" type="button" aria-label="Cerrar">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg>
-      </button>
-
-      <div class="modal-tagline" id="modalTagline"></div>
-      <h3 id="modalTitle"></h3>
-
-      <!-- PASO 1: pedir código postal -->
-      <div id="modalStepPostal">
-        <p style="font-size:0.9rem;color:var(--color-muted);line-height:1.7;margin-top:0;">
-          Antes de ver el menú completo y las opciones de pedido, necesitamos saber tu
-          código postal para localizar la franquicia más cercana.
-        </p>
-        <div class="form-group">
-          <label for="modalPostal">Código postal (España)</label>
-          <input id="modalPostal" type="text" inputmode="numeric" maxlength="5" placeholder="Ej. 08001" required>
-          <p class="helper">Usamos tu código solo para comprobar cobertura de la marca en tu zona.</p>
-          <p class="helper" id="modalPostalError" style="color:#b91c1c;display:none;"></p>
-        </div>
-        <button class="btn-primary btn-full" type="button" id="modalPostalBtn">
-          Continuar
-        </button>
-      </div>
 
       <!-- PASO 2: detalle de franquicia + menú -->
       <div id="modalStepDetails" style="display:none;margin-top:0.7rem;">
@@ -1451,6 +1733,215 @@
   </footer>
 
   <script>
+          // --- DETALLE DE MARCA EN "NUEVA PÁGINA" ---
+
+      const brandDetailSection = document.getElementById("brandDetail");
+      const landingSections = Array.from(document.querySelectorAll("main section"))
+        .filter(sec => sec.id !== "brandDetail");
+
+      const bdTagline = document.getElementById("bdTagline");
+      const bdTitle = document.getElementById("bdTitle");
+      const bdLongDesc = document.getElementById("bdLongDesc");
+      const bdRating = document.getElementById("bdRating");
+      const bdLocations = document.getElementById("bdLocations");
+      const bdLocationLabel = document.getElementById("bdLocationLabel");
+      const bdSpecialties = document.getElementById("bdSpecialties");
+      const bdMenuList = document.getElementById("bdMenuList");
+
+      const bdPostalPanel = document.getElementById("bdPostalPanel");
+      const bdPostalForm = document.getElementById("bdPostalForm");
+      const bdPostalInput = document.getElementById("bdPostalInput");
+      const bdPostalError = document.getElementById("bdPostalError");
+
+      const bdContent = document.getElementById("bdContent");
+      const bdBackBtn = document.getElementById("bdBackBtn");
+
+      const bdOrderForm = document.getElementById("bdOrderForm");
+      const bdTotalItems = document.getElementById("bdTotalItems");
+      const bdTotalAmount = document.getElementById("bdTotalAmount");
+
+      let activeBrandName = null;
+      let activeBrandId = null;
+      let orderState = {};
+
+      function showBrandDetail(card) {
+        activeBrandName = card.getAttribute("data-brand");
+        activeBrandId = BRAND_IDS[activeBrandName];
+
+        const tagline = card.getAttribute("data-tagline") || "";
+        const rating = card.getAttribute("data-rating") || "";
+        const locations = card.getAttribute("data-locations") || "";
+        const desc = card.getAttribute("data-description") ||
+          (card.querySelector(".brand-desc") ? card.querySelector(".brand-desc").textContent.trim() : "");
+        const specs = (card.getAttribute("data-specialties") || "").split(",");
+
+        bdTagline.textContent = tagline;
+        bdTitle.textContent = activeBrandName;
+        bdLongDesc.textContent = desc;
+        bdRating.textContent = rating ? `★ ${rating} · valoración media de clientes` : "";
+        bdLocations.textContent = locations ? `${locations} locales operativos` : "";
+        bdLocationLabel.textContent = "";
+
+        // Especialidades
+        bdSpecialties.innerHTML = "";
+        specs.forEach((s) => {
+          if (!s.trim()) return;
+          const li = document.createElement("li");
+          li.textContent = s.trim();
+          bdSpecialties.appendChild(li);
+        });
+
+        // Reset paso postal
+        bdPostalPanel.style.display = "block";
+        bdContent.hidden = true;
+        bdPostalInput.value = "";
+        bdPostalError.style.display = "none";
+        bdPostalError.textContent = "";
+
+        // Construir menú base (cantidades a 0)
+        buildBrandMenu(activeBrandName);
+
+        // Mostrar vista detalle, ocultar landing
+        landingSections.forEach((sec) => {
+          sec.style.display = "none";
+        });
+        brandDetailSection.classList.add("is-visible");
+        window.scrollTo({ top: 0, behavior: "auto" });
+      }
+
+      function goBackToLanding() {
+        brandDetailSection.classList.remove("is-visible");
+        landingSections.forEach((sec) => {
+          sec.style.display = "";
+        });
+        window.location.hash = "#brands";
+      }
+
+      function buildBrandMenu(brandName) {
+        orderState = {};
+        bdMenuList.innerHTML = "";
+
+        const menu = BRAND_MENUS[brandName] || [];
+        menu.forEach((item, index) => {
+          const row = document.createElement("div");
+          row.className = "menu-item";
+
+          const priceNumber = parseFloat(
+            (item.price || "0").toString().replace("€", "").replace(",", ".")
+          ) || 0;
+
+          row.innerHTML = `
+            <div>
+              <div class="menu-item-title">${item.name}</div>
+              <div class="menu-item-desc">${item.desc || item.description || ""}</div>
+            </div>
+            <div class="menu-item-right">
+              <div class="menu-item-price">${item.price}</div>
+              <div class="qty-control">
+                <button type="button" class="qty-minus">-</button>
+                <span class="qty-value">0</span>
+                <button type="button" class="qty-plus">+</button>
+              </div>
+            </div>
+          `;
+
+          const minus = row.querySelector(".qty-minus");
+          const plus = row.querySelector(".qty-plus");
+          const value = row.querySelector(".qty-value");
+
+          orderState[index] = { qty: 0, price: priceNumber };
+
+          minus.addEventListener("click", () => {
+            const current = orderState[index].qty;
+            const next = Math.max(0, current - 1);
+            orderState[index].qty = next;
+            value.textContent = next;
+            updateOrderTotals();
+          });
+
+          plus.addEventListener("click", () => {
+            const current = orderState[index].qty;
+            const next = current + 1;
+            orderState[index].qty = next;
+            value.textContent = next;
+            updateOrderTotals();
+          });
+
+          bdMenuList.appendChild(row);
+        });
+
+        updateOrderTotals();
+      }
+
+      function updateOrderTotals() {
+        let items = 0;
+        let amount = 0;
+
+        Object.values(orderState).forEach((entry) => {
+          items += entry.qty;
+          amount += entry.qty * entry.price;
+        });
+
+        bdTotalItems.textContent = items;
+        bdTotalAmount.textContent = amount.toFixed(2) + "€";
+      }
+
+      function handlePostalSubmit(e) {
+        e.preventDefault();
+        if (!activeBrandId) return;
+
+        const code = bdPostalInput.value.trim();
+        bdPostalError.style.display = "none";
+        bdPostalError.textContent = "";
+
+        if (!/^\d{5}$/.test(code)) {
+          bdPostalError.textContent = "Introduce un código postal válido de 5 dígitos.";
+          bdPostalError.style.display = "block";
+          return;
+        }
+
+        const locations = FRANCHISE_LOCATIONS[activeBrandId] || {};
+        const locationText = locations[code];
+
+        if (!locationText) {
+          bdPostalError.textContent =
+            "De momento no servimos esta marca en ese código postal. Prueba con otro CP cercano o contáctanos para valorar la zona.";
+          bdPostalError.style.display = "block";
+          return;
+        }
+
+        bdLocationLabel.textContent = "Te serviremos desde " + locationText + ".";
+        bdPostalPanel.style.display = "none";
+        bdContent.hidden = false;
+      }
+
+      // Asignar eventos a las tarjetas de marca (abrir detalle)
+      document.querySelectorAll(".brand-card").forEach((card) => {
+        card.addEventListener("click", () => showBrandDetail(card));
+      });
+
+      if (bdBackBtn) {
+        bdBackBtn.addEventListener("click", goBackToLanding);
+      }
+
+      if (bdPostalForm) {
+        bdPostalForm.addEventListener("submit", handlePostalSubmit);
+      }
+
+      if (bdOrderForm) {
+        bdOrderForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const items = parseInt(bdTotalItems.textContent || "0", 10);
+          if (!items) {
+            alert("Añade al menos un producto al pedido.");
+            return;
+          }
+          alert("Hemos recibido tu solicitud de pedido. Te contactaremos para confirmarlo.");
+          bdOrderForm.reset();
+          buildBrandMenu(activeBrandName);
+          goBackToLanding();
+        });
+      }
     document.addEventListener("DOMContentLoaded", () => {
       // --- MENÚ MÓVIL ---
       const navToggle = document.getElementById("navToggle");
@@ -1580,162 +2071,6 @@
         });
       }
 
-      // --- MODAL DETALLES + GATE POR CP ---
-      const modalBackdrop = document.getElementById("brandModalBackdrop");
-      const modalTagline = document.getElementById("modalTagline");
-      const modalTitle = document.getElementById("modalTitle");
-      const modalDescription = document.getElementById("modalDescription");
-      const modalRating = document.getElementById("modalRating");
-      const modalLocations = document.getElementById("modalLocations");
-      const modalLocationInfo = document.getElementById("modalLocationInfo");
-      const modalSpecialties = document.getElementById("modalSpecialties");
-      const modalMenu = document.getElementById("modalMenu");
-      const modalClose = document.querySelector(".modal-close");
-      const modalStepPostal = document.getElementById("modalStepPostal");
-      const modalStepDetails = document.getElementById("modalStepDetails");
-      const modalPostalInput = document.getElementById("modalPostal");
-      const modalPostalBtn = document.getElementById("modalPostalBtn");
-      const modalPostalError = document.getElementById("modalPostalError");
-      const modalOrderBtn = document.getElementById("modalOrderBtn");
-
-      let activeBrandName = null;
-      let activeBrandCard = null;
-
-      function populateBrandDetails(card) {
-        const brand = card.getAttribute("data-brand");
-        const tagline = card.getAttribute("data-tagline");
-        const rating = card.getAttribute("data-rating");
-        const locations = card.getAttribute("data-locations");
-        const desc = card.getAttribute("data-description");
-        const specs = (card.getAttribute("data-specialties") || "").split(",");
-
-        modalTagline.textContent = tagline;
-        modalTitle.textContent = brand;
-        modalDescription.textContent = desc;
-        modalRating.innerHTML = "★ " + rating + " • valoración media clientes";
-        modalLocations.textContent = locations + " locales operativos";
-
-        modalSpecialties.innerHTML = "";
-        specs.forEach((s) => {
-          if (!s.trim()) return;
-          const li = document.createElement("li");
-          li.textContent = s.trim();
-          modalSpecialties.appendChild(li);
-        });
-
-        modalMenu.innerHTML = "";
-        const menu = BRAND_MENUS[brand] || [];
-        menu.forEach((item) => {
-          const li = document.createElement("li");
-          li.innerHTML =
-            "<strong>" +
-            item.name +
-            "</strong> · " +
-            item.price +
-            "<br><span style='font-size:.8rem;color:#6b7280;'>" +
-            item.desc +
-            "</span>";
-          modalMenu.appendChild(li);
-        });
-
-        modalStepPostal.style.display = "none";
-        modalStepDetails.style.display = "block";
-      }
-
-      function openBrandModal(card) {
-        if (!modalBackdrop) return;
-        activeBrandCard = card;
-        activeBrandName = card.getAttribute("data-brand");
-
-        modalStepPostal.style.display = "block";
-        modalStepDetails.style.display = "none";
-        modalPostalInput.value = "";
-        modalPostalError.style.display = "none";
-        modalPostalError.textContent = "";
-        modalLocationInfo.textContent = "";
-
-        modalTagline.textContent = card.getAttribute("data-tagline");
-        modalTitle.textContent = activeBrandName;
-
-        modalBackdrop.classList.add("is-visible");
-        modalBackdrop.setAttribute("aria-hidden", "false");
-      }
-
-      function closeBrandModal() {
-        if (!modalBackdrop) return;
-        modalBackdrop.classList.remove("is-visible");
-        modalBackdrop.setAttribute("aria-hidden", "true");
-      }
-
-      function handleModalPostal() {
-        if (!activeBrandName || !activeBrandCard) return;
-
-        const code = modalPostalInput.value.trim();
-        modalPostalError.style.display = "none";
-        modalPostalError.textContent = "";
-
-        if (!/^\d{5}$/.test(code)) {
-          modalPostalError.textContent = "Introduce un código postal válido de 5 dígitos.";
-          modalPostalError.style.display = "block";
-          return;
-        }
-
-        const brandId = BRAND_IDS[activeBrandName];
-        const locations = FRANCHISE_LOCATIONS[brandId] || {};
-        const locationText = locations[code];
-
-        if (!locationText) {
-          modalPostalError.textContent =
-            "Por ahora no servimos esta marca en ese código postal. Prueba con otro CP cercano o contáctanos para valorar la zona.";
-          modalPostalError.style.display = "block";
-          return;
-        }
-
-        modalLocationInfo.textContent = "Te serviremos desde " + locationText + ".";
-        populateBrandDetails(activeBrandCard);
-      }
-
-      // Abrir modal al hacer clic en cualquier tarjeta de franquicia
-      document.querySelectorAll(".brand-card").forEach((card) => {
-        card.addEventListener("click", () => {
-          openBrandModal(card);
-        });
-      });
-
-      if (modalPostalBtn && modalPostalInput) {
-        modalPostalBtn.addEventListener("click", handleModalPostal);
-        modalPostalInput.addEventListener("keydown", (e) => {
-          if (e.key === "Enter") {
-            e.preventDefault();
-            handleModalPostal();
-          }
-        });
-      }
-
-      if (modalOrderBtn) {
-        modalOrderBtn.addEventListener("click", () => {
-          closeBrandModal();
-          const contactSection = document.getElementById("contact");
-          if (contactSection) {
-            contactSection.scrollIntoView({ behavior: "smooth" });
-          }
-        });
-      }
-
-      if (modalClose) {
-        modalClose.addEventListener("click", closeBrandModal);
-      }
-
-      if (modalBackdrop) {
-        modalBackdrop.addEventListener("click", (e) => {
-          if (e.target === modalBackdrop) closeBrandModal();
-        });
-      }
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeBrandModal();
-      });
-
       // --- FORMULARIO CONTACTO (dummy) ---
       const contactForm = document.getElementById("contactForm");
       if (contactForm) {
@@ -1749,4 +2084,5 @@
   </script>
 </body>
 </html>
+
 
