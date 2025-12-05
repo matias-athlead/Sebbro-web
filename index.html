@@ -6,19 +6,11 @@
   <meta name="description" content="Sebbro Foods gestiona franquicias de conceptos de comida premium diseñados para comer con las manos: burgers gourmet, tacos, wings, pizza rolls, sándwiches y donuts artesanos.">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="index,follow" />
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" />
-  <!-- Open Graph básico -->
-  <meta property="og:title" content="Sebbro Foods | Gestión de franquicias de food concepts para comer con las manos" />
-  <meta property="og:description" content="Portafolio de marcas de comida premium diseñadas para disfrutarse con las manos. Gestión integral de franquicias." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://sebbro-web.vercel.app/" />
   <style>
     :root {
       --color-bg: #ffffff;
       --color-bg-alt: #f5f5f7;
       --color-primary: #000000;
-      --color-primary-soft: #18181b;
-      --color-accent: #f97316;
       --color-text: #0f172a;
       --color-muted: #6b7280;
       --radius-lg: 18px;
@@ -27,13 +19,9 @@
       --max-width: 1140px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -44,15 +32,9 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    img { max-width: 100%; display: block; }
 
     .container {
       width: 100%;
@@ -145,9 +127,8 @@
       transition: width 0.25s ease;
     }
 
-    .nav a:hover::after,
-    .nav a:focus-visible::after,
-    .nav a.is-active::after {
+    .nav a.is-active::after,
+    .nav a:hover::after {
       width: 100%;
     }
 
@@ -179,10 +160,7 @@
       cursor: pointer;
     }
 
-    .nav-toggle svg {
-      width: 22px;
-      height: 22px;
-    }
+    .nav-toggle svg { width: 22px; height: 22px; }
 
     .nav-mobile {
       display: none;
@@ -196,10 +174,6 @@
       letter-spacing: 0.18em;
     }
 
-    .nav-mobile a {
-      opacity: 0.85;
-    }
-
     .nav-mobile .nav-cta {
       width: 100%;
       justify-content: center;
@@ -209,7 +183,7 @@
 
     .hero {
       padding: 4.5rem 0 3.5rem;
-      background: radial-gradient(circle at top left, #f97316 0, #f97316 0, #f97316 0, #f9fafb 45%);
+      background: radial-gradient(circle at top left, #f97316 0, #f9fafb 45%);
     }
 
     .hero-grid {
@@ -289,10 +263,7 @@
       transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
     }
 
-    .btn-primary span.arrow {
-      font-size: 1rem;
-      transform: translateY(1px);
-    }
+    .btn-primary span.arrow { font-size: 1rem; transform: translateY(1px); }
 
     .btn-primary:hover {
       background: #0f172a;
@@ -322,6 +293,8 @@
       border-color: #9ca3af;
     }
 
+    .btn-full { width: 100%; justify-content: center; }
+
     .hero-meta {
       display: flex;
       flex-wrap: wrap;
@@ -332,10 +305,7 @@
       letter-spacing: 0.16em;
     }
 
-    .hero-meta strong {
-      color: #111827;
-      font-weight: 600;
-    }
+    .hero-meta strong { color: #111827; font-weight: 600; }
 
     .hero-visual {
       background: #020617;
@@ -605,26 +575,7 @@
       gap: 0.25rem;
     }
 
-    .brand-footer button {
-      border: 0;
-      background: transparent;
-      color: #111827;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      cursor: pointer;
-    }
-
-    .brand-footer button svg {
-      width: 12px;
-      height: 12px;
-    }
-
-    /* COVERAGE / POSTAL CODE */
+    /* COVERAGE */
 
     .coverage-grid {
       display: grid;
@@ -755,17 +706,6 @@
       letter-spacing: 0.12em;
     }
 
-    .contact-form-actions {
-      margin-top: 1rem;
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .btn-full {
-      width: 100%;
-      justify-content: center;
-    }
-
     /* FOOTER */
 
     .site-footer {
@@ -811,9 +751,7 @@
       padding: 1.5rem;
     }
 
-    .modal-backdrop.is-visible {
-      display: flex;
-    }
+    .modal-backdrop.is-visible { display: flex; }
 
     .modal {
       max-width: 560px;
@@ -880,19 +818,17 @@
       list-style: none;
       padding-left: 0;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 0.4rem;
       margin-top: 0.45rem;
     }
 
     .modal-specialties li {
-      padding: 0.25rem 0.55rem;
-      border-radius: 999px;
+      padding: 0.4rem 0.55rem;
+      border-radius: 0.7rem;
       background: #f3f4f6;
       color: #4b5563;
     }
-
-    /* ICONS SIMPLE (lucide-like minimal) */
 
     .icon {
       width: 16px;
@@ -909,9 +845,7 @@
       .hero-grid {
         grid-template-columns: minmax(0, 1fr);
       }
-      .hero-visual {
-        margin-top: 1rem;
-      }
+      .hero-visual { margin-top: 1rem; }
       .brands-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -922,21 +856,12 @@
     }
 
     @media (max-width: 720px) {
-      .header-inner {
-        padding: 0.7rem 0;
-      }
-      .nav {
-        display: none;
-      }
-      .nav-toggle {
-        display: block;
-      }
-      .nav-mobile.is-open {
-        display: flex;
-      }
-      .hero {
-        padding: 3.4rem 0 3rem;
-      }
+      .header-inner { padding: 0.7rem 0; }
+      .nav { display: none; }
+      .nav-toggle { display: block; }
+      .nav-mobile.is-open { display: flex; }
+
+      .hero { padding: 3.4rem 0 3rem; }
       .brands-grid {
         grid-template-columns: minmax(0, 1fr);
       }
@@ -950,7 +875,7 @@
   <header class="site-header">
     <div class="container">
       <div class="header-inner">
-        <a href="#top" class="brand" aria-label="Sebbro Foods home">
+        <a href="#home" class="brand" aria-label="Sebbro Foods home">
           <div class="logo-mark">SF</div>
           <div class="brand-text">
             <span>Sebbro Foods</span>
@@ -970,7 +895,6 @@
         </nav>
 
         <button class="nav-toggle" type="button" aria-label="Abrir menú" id="navToggle">
-          <!-- simple hamburger -->
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M4 7h16M4 12h16M4 17h16" />
           </svg>
@@ -1096,7 +1020,8 @@
       <div class="container">
         <h2 id="aboutTitle" class="section-title">Nuestra visión</h2>
         <p class="section-subtitle">
-         
+          Convertir el “comer con las manos” en una ventaja competitiva medible: más experiencia,
+          más fotografía compartida, más recurrencia, con operaciones simples y replicables.
         </p>
 
         <div class="about-layout">
@@ -1141,8 +1066,11 @@
 
         <div class="brands-grid">
           <!-- BurgerCraft -->
-          <article class="brand-card" data-brand="BurgerCraft" data-rating="4.8"
-            data-tagline="Hamburguesas artesanales" data-locations="25"
+          <article class="brand-card"
+            data-brand="BurgerCraft"
+            data-rating="4.8"
+            data-tagline="Gourmet Burgers"
+            data-locations="25"
             data-description="Hamburguesas gourmet con pan brioche propio y blend de carne desarrollado para aguantar el delivery sin perder jugosidad."
             data-specialties="Smash burgers,Patatas hand-cut,Milkshakes artesanos">
             <img src="https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?auto=compress&cs=tinysrgb&w=1200"
@@ -1151,9 +1079,7 @@
               <div class="brand-tagline">Gourmet Burgers</div>
               <div class="brand-name-row">
                 <h3 class="brand-name">BurgerCraft</h3>
-                <div class="brand-rating">
-                  ★ 4,8
-                </div>
+                <div class="brand-rating">★ 4,8</div>
               </div>
               <p class="brand-desc">
                 Hamburguesas artesanales con ingredientes premium y una experiencia de marca diseñada para foto, delivery y sala.
@@ -1168,17 +1094,17 @@
                   <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.1-6-11a6 6 0 0 1 12 0c0 5.9-6 11-6 11z"/></svg>
                   25 locales
                 </span>
-                <button type="button" class="brand-details-btn">
-                  Ver detalles
-                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
+                <span style="font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;">Más información</span>
               </div>
             </div>
           </article>
 
           <!-- Taco Express -->
-          <article class="brand-card" data-brand="Taco Express" data-rating="4.7"
-            data-tagline="Tacos &amp; street food mexicana" data-locations="18"
+          <article class="brand-card"
+            data-brand="Taco Express"
+            data-rating="4.7"
+            data-tagline="Mexican Street"
+            data-locations="18"
             data-description="Tacos al pastor, carnitas y recetas tradicionales con tortillas hechas a mano y un sistema de salsas propio."
             data-specialties="Tacos al pastor,Guacamole fresco,Salsas caseras">
             <img src="https://images.pexels.com/photos/8448321/pexels-photo-8448321.jpeg?auto=compress&cs=tinysrgb&w=1200"
@@ -1187,9 +1113,7 @@
               <div class="brand-tagline">Mexican Street</div>
               <div class="brand-name-row">
                 <h3 class="brand-name">Taco Express</h3>
-                <div class="brand-rating">
-                  ★ 4,7
-                </div>
+                <div class="brand-rating">★ 4,7</div>
               </div>
               <p class="brand-desc">
                 Tacos auténticos con tortillas hechas a mano y un ritual de salsas que convierte cada visita en una experiencia.
@@ -1204,17 +1128,17 @@
                   <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.1-6-11a6 6 0 0 1 12 0c0 5.9-6 11-6 11z"/></svg>
                   18 locales
                 </span>
-                <button type="button" class="brand-details-btn">
-                  Ver detalles
-                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
+                <span style="font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;">Más información</span>
               </div>
             </div>
           </article>
 
           <!-- Wing Masters -->
-          <article class="brand-card" data-brand="Wing Masters" data-rating="4.6"
-            data-tagline="Alitas &amp; sport bar" data-locations="32"
+          <article class="brand-card"
+            data-brand="Wing Masters"
+            data-rating="4.6"
+            data-tagline="Chicken Wings"
+            data-locations="32"
             data-description="Alitas marinadas 24 horas, 12 salsas de firma y un formato pensado para compartir, ver deporte y pedir repetición."
             data-specialties="Alitas Buffalo,Salsa BBQ secreta,Nuggets especiales">
             <img src="https://images.pexels.com/photos/1438672/pexels-photo-1438672.jpeg?auto=compress&cs=tinysrgb&w=1200"
@@ -1223,9 +1147,7 @@
               <div class="brand-tagline">Chicken Wings</div>
               <div class="brand-name-row">
                 <h3 class="brand-name">Wing Masters</h3>
-                <div class="brand-rating">
-                  ★ 4,6
-                </div>
+                <div class="brand-rating">★ 4,6</div>
               </div>
               <p class="brand-desc">
                 El templo de las alitas: marinado propio, salsas exclusivas y unidades pensadas para compartir sin cubiertos.
@@ -1240,17 +1162,17 @@
                   <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.1-6-11a6 6 0 0 1 12 0c0 5.9-6 11-6 11z"/></svg>
                   32 locales
                 </span>
-                <button type="button" class="brand-details-btn">
-                  Ver detalles
-                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
+                <span style="font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;">Más información</span>
               </div>
             </div>
           </article>
 
           <!-- Pizza Fingers -->
-          <article class="brand-card" data-brand="Pizza Fingers" data-rating="4.5"
-            data-tagline="Pizza rolls &amp; dips" data-locations="15"
+          <article class="brand-card"
+            data-brand="Pizza Fingers"
+            data-rating="4.5"
+            data-tagline="Pizza Rolls"
+            data-locations="15"
             data-description="Pizza enrollada en formato finger friendly para take away, delivery y ocio nocturno con ticket medio controlado."
             data-specialties="Pizza rolls,Cheese sticks,Dips exclusivos">
             <img src="https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&w=1200"
@@ -1259,9 +1181,7 @@
               <div class="brand-tagline">Pizza Rolls</div>
               <div class="brand-name-row">
                 <h3 class="brand-name">Pizza Fingers</h3>
-                <div class="brand-rating">
-                  ★ 4,5
-                </div>
+                <div class="brand-rating">★ 4,5</div>
               </div>
               <p class="brand-desc">
                 Todo el sabor de la pizza italiana en un formato limpio y portátil, perfecto para ocio nocturno y delivery.
@@ -1276,17 +1196,17 @@
                   <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.1-6-11a6 6 0 0 1 12 0c0 5.9-6 11-6 11z"/></svg>
                   15 locales
                 </span>
-                <button type="button" class="brand-details-btn">
-                  Ver detalles
-                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
+                <span style="font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;">Más información</span>
               </div>
             </div>
           </article>
 
           <!-- Sandwich Club -->
-          <article class="brand-card" data-brand="Sandwich Club" data-rating="4.4"
-            data-tagline="Sandwiches &amp; wraps" data-locations="22"
+          <article class="brand-card"
+            data-brand="Sandwich Club"
+            data-rating="4.4"
+            data-tagline="Craft Sandwiches"
+            data-locations="22"
             data-description="Sándwiches y wraps gourmet con envoltorios diseñados para mantener temperatura, estructura y limpieza al comer."
             data-specialties="Club sandwiches,Wraps especiales,Baguettes artesanales">
             <img src="https://images.pexels.com/photos/1600711/pexels-photo-1600711.jpeg?auto=compress&cs=tinysrgb&w=1200"
@@ -1295,9 +1215,7 @@
               <div class="brand-tagline">Craft Sandwiches</div>
               <div class="brand-name-row">
                 <h3 class="brand-name">Sandwich Club</h3>
-                <div class="brand-rating">
-                  ★ 4,4
-                </div>
+                <div class="brand-rating">★ 4,4</div>
               </div>
               <p class="brand-desc">
                 El sándwich llevado al siguiente nivel: panadería artesanal, recetas potentes y experiencia nómada friendly.
@@ -1312,17 +1230,17 @@
                   <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.1-6-11a6 6 0 0 1 12 0c0 5.9-6 11-6 11z"/></svg>
                   22 locales
                 </span>
-                <button type="button" class="brand-details-btn">
-                  Ver detalles
-                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
+                <span style="font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;">Más información</span>
               </div>
             </div>
           </article>
 
           <!-- Donut Hands -->
-          <article class="brand-card" data-brand="Donut Hands" data-rating="4.9"
-            data-tagline="Donuts artesanos" data-locations="12"
+          <article class="brand-card"
+            data-brand="Donut Hands"
+            data-rating="4.9"
+            data-tagline="Artisan Donuts"
+            data-locations="12"
             data-description="Donuts de obrador con glaseados fotogénicos y formatos pensados para takeaway, café de especialidad y delivery."
             data-specialties="Donuts gourmet,Mini donuts,Bebidas especiales">
             <img src="https://images.pexels.com/photos/3731474/pexels-photo-3731474.jpeg?auto=compress&cs=tinysrgb&w=1200"
@@ -1331,9 +1249,7 @@
               <div class="brand-tagline">Artisan Donuts</div>
               <div class="brand-name-row">
                 <h3 class="brand-name">Donut Hands</h3>
-                <div class="brand-rating">
-                  ★ 4,9
-                </div>
+                <div class="brand-rating">★ 4,9</div>
               </div>
               <p class="brand-desc">
                 Pastelería artesanal centrada en el donut como lienzo creativo: ergonomía perfecta para tomar con café y compartir en redes.
@@ -1348,10 +1264,7 @@
                   <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.1-6-11a6 6 0 0 1 12 0c0 5.9-6 11-6 11z"/></svg>
                   12 locales
                 </span>
-                <button type="button" class="brand-details-btn">
-                  Ver detalles
-                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
+                <span style="font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;">Más información</span>
               </div>
             </div>
           </article>
@@ -1480,7 +1393,7 @@
                 <label for="message">Cuéntanos un poco más</label>
                 <textarea id="message" placeholder="Experiencia previa, marcas que te interesan, horizonte de apertura…"></textarea>
               </div>
-              <div class="contact-form-actions">
+              <div style="margin-top:1rem;">
                 <button class="btn-primary btn-full" type="submit">
                   Enviar y recibir dosier
                 </button>
@@ -1492,377 +1405,374 @@
     </section>
   </main>
 
- <!-- MODAL DETALLE + CÓDIGO POSTAL -->
-<div class="modal-backdrop" id="brandModalBackdrop" role="dialog" aria-modal="true" aria-hidden="true">
-  <div class="modal" id="brandModal">
-    <button class="modal-close" type="button" aria-label="Cerrar">
-      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg>
-    </button>
-
-    <!-- Cabecera común de la marca -->
-    <div class="modal-tagline" id="modalTagline"></div>
-    <h3 id="modalTitle"></h3>
-
-    <!-- PASO 1: pedir código postal -->
-    <div id="modalStepPostal">
-      <p style="font-size:0.9rem;color:var(--color-muted);line-height:1.7;margin-top:0;">
-        Antes de ver el menú completo y las opciones de pedido, necesitamos saber tu
-        código postal para localizar la franquicia más cercana.
-      </p>
-      <div class="form-group">
-        <label for="modalPostal">Código postal (España)</label>
-        <input id="modalPostal" type="text" inputmode="numeric" maxlength="5" placeholder="Ej. 08001" required>
-        <p class="helper" id="modalPostalHelper">
-          Usamos tu código solo para comprobar cobertura de la marca en tu zona.
-        </p>
-        <p class="helper" id="modalPostalError" style="color:#b91c1c;display:none;"></p>
-      </div>
-      <button class="btn-primary btn-full" type="button" id="modalPostalBtn">
-        Continuar
+  <!-- MODAL DETALLE + CÓDIGO POSTAL -->
+  <div class="modal-backdrop" id="brandModalBackdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" id="brandModal">
+      <button class="modal-close" type="button" aria-label="Cerrar">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg>
       </button>
-    </div>
 
-    <!-- PASO 2: detalle de franquicia + menú -->
-    <div id="modalStepDetails" style="display:none;margin-top:0.7rem;">
-      <p id="modalDescription"></p>
+      <div class="modal-tagline" id="modalTagline"></div>
+      <h3 id="modalTitle"></h3>
 
-      <div class="modal-meta">
-        <span id="modalRating"></span>
-        <span id="modalLocations"></span>
-        <span id="modalLocationInfo"></span>
-      </div>
-
-      <div class="modal-specialties">
-        <div style="text-transform:uppercase;letter-spacing:.16em;font-size:.75rem;color:#9ca3af;">
-          Especialidades
+      <!-- PASO 1: pedir código postal -->
+      <div id="modalStepPostal">
+        <p style="font-size:0.9rem;color:var(--color-muted);line-height:1.7;margin-top:0;">
+          Antes de ver el menú completo y las opciones de pedido, necesitamos saber tu
+          código postal para localizar la franquicia más cercana.
+        </p>
+        <div class="form-group">
+          <label for="modalPostal">Código postal (España)</label>
+          <input id="modalPostal" type="text" inputmode="numeric" maxlength="5" placeholder="Ej. 08001" required>
+          <p class="helper">Usamos tu código solo para comprobar cobertura de la marca en tu zona.</p>
+          <p class="helper" id="modalPostalError" style="color:#b91c1c;display:none;"></p>
         </div>
-        <ul id="modalSpecialties"></ul>
-      </div>
-
-      <div class="modal-specialties">
-        <div style="text-transform:uppercase;letter-spacing:.16em;font-size:.75rem;color:#9ca3af;margin-top:.5rem;">
-          Menú destacado
-        </div>
-        <ul id="modalMenu"></ul>
-      </div>
-
-      <div style="margin-top:1rem;">
-        <button id="modalOrderBtn" class="btn-primary btn-full" type="button">
-          Pedir en esta franquicia
+        <button class="btn-primary btn-full" type="button" id="modalPostalBtn">
+          Continuar
         </button>
+      </div>
+
+      <!-- PASO 2: detalle de franquicia + menú -->
+      <div id="modalStepDetails" style="display:none;margin-top:0.7rem;">
+        <p id="modalDescription"></p>
+
+        <div class="modal-meta">
+          <span id="modalRating"></span>
+          <span id="modalLocations"></span>
+          <span id="modalLocationInfo"></span>
+        </div>
+
+        <div class="modal-specialties">
+          <div style="text-transform:uppercase;letter-spacing:.16em;font-size:.75rem;color:#9ca3af;">
+            Especialidades
+          </div>
+          <ul id="modalSpecialties"></ul>
+        </div>
+
+        <div class="modal-specialties">
+          <div style="text-transform:uppercase;letter-spacing:.16em;font-size:.75rem;color:#9ca3af;margin-top:.5rem;">
+            Menú destacado
+          </div>
+          <ul id="modalMenu"></ul>
+        </div>
+
+        <div style="margin-top:1rem;">
+          <button id="modalOrderBtn" class="btn-primary btn-full" type="button">
+            Pedir en esta franquicia
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo-mark" style="width:26px;height:26px;font-size:.75rem;">SF</div>
+          <span>Sebbro Foods</span>
+        </div>
+        <div>© 2025 Sebbro Foods. Todos los derechos reservados.</div>
+      </div>
+    </div>
   </footer>
 
   <script>
-  <script>
-document.addEventListener("DOMContentLoaded", () => {
-  // --- MENÚ MÓVIL ---
-  const navToggle = document.getElementById("navToggle");
-  const navMobile = document.getElementById("navMobile");
+    document.addEventListener("DOMContentLoaded", () => {
+      // --- MENÚ MÓVIL ---
+      const navToggle = document.getElementById("navToggle");
+      const navMobile = document.getElementById("navMobile");
 
-  if (navToggle && navMobile) {
-    navToggle.addEventListener("click", () => {
-      navMobile.classList.toggle("is-open");
-    });
+      if (navToggle && navMobile) {
+        navToggle.addEventListener("click", () => {
+          navMobile.classList.toggle("is-open");
+        });
+        navMobile.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            navMobile.classList.remove("is-open");
+          });
+        });
+      }
 
-    navMobile.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navMobile.classList.remove("is-open");
+      // --- NAV ACTIVO AL HACER SCROLL ---
+      const sections = document.querySelectorAll("main section[id]");
+      const navLinks = document.querySelectorAll(".nav a");
+
+      function updateActiveNav() {
+        const fromTop = window.scrollY + 90;
+        sections.forEach((section) => {
+          if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+            const id = section.getAttribute("id");
+            navLinks.forEach((link) => {
+              link.classList.toggle("is-active", link.getAttribute("href") === "#" + id);
+            });
+          }
+        });
+      }
+      window.addEventListener("scroll", updateActiveNav);
+
+      // --- DATOS DE COBERTURA POR MARCA ---
+      const FRANCHISE_LOCATIONS = {
+        1: { "28001": "Madrid – Barrio Salamanca", "28002": "Madrid – Goya", "08001": "Barcelona – Centro" },
+        2: { "08001": "Barcelona – Ramblas", "08002": "Barcelona – Gòtic", "46001": "Valencia – Centro" },
+        3: { "46001": "Valencia – Colón", "46002": "Valencia – Puerto", "29001": "Málaga – Centro" },
+        4: { "41001": "Sevilla – Centro", "41002": "Sevilla – Plaza Nueva", "18001": "Granada – Centro" },
+        5: { "48001": "Bilbao – Gran Vía", "48002": "Bilbao – Abando", "39001": "Santander – Centro" },
+        6: { "29001": "Málaga – Larios", "29002": "Málaga – Soho", "11001": "Cádiz – Centro" }
+      };
+
+      const BRAND_IDS = {
+        "BurgerCraft": 1,
+        "Taco Express": 2,
+        "Wing Masters": 3,
+        "Pizza Fingers": 4,
+        "Sandwich Club": 5,
+        "Donut Hands": 6
+      };
+
+      const BRAND_MENUS = {
+        "BurgerCraft": [
+          { name: "Classic Burger", price: "12€", desc: "Carne 100% vacuno, pan brioche propio." },
+          { name: "Truffle Burger", price: "15€", desc: "Blend premium, trufa y queso madurado." },
+          { name: "Combo Burger + Fries", price: "18€", desc: "Burger a elegir + patatas hand-cut." }
+        ],
+        "Taco Express": [
+          { name: "Tacos al pastor", price: "4€/ud", desc: "Cerdo marinado al estilo CDMX con piña y cilantro." },
+          { name: "Tacos de carnitas", price: "4€/ud", desc: "Cerdo confitado y cebolla morada." },
+          { name: "Combo 5 tacos", price: "18€", desc: "Selección de tacos con guacamole y totopos." }
+        ],
+        "Wing Masters": [
+          { name: "Bucket 12 wings", price: "16€", desc: "Alitas marinadas 24h con salsa a elegir." },
+          { name: "Honey Sriracha", price: "14€", desc: "Dulce y picante, la receta más vendida." },
+          { name: "Combo Wings + Fries", price: "17€", desc: "Alitas + patatas especiadas." }
+        ],
+        "Pizza Fingers": [
+          { name: "Margherita Roll", price: "8€", desc: "Tomate, mozzarella y albahaca fresca en formato roll." },
+          { name: "Pepperoni Roll", price: "9€", desc: "Pepperoni, queso y toque picante." },
+          { name: "Box sharing 8 rolls", price: "19€", desc: "Caja para compartir con 2 salsas dipping." }
+        ],
+        "Sandwich Club": [
+          { name: "Club Deluxe", price: "11€", desc: "Pollo, bacon, aguacate y pan de obrador." },
+          { name: "Mediterranean Wrap", price: "9,5€", desc: "Wrap vegetal con hummus y verduras asadas." },
+          { name: "Combo sandwich + chips", price: "13€", desc: "Cualquiera de nuestros sándwiches + chips caseras." }
+        ],
+        "Donut Hands": [
+          { name: "Classic glazed", price: "3€", desc: "Donut clásico glaseado, receta de obrador." },
+          { name: "Chocolate lover", price: "3,5€", desc: "Relleno y cobertura de chocolate belga." },
+          { name: "Box 6 mini donuts", price: "10€", desc: "Selección de minis para compartir." }
+        ]
+      };
+
+      // --- COBERTURA (SECCIÓN FORM) ---
+      const coverageForm = document.getElementById("coverageForm");
+      const coverageResult = document.getElementById("coverageResult");
+      const brandSelect = document.getElementById("brandSelect");
+      const postalInput = document.getElementById("postalCode");
+
+      if (coverageForm && brandSelect && postalInput && coverageResult) {
+        coverageForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const brand = brandSelect.value;
+          const postalCode = postalInput.value.trim();
+          coverageResult.innerHTML = "";
+
+          if (!brand || !/^\d{5}$/.test(postalCode)) {
+            const div = document.createElement("div");
+            div.className = "badge-error";
+            div.innerHTML =
+              '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4m0 4h.01M12 3L3 21h18L12 3z"/></svg>' +
+              "<span>Introduce una marca y un código postal válido de 5 dígitos.</span>";
+            coverageResult.appendChild(div);
+            return;
+          }
+
+          const locations = FRANCHISE_LOCATIONS[brand] || {};
+          const locationText = locations[postalCode];
+
+          if (locationText) {
+            const div = document.createElement("div");
+            div.className = "badge-success";
+            div.innerHTML =
+              '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>' +
+              `<span>Ya operamos en <strong>${locationText}</strong>. Podemos valorar aperturas adicionales o formatos satélite.</span>`;
+            coverageResult.appendChild(div);
+          } else {
+            const div = document.createElement("div");
+            div.className = "badge-error";
+            div.innerHTML =
+              '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4m0 4h.01M12 3L3 21h18L12 3z"/></svg>' +
+              "<span>De momento no tenemos unidades activas en este código postal, pero puede ser zona objetivo. Indícanos más detalles en el formulario de contacto.</span>";
+            coverageResult.appendChild(div);
+          }
+        });
+      }
+
+      // --- MODAL DETALLES + GATE POR CP ---
+      const modalBackdrop = document.getElementById("brandModalBackdrop");
+      const modalTagline = document.getElementById("modalTagline");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalDescription = document.getElementById("modalDescription");
+      const modalRating = document.getElementById("modalRating");
+      const modalLocations = document.getElementById("modalLocations");
+      const modalLocationInfo = document.getElementById("modalLocationInfo");
+      const modalSpecialties = document.getElementById("modalSpecialties");
+      const modalMenu = document.getElementById("modalMenu");
+      const modalClose = document.querySelector(".modal-close");
+      const modalStepPostal = document.getElementById("modalStepPostal");
+      const modalStepDetails = document.getElementById("modalStepDetails");
+      const modalPostalInput = document.getElementById("modalPostal");
+      const modalPostalBtn = document.getElementById("modalPostalBtn");
+      const modalPostalError = document.getElementById("modalPostalError");
+      const modalOrderBtn = document.getElementById("modalOrderBtn");
+
+      let activeBrandName = null;
+      let activeBrandCard = null;
+
+      function populateBrandDetails(card) {
+        const brand = card.getAttribute("data-brand");
+        const tagline = card.getAttribute("data-tagline");
+        const rating = card.getAttribute("data-rating");
+        const locations = card.getAttribute("data-locations");
+        const desc = card.getAttribute("data-description");
+        const specs = (card.getAttribute("data-specialties") || "").split(",");
+
+        modalTagline.textContent = tagline;
+        modalTitle.textContent = brand;
+        modalDescription.textContent = desc;
+        modalRating.innerHTML = "★ " + rating + " • valoración media clientes";
+        modalLocations.textContent = locations + " locales operativos";
+
+        modalSpecialties.innerHTML = "";
+        specs.forEach((s) => {
+          if (!s.trim()) return;
+          const li = document.createElement("li");
+          li.textContent = s.trim();
+          modalSpecialties.appendChild(li);
+        });
+
+        modalMenu.innerHTML = "";
+        const menu = BRAND_MENUS[brand] || [];
+        menu.forEach((item) => {
+          const li = document.createElement("li");
+          li.innerHTML =
+            "<strong>" +
+            item.name +
+            "</strong> · " +
+            item.price +
+            "<br><span style='font-size:.8rem;color:#6b7280;'>" +
+            item.desc +
+            "</span>";
+          modalMenu.appendChild(li);
+        });
+
+        modalStepPostal.style.display = "none";
+        modalStepDetails.style.display = "block";
+      }
+
+      function openBrandModal(card) {
+        if (!modalBackdrop) return;
+        activeBrandCard = card;
+        activeBrandName = card.getAttribute("data-brand");
+
+        modalStepPostal.style.display = "block";
+        modalStepDetails.style.display = "none";
+        modalPostalInput.value = "";
+        modalPostalError.style.display = "none";
+        modalPostalError.textContent = "";
+        modalLocationInfo.textContent = "";
+
+        modalTagline.textContent = card.getAttribute("data-tagline");
+        modalTitle.textContent = activeBrandName;
+
+        modalBackdrop.classList.add("is-visible");
+        modalBackdrop.setAttribute("aria-hidden", "false");
+      }
+
+      function closeBrandModal() {
+        if (!modalBackdrop) return;
+        modalBackdrop.classList.remove("is-visible");
+        modalBackdrop.setAttribute("aria-hidden", "true");
+      }
+
+      function handleModalPostal() {
+        if (!activeBrandName || !activeBrandCard) return;
+
+        const code = modalPostalInput.value.trim();
+        modalPostalError.style.display = "none";
+        modalPostalError.textContent = "";
+
+        if (!/^\d{5}$/.test(code)) {
+          modalPostalError.textContent = "Introduce un código postal válido de 5 dígitos.";
+          modalPostalError.style.display = "block";
+          return;
+        }
+
+        const brandId = BRAND_IDS[activeBrandName];
+        const locations = FRANCHISE_LOCATIONS[brandId] || {};
+        const locationText = locations[code];
+
+        if (!locationText) {
+          modalPostalError.textContent =
+            "Por ahora no servimos esta marca en ese código postal. Prueba con otro CP cercano o contáctanos para valorar la zona.";
+          modalPostalError.style.display = "block";
+          return;
+        }
+
+        modalLocationInfo.textContent = "Te serviremos desde " + locationText + ".";
+        populateBrandDetails(activeBrandCard);
+      }
+
+      // Abrir modal al hacer clic en cualquier tarjeta de franquicia
+      document.querySelectorAll(".brand-card").forEach((card) => {
+        card.addEventListener("click", () => {
+          openBrandModal(card);
+        });
       });
-    });
-  }
 
-  // --- LINK ACTIVO EN EL NAV AL HACER SCROLL ---
-  const sections = document.querySelectorAll("main section[id]");
-  const navLinks = document.querySelectorAll(".nav a");
+      if (modalPostalBtn && modalPostalInput) {
+        modalPostalBtn.addEventListener("click", handleModalPostal);
+        modalPostalInput.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            handleModalPostal();
+          }
+        });
+      }
 
-  function updateActiveNav() {
-    const fromTop = window.scrollY + 90;
-    sections.forEach((section) => {
-      if (
-        section.offsetTop <= fromTop &&
-        section.offsetTop + section.offsetHeight > fromTop
-      ) {
-        const id = section.getAttribute("id");
-        navLinks.forEach((link) => {
-          link.classList.toggle(
-            "is-active",
-            link.getAttribute("href") === "#" + id
-          );
+      if (modalOrderBtn) {
+        modalOrderBtn.addEventListener("click", () => {
+          closeBrandModal();
+          const contactSection = document.getElementById("contact");
+          if (contactSection) {
+            contactSection.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      }
+
+      if (modalClose) {
+        modalClose.addEventListener("click", closeBrandModal);
+      }
+
+      if (modalBackdrop) {
+        modalBackdrop.addEventListener("click", (e) => {
+          if (e.target === modalBackdrop) closeBrandModal();
+        });
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeBrandModal();
+      });
+
+      // --- FORMULARIO CONTACTO (dummy) ---
+      const contactForm = document.getElementById("contactForm");
+      if (contactForm) {
+        contactForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          alert("Gracias por tu interés. Te enviaremos el dosier de franquicia a tu correo.");
+          contactForm.reset();
         });
       }
     });
-  }
-
-  window.addEventListener("scroll", updateActiveNav);
-
-  // --- DATOS DE COBERTURA POR MARCA ---
-  const FRANCHISE_LOCATIONS = {
-    1: { "28001": "Madrid – Barrio Salamanca", "28002": "Madrid – Goya", "08001": "Barcelona – Centro" },
-    2: { "08001": "Barcelona – Ramblas", "08002": "Barcelona – Gòtic", "46001": "Valencia – Centro" },
-    3: { "46001": "Valencia – Colón", "46002": "Valencia – Puerto", "29001": "Málaga – Centro" },
-    4: { "41001": "Sevilla – Centro", "41002": "Sevilla – Plaza Nueva", "18001": "Granada – Centro" },
-    5: { "48001": "Bilbao – Gran Vía", "48002": "Bilbao – Abando", "39001": "Santander – Centro" },
-    6: { "29001": "Málaga – Larios", "29002": "Málaga – Soho", "11001": "Cádiz – Centro" }
-  };
-
-  const BRAND_IDS = {
-    "BurgerCraft": 1,
-    "Taco Express": 2,
-    "Wing Masters": 3,
-    "Pizza Fingers": 4,
-    "Sandwich Club": 5,
-    "Donut Hands": 6
-  };
-
-  const BRAND_MENUS = {
-    "BurgerCraft": [
-      { name: "Classic Burger", price: "12€", desc: "Carne 100% vacuno, pan brioche propio." },
-      { name: "Truffle Burger", price: "15€", desc: "Blend premium, trufa y queso madurado." },
-      { name: "Combo Burger + Fries", price: "18€", desc: "Burger a elegir + patatas hand-cut." }
-    ],
-    "Taco Express": [
-      { name: "Tacos al pastor", price: "4€/ud", desc: "Cerdo marinado al estilo CDMX con piña y cilantro." },
-      { name: "Tacos de carnitas", price: "4€/ud", desc: "Cerdo confitado y cebolla morada." },
-      { name: "Combo 5 tacos", price: "18€", desc: "Selección de tacos con guacamole y totopos." }
-    ],
-    "Wing Masters": [
-      { name: "Bucket 12 wings", price: "16€", desc: "Alitas marinadas 24h con salsa a elegir." },
-      { name: "Honey Sriracha", price: "14€", desc: "Dulce y picante, la receta más vendida." },
-      { name: "Combo Wings + Fries", price: "17€", desc: "Alitas + patatas especiadas." }
-    ],
-    "Pizza Fingers": [
-      { name: "Margherita Roll", price: "8€", desc: "Tomate, mozzarella y albahaca fresca en formato roll." },
-      { name: "Pepperoni Roll", price: "9€", desc: "Pepperoni, queso y toque picante." },
-      { name: "Box sharing 8 rolls", price: "19€", desc: "Caja para compartir con 2 salsas dipping." }
-    ],
-    "Sandwich Club": [
-      { name: "Club Deluxe", price: "11€", desc: "Pollo, bacon, aguacate y pan de obrador." },
-      { name: "Mediterranean Wrap", price: "9,5€", desc: "Wrap vegetal con hummus y verduras asadas." },
-      { name: "Combo sandwich + chips", price: "13€", desc: "Cualquiera de nuestros sándwiches + chips caseras." }
-    ],
-    "Donut Hands": [
-      { name: "Classic glazed", price: "3€", desc: "Donut clásico glaseado, receta de obrador." },
-      { name: "Chocolate lover", price: "3,5€", desc: "Relleno y cobertura de chocolate belga." },
-      { name: "Box 6 mini donuts", price: "10€", desc: "Selección de minis para compartir." }
-    ]
-  };
-
-  // --- COBERTURA (SECCIÓN FORM) ---
-  const coverageForm = document.getElementById("coverageForm");
-  const coverageResult = document.getElementById("coverageResult");
-  const brandSelect = document.getElementById("brandSelect");
-  const postalInput = document.getElementById("postalCode");
-
-  if (coverageForm && brandSelect && postalInput && coverageResult) {
-    coverageForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const brand = brandSelect.value;
-      const postalCode = postalInput.value.trim();
-      coverageResult.innerHTML = "";
-
-      if (!brand || !/^\d{5}$/.test(postalCode)) {
-        const div = document.createElement("div");
-        div.className = "badge-error";
-        div.innerHTML =
-          '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4m0 4h.01M12 3L3 21h18L12 3z"/></svg>' +
-          "<span>Introduce una marca y un código postal válido de 5 dígitos.</span>";
-        coverageResult.appendChild(div);
-        return;
-      }
-
-      const locations = FRANCHISE_LOCATIONS[brand] || {};
-      const locationText = locations[postalCode];
-
-      if (locationText) {
-        const div = document.createElement("div");
-        div.className = "badge-success";
-        div.innerHTML =
-          '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>' +
-          `<span>Ya operamos en <strong>${locationText}</strong>. Podemos valorar aperturas adicionales o formatos satélite.</span>`;
-        coverageResult.appendChild(div);
-      } else {
-        const div = document.createElement("div");
-        div.className = "badge-error";
-        div.innerHTML =
-          '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4m0 4h.01M12 3L3 21h18L12 3z"/></svg>' +
-          "<span>De momento no tenemos unidades activas en este código postal, pero puede ser zona objetivo. Indícanos más detalles en el formulario de contacto.</span>";
-        coverageResult.appendChild(div);
-      }
-    });
-  }
-
-  // --- MODAL DETALLES DE MARCA + GATE POR CÓDIGO POSTAL ---
-  const modalBackdrop = document.getElementById("brandModalBackdrop");
-  const modalTagline = document.getElementById("modalTagline");
-  const modalTitle = document.getElementById("modalTitle");
-  const modalDescription = document.getElementById("modalDescription");
-  const modalRating = document.getElementById("modalRating");
-  const modalLocations = document.getElementById("modalLocations");
-  const modalLocationInfo = document.getElementById("modalLocationInfo");
-  const modalSpecialties = document.getElementById("modalSpecialties");
-  const modalMenu = document.getElementById("modalMenu");
-  const modalClose = document.querySelector(".modal-close");
-  const modalStepPostal = document.getElementById("modalStepPostal");
-  const modalStepDetails = document.getElementById("modalStepDetails");
-  const modalPostalInput = document.getElementById("modalPostal");
-  const modalPostalBtn = document.getElementById("modalPostalBtn");
-  const modalPostalError = document.getElementById("modalPostalError");
-  const modalOrderBtn = document.getElementById("modalOrderBtn");
-
-  let activeBrandName = null;
-  let activeBrandCard = null;
-
-  function populateBrandDetails(card) {
-    const brand = card.getAttribute("data-brand");
-    const tagline = card.getAttribute("data-tagline");
-    const rating = card.getAttribute("data-rating");
-    const locations = card.getAttribute("data-locations");
-    const desc = card.getAttribute("data-description");
-    const specs = (card.getAttribute("data-specialties") || "").split(",");
-
-    modalTagline.textContent = tagline;
-    modalTitle.textContent = brand;
-    modalDescription.textContent = desc;
-    modalRating.innerHTML = "★ " + rating + " • valoración media clientes";
-    modalLocations.textContent = locations + " locales operativos";
-
-    modalSpecialties.innerHTML = "";
-    specs.forEach((s) => {
-      if (!s.trim()) return;
-      const li = document.createElement("li");
-      li.textContent = s.trim();
-      modalSpecialties.appendChild(li);
-    });
-
-    modalMenu.innerHTML = "";
-    const menu = BRAND_MENUS[brand] || [];
-    menu.forEach((item) => {
-      const li = document.createElement("li");
-      li.innerHTML =
-        "<strong>" +
-        item.name +
-        "</strong> · " +
-        item.price +
-        "<br><span style='font-size:.8rem;color:#6b7280;'>" +
-        item.desc +
-        "</span>";
-      modalMenu.appendChild(li);
-    });
-
-    modalStepPostal.style.display = "none";
-    modalStepDetails.style.display = "block";
-  }
-
-  function openBrandModal(card) {
-    if (!modalBackdrop) return;
-    activeBrandCard = card;
-    activeBrandName = card.getAttribute("data-brand");
-
-    modalStepPostal.style.display = "block";
-    modalStepDetails.style.display = "none";
-    modalPostalInput.value = "";
-    modalPostalError.style.display = "none";
-    modalPostalError.textContent = "";
-    modalLocationInfo.textContent = "";
-
-    modalTagline.textContent = card.getAttribute("data-tagline");
-    modalTitle.textContent = activeBrandName;
-
-    modalBackdrop.classList.add("is-visible");
-    modalBackdrop.setAttribute("aria-hidden", "false");
-  }
-
-  function closeBrandModal() {
-    if (!modalBackdrop) return;
-    modalBackdrop.classList.remove("is-visible");
-    modalBackdrop.setAttribute("aria-hidden", "true");
-  }
-
-  function handleModalPostal() {
-    if (!activeBrandName || !activeBrandCard) return;
-
-    const code = modalPostalInput.value.trim();
-    modalPostalError.style.display = "none";
-    modalPostalError.textContent = "";
-
-    if (!/^\d{5}$/.test(code)) {
-      modalPostalError.textContent = "Introduce un código postal válido de 5 dígitos.";
-      modalPostalError.style.display = "block";
-      return;
-    }
-
-    const brandId = BRAND_IDS[activeBrandName];
-    const locations = FRANCHISE_LOCATIONS[brandId] || {};
-    const locationText = locations[code];
-
-    if (!locationText) {
-      modalPostalError.textContent =
-        "Por ahora no servimos esta marca en ese código postal. Prueba con otro CP cercano o contáctanos para valorar la zona.";
-      modalPostalError.style.display = "block";
-      return;
-    }
-
-    modalLocationInfo.textContent = "Te serviremos desde " + locationText + ".";
-    populateBrandDetails(activeBrandCard);
-  }
-
-  // 👉 Abrir modal al hacer clic en CUALQUIER tarjeta de franquicia
-  document.querySelectorAll(".brand-card").forEach((card) => {
-    card.addEventListener("click", () => {
-      openBrandModal(card);
-    });
-  });
-
-  if (modalPostalBtn && modalPostalInput) {
-    modalPostalBtn.addEventListener("click", handleModalPostal);
-    modalPostalInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        handleModalPostal();
-      }
-    });
-  }
-
-  if (modalOrderBtn) {
-    modalOrderBtn.addEventListener("click", () => {
-      closeBrandModal();
-      const contactSection = document.getElementById("contact");
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  }
-
-  if (modalClose) {
-    modalClose.addEventListener("click", closeBrandModal);
-  }
-  if (modalBackdrop) {
-    modalBackdrop.addEventListener("click", (e) => {
-      if (e.target === modalBackdrop) closeBrandModal();
-    });
-  }
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeBrandModal();
-  });
-
-  // --- FORMULARIO CONTACTO (dummy) ---
-  const contactForm = document.getElementById("contactForm");
-  if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      alert("Gracias por tu interés. Te enviaremos el dosier de franquicia a tu correo.");
-      contactForm.reset();
-    });
-  }
-});
-</script>
+  </script>
 </body>
 </html>
-
-
-
