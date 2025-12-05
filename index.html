@@ -16,9 +16,7 @@
       --border-subtle: #e5e7eb;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -27,38 +25,42 @@
       color: var(--text);
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    img { max-width: 100%; display: block; }
 
     .container {
       width: 100%;
-      max-width: 1120px;
+      max-width: 1160px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
+    a { color: inherit; text-decoration: none; }
+
+    /* ================== HEADER + NAV ================== */
+
     header {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: #111827;
+      z-index: 40;
+      background: rgba(17, 24, 39, 0.96);
       color: #f9fafb;
+      backdrop-filter: blur(18px);
       border-bottom: 1px solid #1f2937;
     }
 
-    header .inner {
+    .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0.9rem 0;
+      gap: 1rem;
     }
 
     .brand-mark {
       display: inline-flex;
       gap: 0.6rem;
       align-items: center;
+      min-width: 0;
     }
 
     .brand-logo {
@@ -79,6 +81,7 @@
       font-size: 1rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      white-space: nowrap;
     }
 
     .brand-text p {
@@ -89,44 +92,115 @@
       text-transform: uppercase;
     }
 
-    main {
-      padding-bottom: 4rem;
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      color: #e5e7eb;
+      font-size: 1.4rem;
+      cursor: pointer;
     }
 
-    /* === LANDING (HERO + GRID) === */
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem;
+      border-radius: 999px;
+      background: rgba(31, 41, 55, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.8);
+    }
+
+    .main-nav button {
+      border: none;
+      background: transparent;
+      color: #e5e7eb;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .main-nav button:hover {
+      background: rgba(249, 250, 251, 0.12);
+    }
+
+    .main-nav button.is-active {
+      background: #f9fafb;
+      color: #111827;
+    }
+
+    @media (max-width: 768px) {
+      .header-inner {
+        align-items: center;
+      }
+      .main-nav {
+        position: fixed;
+        left: 1.25rem;
+        right: 1.25rem;
+        top: 3.1rem;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.5rem;
+        background: #111827;
+        border-radius: 16px;
+        display: none;
+      }
+      .main-nav.is-open { display: flex; }
+      .main-nav button {
+        width: 100%;
+        text-align: left;
+      }
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    /* ================== ESTRUCTURA GENERAL ================== */
+
+    main { padding-bottom: 4rem; }
+
+    section { scroll-margin-top: 88px; }
+
+    /* ================== HERO / LANDING ================== */
 
     #landing {
-      padding-top: 2.5rem;
+      padding-top: 3.5rem;
     }
 
     .hero {
-      padding-bottom: 3rem;
+      padding: 4.2rem 0 3.4rem;
       text-align: center;
     }
 
     .hero h2 {
       margin: 0 0 0.9rem;
-      font-size: 2.4rem;
-      letter-spacing: -0.04em;
+      font-size: 2.7rem;
+      letter-spacing: -0.05em;
     }
 
     .hero p {
       margin: 0 auto;
-      max-width: 620px;
+      max-width: 640px;
       font-size: 1rem;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
     .hero-metrics {
-      margin-top: 2.2rem;
+      margin-top: 2.6rem;
       display: grid;
       gap: 1.5rem;
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .hero-metric-value {
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: 300;
     }
 
@@ -137,8 +211,21 @@
       color: #9ca3af;
     }
 
+    @media (max-width: 900px) {
+      .hero { padding-top: 3.4rem; }
+      .hero h2 { font-size: 2.1rem; }
+      .hero-metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 640px) {
+      #landing { padding-top: 2.7rem; }
+      .hero { padding: 2.8rem 0 2.6rem; }
+      .hero h2 { font-size: 1.9rem; }
+      .hero-metrics { grid-template-columns: 1fr 1fr; }
+    }
+
     .section-title {
-      margin: 0 0 1.2rem;
+      margin: 0 0 1.1rem;
       font-size: 1.4rem;
       letter-spacing: -0.03em;
     }
@@ -147,7 +234,70 @@
       margin: 0 0 2rem;
       font-size: 0.95rem;
       color: var(--muted);
-      max-width: 520px;
+      max-width: 540px;
+    }
+
+    /* ================== ABOUT ================== */
+
+    #about {
+      background: #ffffff;
+      padding: 3.4rem 0;
+    }
+
+    .about-grid {
+      display: grid;
+      gap: 2.5rem;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
+      align-items: center;
+    }
+
+    .about-grid p {
+      margin: 0 0 1rem;
+      font-size: 0.98rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .about-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid #e5e7eb;
+      background: radial-gradient(circle at top left, #111827, #020617);
+      color: #e5e7eb;
+      padding: 1.6rem 1.7rem;
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.4);
+    }
+
+    .about-card h4 {
+      margin: 0 0 0.8rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #d1d5db;
+    }
+
+    .about-card p {
+      margin: 0 0 0.5rem;
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+
+    .about-points {
+      margin-top: 0.8rem;
+      display: grid;
+      gap: 0.35rem;
+      font-size: 0.86rem;
+    }
+
+    @media (max-width: 900px) {
+      .about-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* ================== BRANDS GRID ================== */
+
+    #brands {
+      padding: 3.4rem 0;
     }
 
     .brands-grid {
@@ -157,24 +307,11 @@
     }
 
     @media (max-width: 900px) {
-      .hero h2 {
-        font-size: 1.8rem;
-      }
-      .hero-metrics {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      .brands-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+      .brands-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 640px) {
-      .hero-metrics {
-        grid-template-columns: 1fr 1fr;
-      }
-      .brands-grid {
-        grid-template-columns: 1fr;
-      }
+      .brands-grid { grid-template-columns: 1fr; }
     }
 
     .brand-card {
@@ -258,11 +395,121 @@
       padding: 0;
     }
 
-    .brand-card-cta:hover {
-      text-decoration: underline;
+    .brand-card-cta:hover { text-decoration: underline; }
+
+    /* ================== MAPA ================== */
+
+    #map-section {
+      padding: 3.4rem 0;
+      background: #ffffff;
     }
 
-    /* === BOTONES Y FORMULARIOS === */
+    .map-wrapper {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 22px 55px rgba(15, 23, 42, 0.25);
+      margin-bottom: 1.4rem;
+    }
+
+    .map-wrapper iframe {
+      width: 100%;
+      height: 380px;
+      border: 0;
+    }
+
+    .map-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .map-tags span {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+    }
+
+    /* ================== CONTACTO ================== */
+
+    #contact {
+      padding: 3.4rem 0 3.8rem;
+      background: #020617;
+      color: #e5e7eb;
+    }
+
+    .contact-heading {
+      text-align: center;
+      margin-bottom: 2.4rem;
+    }
+
+    .contact-heading h3 {
+      margin: 0 0 0.7rem;
+      font-size: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .contact-heading p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #9ca3af;
+      max-width: 520px;
+      display: inline-block;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 2.4rem;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      align-items: flex-start;
+    }
+
+    .contact-text p {
+      margin: 0 0 0.9rem;
+      font-size: 0.95rem;
+      color: #d1d5db;
+    }
+
+    .contact-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: radial-gradient(circle at top left, #111827, #020617);
+      padding: 1.6rem 1.7rem;
+    }
+
+    .contact-card h4 {
+      margin: 0 0 0.9rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+    }
+
+    .form-group label {
+      color: #e5e7eb;
+    }
+
+    .contact-card input,
+    .contact-card textarea {
+      background: #020617;
+      border-color: #4b5563;
+      color: #e5e7eb;
+    }
+
+    .contact-card input:focus,
+    .contact-card textarea:focus {
+      outline: none;
+      border-color: #e5e7eb;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: minmax(0, 1fr); }
+    }
+
+    /* ================== BOTONES Y FORMULARIOS GENERALES ================== */
 
     .btn-primary {
       border-radius: 999px;
@@ -274,23 +521,17 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       cursor: pointer;
-    }
-
-    .btn-primary:hover {
-      background: #000000;
-    }
-
-    .btn-full {
-      width: 100%;
-      justify-content: center;
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      justify-content: center;
+      gap: 0.35rem;
     }
 
-    .form-group {
-      margin-bottom: 0.9rem;
-    }
+    .btn-primary:hover { background: #000000; }
+
+    .btn-full { width: 100%; }
+
+    .form-group { margin-bottom: 0.9rem; }
 
     .form-group label {
       display: block;
@@ -308,11 +549,11 @@
       font-size: 0.9rem;
       font-family: inherit;
       resize: vertical;
+      background: #ffffff;
+      color: #111827;
     }
 
-    .form-group textarea {
-      min-height: 70px;
-    }
+    .form-group textarea { min-height: 80px; }
 
     .helper {
       font-size: 0.75rem;
@@ -320,12 +561,12 @@
       margin-top: 0.2rem;
     }
 
-    /* === DETALLE FRANQUICIA === */
+    /* ================== DETALLE FRANQUICIA ================== */
 
     #brand-detail {
       display: none;
       background: #ffffff;
-      padding: 2.5rem 0 4rem;
+      padding: 3rem 0 3.5rem;
     }
 
     .detail-back {
@@ -340,9 +581,7 @@
       padding: 0;
     }
 
-    .detail-back:hover {
-      color: #111827;
-    }
+    .detail-back:hover { color: #111827; }
 
     .detail-header {
       display: flex;
@@ -384,41 +623,12 @@
       margin: 0 0 0.25rem;
     }
 
-    .detail-header-meta strong {
-      color: #111827;
-    }
+    .detail-header-meta strong { color: #111827; }
 
     .coverage-ok {
       color: #16a34a;
       font-size: 0.82rem;
       margin-top: 0.3rem;
-    }
-
-    .postal-panel {
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border-subtle);
-      padding: 1.2rem 1.3rem;
-      background: #f9fafb;
-      margin-bottom: 1.8rem;
-    }
-
-    .postal-panel h3 {
-      margin: 0 0 0.4rem;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
-
-    .postal-panel p {
-      margin: 0 0 0.9rem;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .postal-error {
-      color: #b91c1c;
-      font-size: 0.78rem;
-      margin-top: 0.25rem;
     }
 
     .detail-layout {
@@ -429,15 +639,9 @@
     }
 
     @media (max-width: 900px) {
-      .detail-header {
-        flex-direction: column;
-      }
-      .detail-header-meta {
-        text-align: left;
-      }
-      .detail-layout {
-        grid-template-columns: minmax(0, 1fr);
-      }
+      .detail-header { flex-direction: column; }
+      .detail-header-meta { text-align: left; }
+      .detail-layout { grid-template-columns: minmax(0, 1fr); }
     }
 
     .detail-menu h3,
@@ -448,9 +652,7 @@
       letter-spacing: 0.16em;
     }
 
-    .menu-list {
-      border-top: 1px solid #e5e7eb;
-    }
+    .menu-list { border-top: 1px solid #e5e7eb; }
 
     .menu-item {
       display: flex;
@@ -496,9 +698,7 @@
       cursor: pointer;
     }
 
-    .qty-control button:hover {
-      background: #f3f4f6;
-    }
+    .qty-control button:hover { background: #f3f4f6; }
 
     .qty-value {
       padding: 0.25rem 0.7rem;
@@ -550,11 +750,71 @@
       color: #111827;
     }
 
+    /* ================== MODAL CÓDIGO POSTAL ================== */
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.75);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+    }
+
+    .modal-backdrop.is-visible { display: flex; }
+
+    .modal-panel {
+      background: #ffffff;
+      border-radius: 18px;
+      max-width: 420px;
+      width: 100%;
+      padding: 1.6rem 1.7rem 1.5rem;
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.45);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+
+    .modal-header h3 {
+      margin: 0;
+      font-size: 1rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .modal-close {
+      border: none;
+      background: transparent;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #6b7280;
+    }
+
+    .modal-body p {
+      margin: 0 0 0.9rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .postal-error {
+      color: #b91c1c;
+      font-size: 0.78rem;
+      margin-top: 0.25rem;
+    }
+
+    /* ================== FOOTER ================== */
+
     footer {
       border-top: 1px solid #e5e7eb;
       padding: 1.4rem 0 1.6rem;
       font-size: 0.8rem;
       color: #9ca3af;
+      background: #ffffff;
     }
 
     footer .inner {
@@ -568,7 +828,7 @@
 </head>
 <body>
 <header>
-  <div class="container inner">
+  <div class="container header-inner">
     <div class="brand-mark">
       <div class="brand-logo">S</div>
       <div class="brand-text">
@@ -576,18 +836,28 @@
         <p>Hand-eating franchise management</p>
       </div>
     </div>
+
+    <nav class="main-nav" id="main-nav">
+      <button type="button" data-scroll="#landing" class="is-active">Inicio</button>
+      <button type="button" data-scroll="#about">Sobre nosotros</button>
+      <button type="button" data-scroll="#brands">Marcas</button>
+      <button type="button" data-scroll="#map-section">Mapa</button>
+      <button type="button" data-scroll="#contact">Contacto</button>
+    </nav>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">☰</button>
   </div>
 </header>
 
 <main>
-  <!-- LANDING -->
+  <!-- LANDING / HERO -->
   <div id="landing">
     <section class="hero">
       <div class="container">
         <h2>Marcas pensadas para comer con las manos</h2>
         <p>
           Gestionamos un porfolio de franquicias de comida diseñadas para disfrutarse sin cubiertos:
-          formatos ergonómicos, producto de calidad y operaciones muy afinadas.
+          formatos ergonómicos, producto de calidad y operaciones muy afinadas para delivery y take away.
         </p>
         <div class="hero-metrics">
           <div>
@@ -606,6 +876,44 @@
       </div>
     </section>
 
+    <!-- SOBRE NOSOTROS -->
+    <section id="about">
+      <div class="container about-grid">
+        <div>
+          <h3 class="section-title">Sobre Sebbro Foods</h3>
+          <p>
+            Sebbro Foods nace de una idea sencilla: los momentos gastronómicos más memorables
+            suelen ocurrir cuando comemos con las manos. Tacos, burgers, wings, pizza al corte,
+            sándwiches o donuts… todos ellos comparten una cosa en común: la experiencia táctil.
+          </p>
+          <p>
+            Nuestro equipo combina background en restauración organizada, logística, diseño de
+            producto y data. Desarrollamos marcas propias con un enfoque muy claro: operaciones
+            ligeras, ticket medio sano, cocina optimizada para delivery y una experiencia de marca
+            que se entiende en segundos.
+          </p>
+          <p>
+            Trabajamos con franquiciados y operadores que buscan conceptos claros, escalables y con
+            soporte real en marketing, formación y analítica de negocio.
+          </p>
+        </div>
+        <aside class="about-card">
+          <h4>Nuestro enfoque</h4>
+          <p>
+            Diseñamos conceptos de “hand eating” 360º: desde el producto y el packaging hasta los
+            procesos en cocina y la experiencia digital del cliente.
+          </p>
+          <div class="about-points">
+            <span>• Modelos pensados para locales compactos y dark kitchens.</span>
+            <span>• Recetas replicables y manuales operativos claros.</span>
+            <span>• Branding y fotografía listos para redes sociales.</span>
+            <span>• Soporte en aperturas, formación y análisis de ventas.</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- MARCAS -->
     <section id="brands">
       <div class="container">
         <h3 class="section-title">Franquicias Sebbro Foods</h3>
@@ -615,7 +923,6 @@
         </p>
 
         <div class="brands-grid">
-          <!-- Las tarjetas usan data-slug para enganchar el JS -->
           <article class="brand-card" data-slug="burgercraft">
             <img src="https://placehold.co/800x600/111111/ffffff?text=BurgerCraft" alt="BurgerCraft" />
             <div class="brand-card-body">
@@ -720,9 +1027,92 @@
         </div>
       </div>
     </section>
+
+    <!-- MAPA -->
+    <section id="map-section">
+      <div class="container">
+        <h3 class="section-title">Mapa de locales</h3>
+        <p class="section-subtitle">
+          Mapa aproximado de operación actual y expansión prevista. Cada nueva apertura se
+          integra en nuestro ecosistema de datos y soporte centralizado.
+        </p>
+
+        <div class="map-wrapper">
+          <!-- Puedes sustituir la URL por tu propio mapa de Google My Maps si lo prefieres -->
+          <iframe
+            src="https://www.google.com/maps?q=Madrid,Spain&z=5&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa Sebbro Foods">
+          </iframe>
+        </div>
+
+        <div class="map-tags">
+          <span>Madrid · BurgerCraft</span>
+          <span>Barcelona · Taco Express</span>
+          <span>Valencia · Wing Masters</span>
+          <span>Sevilla · Pizza Fingers</span>
+          <span>Bilbao · Sandwich Club</span>
+          <span>Málaga · Donut Hands</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-heading">
+          <h3>Contacto y expansión</h3>
+          <p>
+            Si estás valorando abrir una franquicia o integrar una de nuestras marcas en tu
+            portfolio de F&B, cuéntanos un poco sobre tu proyecto y te contactaremos.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-text">
+            <p>
+              Trabajamos tanto con operadores individuales como con grupos que gestionan varias
+              ubicaciones. Nos interesan ubicaciones urbanas, zonas de oficinas, centros
+              comerciales y entornos con fuerte componente delivery.
+            </p>
+            <p>
+              Además del modelo de franquicia, podemos estudiar acuerdos de licencia o joint
+              venture en mercados estratégicos.
+            </p>
+            <p class="helper">
+              Respuesta habitual en menos de 48 horas laborables.
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <h4>Escríbenos</h4>
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="cf-name">Nombre</label>
+                <input id="cf-name" type="text" required placeholder="Tu nombre completo" />
+              </div>
+              <div class="form-group">
+                <label for="cf-email">Email</label>
+                <input id="cf-email" type="email" required placeholder="tu@email.com" />
+              </div>
+              <div class="form-group">
+                <label for="cf-location">Ciudad / país</label>
+                <input id="cf-location" type="text" placeholder="Ej. Madrid, España" />
+              </div>
+              <div class="form-group">
+                <label for="cf-message">Cuéntanos tu proyecto</label>
+                <textarea id="cf-message" required placeholder="Tipo de ubicación, plazos, experiencia previa…"></textarea>
+              </div>
+              <button class="btn-primary btn-full" type="submit">Enviar mensaje</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 
-  <!-- DETALLE DE FRANQUICIA (segunda “página”) -->
+  <!-- DETALLE DE FRANQUICIA -->
   <section id="brand-detail">
     <div class="container">
       <button type="button" id="detail-back" class="detail-back">← Volver a todas las marcas</button>
@@ -740,98 +1130,103 @@
         </div>
       </div>
 
-      <!-- Paso 1: Código postal -->
-      <section class="postal-panel" id="postal-step">
-        <h3>Código postal</h3>
-        <p>
-          Primero comprobamos si la franquicia sirve pedidos en tu zona. Introduce tu código postal para ver el menú y hacer un pedido.
-        </p>
-        <form id="postal-form" novalidate>
-          <div class="form-group">
-            <label for="postal-input">Código postal (España)</label>
-            <input id="postal-input" type="text" maxlength="5" inputmode="numeric" placeholder="Ej. 08001" required />
-            <p class="helper">Solo lo usamos para localizar la cocina o punto de venta que te servirá.</p>
-            <p id="postal-error" class="postal-error" style="display:none;"></p>
-          </div>
-          <button class="btn-primary btn-full" type="submit">Continuar</button>
-        </form>
-      </section>
-
-      <!-- Paso 2: Menú + pedido -->
-      <section id="menu-step" style="display:none;">
-        <div class="detail-layout">
-          <div class="detail-menu">
-            <h3>Menú</h3>
-            <div id="menu-list" class="menu-list"></div>
-          </div>
-
-          <aside class="detail-sidebar">
-            <div class="detail-box">
-              <h3>Ubicación y contacto</h3>
-              <div class="detail-location-row">
-                <span>📍</span>
-                <span id="loc-address"></span>
-              </div>
-              <div class="detail-location-row">
-                <span>⏰</span>
-                <span id="loc-hours"></span>
-              </div>
-              <div class="detail-location-row">
-                <span>📞</span>
-                <span id="loc-phone"></span>
-              </div>
-              <div class="detail-location-row">
-                <span>✉️</span>
-                <span id="loc-email"></span>
-              </div>
-            </div>
-
-            <div class="detail-box">
-              <h3>Especialidades</h3>
-              <ul id="detail-specialties"></ul>
-            </div>
-
-            <div class="detail-box">
-              <h3>Tu pedido</h3>
-              <form id="order-form">
-                <p class="helper">
-                  Completa tus datos y te contactaremos para confirmar el pedido y la franja de entrega.
-                </p>
-                <div class="form-group">
-                  <label for="order-name">Nombre</label>
-                  <input id="order-name" type="text" required />
-                </div>
-                <div class="form-group">
-                  <label for="order-phone">Teléfono</label>
-                  <input id="order-phone" type="tel" required />
-                </div>
-                <div class="form-group">
-                  <label for="order-email">Email</label>
-                  <input id="order-email" type="email" required />
-                </div>
-                <div class="form-group">
-                  <label for="order-address">Dirección de entrega</label>
-                  <textarea id="order-address" required></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="order-notes">Comentarios adicionales</label>
-                  <textarea id="order-notes" placeholder="Piso, timbre, alergias, horario preferente…"></textarea>
-                </div>
-
-                <div class="order-summary">
-                  <div>Total artículos: <span id="order-total-items">0</span></div>
-                  <div>Total estimado: <span id="order-total-amount">0,00€</span></div>
-                </div>
-
-                <button class="btn-primary btn-full" type="submit">Enviar pedido</button>
-              </form>
-            </div>
-          </aside>
+      <div class="detail-layout">
+        <div class="detail-menu">
+          <h3>Menú</h3>
+          <div id="menu-list" class="menu-list"></div>
         </div>
-      </section>
+
+        <aside class="detail-sidebar">
+          <div class="detail-box">
+            <h3>Ubicación y contacto</h3>
+            <div class="detail-location-row">
+              <span>📍</span>
+              <span id="loc-address"></span>
+            </div>
+            <div class="detail-location-row">
+              <span>⏰</span>
+              <span id="loc-hours"></span>
+            </div>
+            <div class="detail-location-row">
+              <span>📞</span>
+              <span id="loc-phone"></span>
+            </div>
+            <div class="detail-location-row">
+              <span>✉️</span>
+              <span id="loc-email"></span>
+            </div>
+          </div>
+
+          <div class="detail-box">
+            <h3>Especialidades</h3>
+            <ul id="detail-specialties"></ul>
+          </div>
+
+          <div class="detail-box">
+            <h3>Tu pedido</h3>
+            <form id="order-form">
+              <p class="helper">
+                Completa tus datos y te contactaremos para confirmar el pedido y la franja de entrega.
+              </p>
+              <div class="form-group">
+                <label for="order-name">Nombre</label>
+                <input id="order-name" type="text" required />
+              </div>
+              <div class="form-group">
+                <label for="order-phone">Teléfono</label>
+                <input id="order-phone" type="tel" required />
+              </div>
+              <div class="form-group">
+                <label for="order-email">Email</label>
+                <input id="order-email" type="email" required />
+              </div>
+              <div class="form-group">
+                <label for="order-address">Dirección de entrega</label>
+                <textarea id="order-address" required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="order-notes">Comentarios adicionales</label>
+                <textarea id="order-notes" placeholder="Piso, timbre, alergias, horario preferente…"></textarea>
+              </div>
+
+              <div class="order-summary">
+                <div>Total artículos: <span id="order-total-items">0</span></div>
+                <div>Total estimado: <span id="order-total-amount">0,00€</span></div>
+              </div>
+
+              <button class="btn-primary btn-full" type="submit">Enviar pedido</button>
+            </form>
+          </div>
+        </aside>
+      </div>
     </div>
   </section>
 </main>
+
+<!-- MODAL CÓDIGO POSTAL -->
+<div class="modal-backdrop" id="postal-modal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true">
+    <div class="modal-header">
+      <h3>Zona de servicio</h3>
+      <button class="modal-close" id="postal-close" type="button">×</button>
+    </div>
+    <div class="modal-body">
+      <p>
+        Antes de mostrarte el menú completo, comprobamos si esta marca sirve pedidos en tu zona.
+        Introduce tu código postal:
+      </p>
+      <form id="postal-form" novalidate>
+        <div class="form-group">
+          <label for="postal-input">Código postal (España)</label>
+          <input id="postal-input" type="text" maxlength="5" inputmode="numeric" placeholder="Ej. 08001" required />
+          <p class="helper">Solo lo usamos para localizar la cocina o punto de venta que te servirá.</p>
+          <p id="postal-error" class="postal-error" style="display:none;"></p>
+        </div>
+        <button class="btn-primary btn-full" type="submit">Continuar</button>
+      </form>
+    </div>
+  </div>
+</div>
 
 <footer>
   <div class="container inner">
@@ -842,15 +1237,44 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
+    /* ---------- NAV SCROLL / MOBILE ---------- */
+    const nav = document.getElementById("main-nav");
+    const navToggle = document.getElementById("nav-toggle");
+    const navButtons = nav.querySelectorAll("button[data-scroll]");
+
+    function setActiveNav(targetSelector) {
+      navButtons.forEach((btn) => {
+        btn.classList.toggle("is-active", btn.getAttribute("data-scroll") === targetSelector);
+      });
+    }
+
+    navButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const target = btn.getAttribute("data-scroll");
+        const el = document.querySelector(target);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+          setActiveNav(target);
+        }
+        if (window.innerWidth <= 768) {
+          nav.classList.remove("is-open");
+        }
+      });
+    });
+
+    navToggle.addEventListener("click", () => {
+      nav.classList.toggle("is-open");
+    });
+
+    /* ---------- DATA DE MARCAS ---------- */
+
     const brands = [
       {
         slug: "burgercraft",
         name: "BurgerCraft",
         tagline: "Gourmet Burgers · Hand Eating",
-        shortDesc:
-          "Hamburguesas artesanales con ingredientes premium y panes pensados para no romperse al comer con las manos.",
         longDesc:
-          "BurgerCraft nació para demostrar que una burger puede ser fast y a la vez muy cuidada. Trabajamos con proveedores locales, carnes seleccionadas y panes diseñados para aguantar el jugo sin deshacerse. El formato está optimizado para delivery y consumo con las manos, minimizando manchas y caídas de producto.",
+          "BurgerCraft nació para demostrar que una burger puede ser fast y a la vez muy cuidada. Proveedores locales, carnes seleccionadas y panes diseñados para aguantar el jugo sin deshacerse. El formato está optimizado para delivery y consumo con las manos.",
         rating: 4.8,
         locations: 25,
         specialties: ["Hamburguesas gourmet", "Patatas hand-cut", "Milkshakes artesanales"],
@@ -875,10 +1299,8 @@
         slug: "tacoexpress",
         name: "Taco Express",
         tagline: "Mexican Street Food",
-        shortDesc:
-          "Tacos auténticos con tortillas hechas a mano y recetas tradicionales, pensados para comer de pie o sobre la marcha.",
         longDesc:
-          "Taco Express trae la experiencia de un puesto callejero mexicano a locales compactos y pensados para delivery. Tortillas hechas a diario, marinados propios y salsas con diferentes niveles de picante. El formato de producto y packaging está optimizado para comer con las manos y moverse mientras se disfruta.",
+          "Taco Express trae la experiencia de un puesto callejero mexicano a locales compactos y pensados para delivery. Tortillas hechas a diario, marinados propios y salsas con diferentes niveles de picante. El formato está optimizado para comer con las manos y moverse mientras se disfruta.",
         rating: 4.7,
         locations: 18,
         specialties: ["Tacos al pastor", "Guacamole fresco", "Salsas caseras"],
@@ -903,10 +1325,8 @@
         slug: "wingmasters",
         name: "Wing Masters",
         tagline: "Chicken Wings Bar",
-        shortDesc:
-          "Alitas marinadas y 12 salsas exclusivas para compartir en grupo, con foco en take away y delivery nocturno.",
         longDesc:
-          "Wing Masters es un formato pensado para la noche: partidos, gaming, reuniones en casa. Porciones para compartir, alitas crujientes y una carta de salsas propia que genera recurrencia. Todo el producto está diseñado para comerse con las manos, con packaging que evita manchar sofás y mesas.",
+          "Wing Masters es un formato pensado para la noche: partidos, gaming, reuniones en casa. Porciones para compartir, alitas crujientes y una carta de salsas propia que genera recurrencia. Packaging diseñado para no manchar sofás ni mesas.",
         rating: 4.6,
         locations: 32,
         specialties: ["Alitas Buffalo", "Salsa BBQ secreta", "Nuggets especiales"],
@@ -931,10 +1351,8 @@
         slug: "pizzafingers",
         name: "Pizza Fingers",
         tagline: "Italian Pizza Rolls",
-        shortDesc:
-          "Pizza enrollada en formato “finger food” para comer sin platos, perfecta para oficinas, eventos y ocio nocturno.",
         longDesc:
-          "Pizza Fingers reinterpreta la pizza tradicional en un formato enrollado y fácil de llevar. Pensado para oficinas, caterings y grupos, permite compartir sin necesidad de platos ni cubiertos. La masa y las salsas siguen receta italiana, pero con un layout de producto moderno.",
+          "Pizza Fingers reinterpreta la pizza tradicional en un formato enrollado y fácil de llevar. Pensado para oficinas, caterings y grupos, permite compartir sin necesidad de platos ni cubiertos.",
         rating: 4.5,
         locations: 15,
         specialties: ["Pizza rolls", "Sticks de queso", "Dips exclusivos"],
@@ -959,10 +1377,8 @@
         slug: "sandwichclub",
         name: "Sandwich Club",
         tagline: "Gourmet Sandwiches",
-        shortDesc:
-          "Sándwiches y wraps premium, envueltos en papel técnico para un consumo limpio en oficinas, trenes y aeropuertos.",
         longDesc:
-          "Sandwich Club eleva el sándwich a una propuesta gourmet. Panaderos artesanos, combinaciones muy pensadas y un envoltorio que permite comer en movilidad sin mancharse. Especialmente diseñado para ubicaciones de alto tráfico y consumo diurno.",
+          "Sandwich Club eleva el sándwich a una propuesta gourmet. Panaderos artesanos, combinaciones muy pensadas y un envoltorio que permite comer en movilidad sin mancharse.",
         rating: 4.4,
         locations: 22,
         specialties: ["Club sandwiches", "Wraps especiales", "Baguettes artesanales"],
@@ -987,10 +1403,8 @@
         slug: "donuthands",
         name: "Donut Hands",
         tagline: "Artisanal Donuts",
-        shortDesc:
-          "Donuts artesanales con diseño ergonómico, pensados para llevar, compartir y viralizar en redes sociales.",
         longDesc:
-          "Donut Hands combina pastelería artesanal con diseño de producto. Donuts pensados para agarrar bien, toppings muy visuales y un packaging que vive bien en Instagram y TikTok. Ideal para locales de impulso, street retail y kioscos de centros comerciales.",
+          "Donut Hands combina pastelería artesanal con diseño de producto. Donuts pensados para agarrar bien, toppings muy visuales y un packaging que vive bien en Instagram y TikTok.",
         rating: 4.9,
         locations: 12,
         specialties: ["Donuts gourmet", "Mini donuts", "Bebidas especiales"],
@@ -1013,6 +1427,8 @@
       }
     ];
 
+    /* ---------- ELEMENTOS DETALLE Y MODAL ---------- */
+
     const landingEl = document.getElementById("landing");
     const detailEl = document.getElementById("brand-detail");
 
@@ -1024,31 +1440,41 @@
     const detailLocations = document.getElementById("detail-locations");
     const detailCoverage = document.getElementById("detail-coverage");
 
-    const postalStep = document.getElementById("postal-step");
-    const postalForm = document.getElementById("postal-form");
-    const postalInput = document.getElementById("postal-input");
-    const postalError = document.getElementById("postal-error");
-
-    const menuStep = document.getElementById("menu-step");
     const menuList = document.getElementById("menu-list");
-
     const locAddress = document.getElementById("loc-address");
     const locHours = document.getElementById("loc-hours");
     const locPhone = document.getElementById("loc-phone");
     const locEmail = document.getElementById("loc-email");
-
     const detailSpecialties = document.getElementById("detail-specialties");
 
     const orderForm = document.getElementById("order-form");
     const orderTotalItems = document.getElementById("order-total-items");
     const orderTotalAmount = document.getElementById("order-total-amount");
 
+    const postalModal = document.getElementById("postal-modal");
+    const postalForm = document.getElementById("postal-form");
+    const postalInput = document.getElementById("postal-input");
+    const postalError = document.getElementById("postal-error");
+    const postalClose = document.getElementById("postal-close");
+
     let activeBrand = null;
     let orderState = [];
 
-    function openBrandDetail(slug) {
-      const brand = brands.find((b) => b.slug === slug);
-      if (!brand) return;
+    function openPostalModal(brand) {
+      activeBrand = brand;
+      postalInput.value = "";
+      postalError.textContent = "";
+      postalError.style.display = "none";
+      postalModal.classList.add("is-visible");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closePostalModal() {
+      postalModal.classList.remove("is-visible");
+      document.body.style.overflow = "";
+    }
+
+    function openBrandDetail(brand, coverageLocationText) {
       activeBrand = brand;
 
       detailTagline.textContent = brand.tagline;
@@ -1056,7 +1482,9 @@
       detailDesc.textContent = brand.longDesc;
       detailRating.textContent = `★ ${brand.rating.toFixed(1)} · valoración media`;
       detailLocations.textContent = `${brand.locations} locales operativos`;
-      detailCoverage.textContent = "";
+      detailCoverage.textContent = coverageLocationText
+        ? "Servicio disponible desde: " + coverageLocationText + "."
+        : "";
 
       locAddress.textContent = brand.address;
       locHours.textContent = brand.hours;
@@ -1069,12 +1497,6 @@
         li.textContent = s;
         detailSpecialties.appendChild(li);
       });
-
-      postalInput.value = "";
-      postalError.textContent = "";
-      postalError.style.display = "none";
-      postalStep.style.display = "block";
-      menuStep.style.display = "none";
 
       buildMenu(brand);
 
@@ -1173,7 +1595,9 @@
     document.querySelectorAll(".brand-card").forEach((card) => {
       card.addEventListener("click", () => {
         const slug = card.getAttribute("data-slug");
-        openBrandDetail(slug);
+        const brand = brands.find((b) => b.slug === slug);
+        if (!brand) return;
+        openPostalModal(brand);
       });
     });
 
@@ -1202,10 +1626,20 @@
         return;
       }
 
-      detailCoverage.textContent = "Servicio disponible desde: " + location + ".";
-      postalStep.style.display = "none";
-      menuStep.style.display = "block";
-      window.scrollTo({ top: postalStep.offsetTop, behavior: "smooth" });
+      closePostalModal();
+      openBrandDetail(activeBrand, location);
+    });
+
+    postalClose.addEventListener("click", () => {
+      closePostalModal();
+      activeBrand = null;
+    });
+
+    postalModal.addEventListener("click", (e) => {
+      if (e.target === postalModal) {
+        closePostalModal();
+        activeBrand = null;
+      }
     });
 
     orderForm.addEventListener("submit", (e) => {
@@ -1222,6 +1656,15 @@
       orderForm.reset();
       if (activeBrand) buildMenu(activeBrand);
       closeDetail();
+    });
+
+    /* ---------- FORM CONTACTO (dummy) ---------- */
+    const contactForm = document.getElementById("contact-form");
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!contactForm.reportValidity()) return;
+      alert("Gracias por tu mensaje. Nos pondremos en contacto contigo en breve.");
+      contactForm.reset();
     });
   });
 </script>
