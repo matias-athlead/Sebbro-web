@@ -1557,12 +1557,13 @@
   </footer>
 
   <script>
-   <script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
   // --- MENÚ MÓVIL ---
   const navToggle = document.getElementById("navToggle");
   const navMobile = document.getElementById("navMobile");
 
-  if (navToggle) {
+  if (navToggle && navMobile) {
     navToggle.addEventListener("click", () => {
       navMobile.classList.toggle("is-open");
     });
@@ -1598,69 +1599,69 @@
 
   window.addEventListener("scroll", updateActiveNav);
 
-  // --- DATOS DE COBERTURA POR MARCA (mismo esquema que antes) ---
+  // --- DATOS DE COBERTURA POR MARCA ---
   const FRANCHISE_LOCATIONS = {
     1: { "28001": "Madrid – Barrio Salamanca", "28002": "Madrid – Goya", "08001": "Barcelona – Centro" },
     2: { "08001": "Barcelona – Ramblas", "08002": "Barcelona – Gòtic", "46001": "Valencia – Centro" },
     3: { "46001": "Valencia – Colón", "46002": "Valencia – Puerto", "29001": "Málaga – Centro" },
     4: { "41001": "Sevilla – Centro", "41002": "Sevilla – Plaza Nueva", "18001": "Granada – Centro" },
     5: { "48001": "Bilbao – Gran Vía", "48002": "Bilbao – Abando", "39001": "Santander – Centro" },
-    6: { "29001": "Málaga – Larios", "29002": "Málaga – Soho", "11001": "Cádiz – Centro" },
+    6: { "29001": "Málaga – Larios", "29002": "Málaga – Soho", "11001": "Cádiz – Centro" }
   };
 
-  // Mapeo nombre de marca -> id del objeto anterior
   const BRAND_IDS = {
     "BurgerCraft": 1,
     "Taco Express": 2,
     "Wing Masters": 3,
     "Pizza Fingers": 4,
     "Sandwich Club": 5,
-    "Donut Hands": 6,
+    "Donut Hands": 6
   };
 
-  // Menús destacados de cada franquicia
   const BRAND_MENUS = {
     "BurgerCraft": [
       { name: "Classic Burger", price: "12€", desc: "Carne 100% vacuno, pan brioche propio." },
       { name: "Truffle Burger", price: "15€", desc: "Blend premium, trufa y queso madurado." },
-      { name: "Combo Burger + Fries", price: "18€", desc: "Burger a elegir + patatas hand-cut." },
+      { name: "Combo Burger + Fries", price: "18€", desc: "Burger a elegir + patatas hand-cut." }
     ],
     "Taco Express": [
       { name: "Tacos al pastor", price: "4€/ud", desc: "Cerdo marinado al estilo CDMX con piña y cilantro." },
       { name: "Tacos de carnitas", price: "4€/ud", desc: "Cerdo confitado y cebolla morada." },
-      { name: "Combo 5 tacos", price: "18€", desc: "Selección de tacos con guacamole y totopos." },
+      { name: "Combo 5 tacos", price: "18€", desc: "Selección de tacos con guacamole y totopos." }
     ],
     "Wing Masters": [
       { name: "Bucket 12 wings", price: "16€", desc: "Alitas marinadas 24h con salsa a elegir." },
       { name: "Honey Sriracha", price: "14€", desc: "Dulce y picante, la receta más vendida." },
-      { name: "Combo Wings + Fries", price: "17€", desc: "Alitas + patatas especiadas." },
+      { name: "Combo Wings + Fries", price: "17€", desc: "Alitas + patatas especiadas." }
     ],
     "Pizza Fingers": [
       { name: "Margherita Roll", price: "8€", desc: "Tomate, mozzarella y albahaca fresca en formato roll." },
       { name: "Pepperoni Roll", price: "9€", desc: "Pepperoni, queso y toque picante." },
-      { name: "Box sharing 8 rolls", price: "19€", desc: "Caja para compartir con 2 salsas dipping." },
+      { name: "Box sharing 8 rolls", price: "19€", desc: "Caja para compartir con 2 salsas dipping." }
     ],
     "Sandwich Club": [
       { name: "Club Deluxe", price: "11€", desc: "Pollo, bacon, aguacate y pan de obrador." },
       { name: "Mediterranean Wrap", price: "9,5€", desc: "Wrap vegetal con hummus y verduras asadas." },
-      { name: "Combo sandwich + chips", price: "13€", desc: "Cualquiera de nuestros sándwiches + chips caseras." },
+      { name: "Combo sandwich + chips", price: "13€", desc: "Cualquiera de nuestros sándwiches + chips caseras." }
     ],
     "Donut Hands": [
       { name: "Classic glazed", price: "3€", desc: "Donut clásico glaseado, receta de obrador." },
       { name: "Chocolate lover", price: "3,5€", desc: "Relleno y cobertura de chocolate belga." },
-      { name: "Box 6 mini donuts", price: "10€", desc: "Selección de minis para compartir." },
-    ],
+      { name: "Box 6 mini donuts", price: "10€", desc: "Selección de minis para compartir." }
+    ]
   };
 
   // --- COBERTURA (SECCIÓN FORM) ---
   const coverageForm = document.getElementById("coverageForm");
   const coverageResult = document.getElementById("coverageResult");
+  const brandSelect = document.getElementById("brandSelect");
+  const postalInput = document.getElementById("postalCode");
 
-  if (coverageForm) {
+  if (coverageForm && brandSelect && postalInput && coverageResult) {
     coverageForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const brand = coverageForm.brandSelect.value;
-      const postalCode = coverageForm.postalCode.value.trim();
+      const brand = brandSelect.value;
+      const postalCode = postalInput.value.trim();
       coverageResult.innerHTML = "";
 
       if (!brand || !/^\d{5}$/.test(postalCode)) {
@@ -1729,7 +1730,6 @@
     modalRating.innerHTML = "★ " + rating + " • valoración media clientes";
     modalLocations.textContent = locations + " locales operativos";
 
-    // especialidades
     modalSpecialties.innerHTML = "";
     specs.forEach((s) => {
       if (!s.trim()) return;
@@ -1738,7 +1738,6 @@
       modalSpecialties.appendChild(li);
     });
 
-    // menú
     modalMenu.innerHTML = "";
     const menu = BRAND_MENUS[brand] || [];
     menu.forEach((item) => {
@@ -1759,10 +1758,10 @@
   }
 
   function openBrandModal(card) {
+    if (!modalBackdrop) return;
     activeBrandCard = card;
     activeBrandName = card.getAttribute("data-brand");
 
-    // estado inicial: solo paso postal
     modalStepPostal.style.display = "block";
     modalStepDetails.style.display = "none";
     modalPostalInput.value = "";
@@ -1770,7 +1769,6 @@
     modalPostalError.textContent = "";
     modalLocationInfo.textContent = "";
 
-    // cabecera
     modalTagline.textContent = card.getAttribute("data-tagline");
     modalTitle.textContent = activeBrandName;
 
@@ -1779,6 +1777,7 @@
   }
 
   function closeBrandModal() {
+    if (!modalBackdrop) return;
     modalBackdrop.classList.remove("is-visible");
     modalBackdrop.setAttribute("aria-hidden", "true");
   }
@@ -1811,14 +1810,14 @@
     populateBrandDetails(activeBrandCard);
   }
 
-  document.querySelectorAll(".brand-details-btn").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      const card = e.currentTarget.closest(".brand-card");
+  // 👉 Abrir modal al hacer clic en CUALQUIER tarjeta de franquicia
+  document.querySelectorAll(".brand-card").forEach((card) => {
+    card.addEventListener("click", () => {
       openBrandModal(card);
     });
   });
 
-  if (modalPostalBtn) {
+  if (modalPostalBtn && modalPostalInput) {
     modalPostalBtn.addEventListener("click", handleModalPostal);
     modalPostalInput.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
@@ -1846,6 +1845,7 @@
       if (e.target === modalBackdrop) closeBrandModal();
     });
   }
+
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeBrandModal();
   });
@@ -1859,8 +1859,10 @@
       contactForm.reset();
     });
   }
+});
 </script>
 </body>
 </html>
+
 
 
