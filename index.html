@@ -80,12 +80,13 @@
     }
 
     /* logo + texto */
-    .brand-mark {
-      display: inline-flex;
-      gap: 0.6rem;
-      align-items: center;
-      min-width: 0;
-    }
+   .brand-mark {
+  display: inline-flex;
+  gap: 0.6rem;
+  align-items: center;
+  min-width: 0;
+  cursor: pointer;  
+}
 
     .brand-logo {
       width: 30px;
@@ -1376,6 +1377,21 @@ document.addEventListener("DOMContentLoaded", () => {
       behavior: 'smooth'
     });
   }
+    // -------- Click en el logo: volver a la página principal --------
+  const brandMark = document.querySelector('.brand-mark');
+
+  if (brandMark) {
+    brandMark.addEventListener('click', () => {
+      // Si estamos viendo el detalle de una marca, volvemos al listado
+      if (detailEl.style.display === 'block') {
+        closeDetail();              // ya definida más abajo en el script
+      } else {
+        // Si ya estamos en la home, solo hacemos scroll suave al inicio
+        scrollToSection('#landing');
+      }
+    });
+  }
+
 
   navButtons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -1903,3 +1919,4 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
