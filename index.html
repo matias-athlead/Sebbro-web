@@ -36,33 +36,30 @@
 
     a { color: inherit; text-decoration: none; }
 
-  /* ================== HEADER + NAV (ISLA FLOTANTE) ================== */
-
+/* ================== HEADER + NAV (ISLA FLOTANTE) ================== */
 header {
   position: sticky;
-  top: 0.75rem;              /* separa la “isla” del borde superior */
+  top: 1rem;                 /* separación con el borde superior */
   z-index: 40;
-  background: transparent;   /* sin barra sólida a todo lo ancho */
+  background: transparent;   /* nada de barra a todo lo ancho */
   border-bottom: none;
+  color: #f9fafb;            /* <-- texto claro en toda la barra */
 }
 
-/* el contenedor entero se convierte en una píldora flotante */
+/* la “isla” centrada y más proporcionada */
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.55rem 1.1rem;
+  padding: 0.7rem 1.4rem;
   border-radius: 999px;
-  background: rgba(17, 24, 39, 0.96);
+  background: #0f172a;
   border: 1px solid rgba(31, 41, 55, 0.9);
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.7);
-  margin-top: 0.25rem;
-  margin-bottom: 0.35rem;
+  box-shadow: 0 22px 50px rgba(15, 23, 42, 0.5); /* sombra algo más suave */
 }
 
-/* el menú interno deja de tener su propia “pastilla”,
-   solo los botones son tipo píldora */
+/* el menú interno, en forma de píldoras */
 .main-nav {
   display: flex;
   align-items: center;
@@ -95,7 +92,7 @@ header {
   color: #111827;
 }
 
-/* botón hamburguesa igual que antes */
+/* botón hamburguesa */
 .nav-toggle {
   display: none;
   border: none;
@@ -105,7 +102,7 @@ header {
   cursor: pointer;
 }
 
-/* ----- Versión móvil: menú desplegable tipo tarjeta ----- */
+/* Versión móvil: menú desplegable debajo de la isla */
 @media (max-width: 768px) {
   .header-inner {
     border-radius: 18px;
@@ -142,6 +139,7 @@ header {
     text-align: left;
   }
 }
+
 
     /* ================== ESTRUCTURA GENERAL ================== */
 
@@ -1652,4 +1650,5 @@ header {
 </script>
 </body>
 </html>
+
 
