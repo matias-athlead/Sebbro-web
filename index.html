@@ -5,6 +5,7 @@
   <title>Sebbro Foods – Franquicias food & hand eating</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Sebbro Foods gestiona franquicias de comida diseñada para comer con las manos: burgers, tacos, wings, pizza rolls, sandwiches y donuts gourmet." />
+
   <style>
     :root {
       --bg: #f5f5f7;
@@ -36,224 +37,226 @@
 
     a { color: inherit; text-decoration: none; }
 
-/* ============== HEADER ESTILO ATHLEAD ============== */
+    /* ============== HEADER ESTILO ATHLEAD ============== */
 
-header {
-  position: sticky;
-  top: 0.75rem;
-  z-index: 40;
-  background: transparent;
-  border-bottom: none;
-  color: #f9fafb;
-  transform: translateY(0);
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
+    header {
+      position: sticky;
+      top: 0.75rem;
+      z-index: 40;
+      background: transparent;
+      border-bottom: none;
+      color: #f9fafb;
+
+      /* para animar al ocultar/mostrar */
+      transform: translateY(0);
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
     /* Header oculto al hacer scroll hacia abajo */
-.header-hidden {
-  transform: translateY(-140%);
-  opacity: 0;
-  pointer-events: none; /* para que no bloquee clics cuando está oculto */
-}
+    .header-hidden {
+      transform: translateY(-140%);
+      opacity: 0;
+      pointer-events: none;
+    }
 
+    /* pastilla larga y fina, centrada */
+    .header-inner {
+      margin: 0 auto;
+      margin-top: 0.25rem;
+      margin-bottom: 0.35rem;
 
+      max-width: 1100px;
+      width: 100%;
 
-/* pastilla larga y fina, centrada */
-.header-inner {
-  margin: 0 auto;
-  margin-top: 0.25rem;
-  margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 0.55rem 1.6rem;
 
-  max-width: 1100px;        /* 👉 ajusta esto para hacerla más larga o corta */
-  width: 100%;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid rgba(31,41,55,0.9);
+      box-shadow: 0 18px 40px rgba(15,23,42,0.6);
+    }
 
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 0.55rem 1.6rem;
+    /* logo + texto */
+    .brand-mark {
+      display: inline-flex;
+      gap: 0.6rem;
+      align-items: center;
+      min-width: 0;
+    }
 
-  border-radius: 999px;
-  background: #020617;
-  border: 1px solid rgba(31,41,55,0.9);
-  box-shadow: 0 18px 40px rgba(15,23,42,0.6);
-}
+    .brand-logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background: #f9fafb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #020617;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
 
-/* logo + texto igual que antes */
-.brand-mark {
-  display: inline-flex;
-  gap: 0.6rem;
-  align-items: center;
-  min-width: 0;
-}
+    .brand-text h1 {
+      margin: 0;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
 
-.brand-logo {
-  width: 30px;
-  height: 30px;
-  border-radius: 999px;
-  background: #f9fafb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #020617;
-  font-size: 0.85rem;
-  font-weight: 700;
-}
+    .brand-text p {
+      margin: 0;
+      font-size: 0.7rem;
+      color: #9ca3af;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
 
-.brand-text h1 {
-  margin: 0;
-  font-size: 0.95rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
+    /* nav horizontal */
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      margin-left: 1.5rem;
+    }
 
-.brand-text p {
-  margin: 0;
-  font-size: 0.7rem;
-  color: #9ca3af;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
+    .main-nav button {
+      border: none;
+      background: transparent;
+      color: #e5e7eb;
+      padding: 0;
+      font-size: 0.86rem;
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+      cursor: pointer;
+      position: relative;
+    }
 
-/* nav horizontal, tipo Athlead */
-.main-nav {
-  display: flex;
-  align-items: center;
-  gap: 1.4rem;
-  margin-left: 1.5rem;
-}
+    .main-nav button:hover {
+      color: #ffffff;
+    }
 
-.main-nav button {
-  border: none;
-  background: transparent;
-  color: #e5e7eb;
-  padding: 0;
-  font-size: 0.86rem;
-  font-weight: 400;
-  text-transform: none;
-  letter-spacing: 0;
-  cursor: pointer;
-  position: relative;
-}
+    .main-nav button.is-active {
+      color: #ffffff;
+      font-weight: 500;
+    }
 
-.main-nav button:hover {
-  color: #ffffff;
-}
+    .main-nav button.is-active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.35rem;
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
+      background: #facc15; /* barra amarilla */
+    }
 
-.main-nav button.is-active {
-  color: #ffffff;
-  font-weight: 500;
-}
+    /* buscador a la derecha */
+    .nav-search {
+      margin-left: auto;
+      display: block;
+    }
 
-.main-nav button.is-active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.35rem;
-  width: 100%;
-  height: 2px;
-  border-radius: 999px;
-  background: #facc15; /* subrayado amarillo tipo indicador */
-}
+    .nav-search input {
+      min-width: 190px;
+      border-radius: 999px;
+      border: 1px solid rgba(156,163,175,0.6);
+      padding: 0.4rem 0.9rem;
+      font-size: 0.8rem;
+      background: #020617;
+      color: #e5e7eb;
+    }
 
-/* buscador a la derecha */
-.nav-search {
-  margin-left: auto;
-  display: block;
-}
+    .nav-search input::placeholder {
+      color: #6b7280;
+    }
 
-.nav-search input {
-  min-width: 190px;
-  border-radius: 999px;
-  border: 1px solid rgba(156,163,175,0.6);
-  padding: 0.4rem 0.9rem;
-  font-size: 0.8rem;
-  background: #020617;
-  color: #e5e7eb;
-}
+    /* botón hamburguesa, oculto en desktop */
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      color: #e5e7eb;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
 
-.nav-search input::placeholder {
-  color: #6b7280;
-}
+    /* ============== VERSIÓN MÓVIL ============== */
+    @media (max-width: 768px) {
+      .header-inner {
+        max-width: none;
+        border-radius: 18px;
+        padding: 0.6rem 0.9rem;
+      }
 
-/* botón hamburguesa, oculto en desktop */
-.nav-toggle {
-  display: none;
-  border: none;
-  background: transparent;
-  color: #e5e7eb;
-  font-size: 1.4rem;
-  cursor: pointer;
-}
+      .nav-search {
+        display: none;
+      }
 
-/* ============== VERSIÓN MÓVIL ============== */
-@media (max-width: 768px) {
-  .header-inner {
-    max-width: none;
-    border-radius: 18px;
-    padding: 0.6rem 0.9rem;
-  }
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+      }
 
-  .nav-search {
-    display: none; /* ocultamos buscador en móvil */
-  }
+      .main-nav {
+        position: fixed;
+        left: 1.25rem;
+        right: 1.25rem;
+        top: 3.4rem;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.6rem;
+        background: #111827;
+        border-radius: 16px;
+        border: 1px solid #374151;
+        box-shadow: 0 22px 45px rgba(15,23,42,0.85);
+        display: none;
+      }
 
-  .nav-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-  }
+      .main-nav.is-open {
+        display: flex;
+      }
 
-  .main-nav {
-    position: fixed;
-    left: 1.25rem;
-    right: 1.25rem;
-    top: 3.4rem;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0.6rem;
-    background: #111827;
-    border-radius: 16px;
-    border: 1px solid #374151;
-    box-shadow: 0 22px 45px rgba(15,23,42,0.85);
-    display: none;
-  }
+      .main-nav button {
+        width: 100%;
+        text-align: left;
+      }
+    }
 
-  .main-nav.is-open {
-    display: flex;
-  }
+    /* ===== Ajustes de tamaño SOLO escritorio ===== */
+    @media (min-width: 1024px) {
+      .header-inner {
+        max-width: 1240px;
+        padding: 0.9rem 2.2rem;
+        gap: 2rem;
+      }
 
-  .main-nav button {
-    width: 100%;
-    text-align: left;
-  }
-}
-/* ===== Ajustes de tamaño solo para escritorio ===== */
-@media (min-width: 1024px) {
-  .header-inner {
-    max-width: 1240px;        /* isla más larga */
-    padding: 0.9rem 2.2rem;   /* un poco más alta y ancha */
-    gap: 2rem;
-  }
+      .brand-logo {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+      }
 
-  .brand-logo {
-    width: 36px;
-    height: 36px;
-    font-size: 1rem;
-  }
+      .brand-text h1 {
+        font-size: 1.1rem;
+      }
 
-  .brand-text h1 {
-    font-size: 1.1rem;
-  }
+      .main-nav button {
+        font-size: 0.95rem;
+      }
 
-  .main-nav button {
-    font-size: 0.95rem;
-  }
-
-  .nav-search input {
-    min-width: 230px;
-  }
-}
+      .nav-search input {
+        min-width: 230px;
+      }
+    }
 
     /* ================== ESTRUCTURA GENERAL ================== */
 
@@ -918,15 +921,18 @@ header {
       gap: 1rem;
       flex-wrap: wrap;
     }
-    /* === Resaltado de resultado de búsqueda === */
-.search-highlight {
-  outline: 2px solid #facc15;
-  border-radius: 18px;
-  background: rgba(250, 204, 21, 0.04);
-  transition: background 0.3s ease;
-}
 
+    /* === Resaltado de resultado de búsqueda === */
+    .search-highlight {
+      outline: 2px solid #facc15;
+      border-radius: 18px;
+      background: rgba(250, 204, 21, 0.04);
+      transition: background 0.3s ease;
+    }
   </style>
+</head>
+
+<body>
 <header>
   <div class="container">
     <div class="header-inner">
@@ -946,16 +952,15 @@ header {
         <button type="button" data-scroll="#contact">Contacto</button>
       </nav>
 
-      <!-- buscador estilo Athlead (solo visual, no hace falta lógica) -->
       <form class="nav-search" role="search" id="nav-search-form">
-  <input
-    type="text"
-    id="nav-search-input"
-    placeholder="Buscar en Sebbro…"
-    autocomplete="off"
-  />
-</form>
-      
+        <input
+          type="text"
+          id="nav-search-input"
+          placeholder="Buscar en Sebbro…"
+          autocomplete="off"
+        />
+      </form>
+
       <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">☰</button>
     </div>
   </div>
@@ -1150,7 +1155,6 @@ header {
         </p>
 
         <div class="map-wrapper">
-          <!-- Puedes sustituir la URL por tu propio mapa de Google My Maps si lo prefieres -->
           <iframe
             src="https://www.google.com/maps?q=Madrid,Spain&z=5&output=embed"
             loading="lazy"
@@ -1348,15 +1352,96 @@ header {
 </footer>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    /* ---------- NAV SCROLL / MOBILE ---------- */
- <script>
-// ================= NAV: scroll suave + menú móvil + scrollspy =================
+document.addEventListener("DOMContentLoaded", () => {
+  /* ---------- NAV / SCROLL / MOBILE ---------- */
+  const navButtons = document.querySelectorAll('.main-nav button[data-scroll]');
+  const nav       = document.getElementById('main-nav');
+  const navToggle = document.getElementById('nav-toggle');
+  const headerEl  = document.querySelector('header');
 
-const navButtons = document.querySelectorAll('.main-nav button[data-scroll]');
-const nav       = document.getElementById('main-nav');
-const navToggle = document.getElementById('nav-toggle');
-    // ======= BUSCADOR INTERNO =======
+  const SCROLL_OFFSET     = 120;
+  const SCROLLSPY_OFFSET  = 140;
+  const HIDE_THRESHOLD    = 150;
+  let   lastScrollY       = window.scrollY;
+
+  function scrollToSection(selector) {
+    const target = document.querySelector(selector);
+    if (!target) return;
+
+    const rect = target.getBoundingClientRect();
+    const offsetTop = rect.top + window.scrollY - SCROLL_OFFSET;
+
+    window.scrollTo({
+      top: offsetTop,
+      behavior: 'smooth'
+    });
+  }
+
+  navButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selector = btn.getAttribute('data-scroll');
+      if (selector) scrollToSection(selector);
+
+      if (window.innerWidth <= 768 && nav) {
+        nav.classList.remove('is-open');
+      }
+    });
+  });
+
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('is-open');
+    });
+  }
+
+  // Scrollspy: qué sección está activa
+  const sectionMap = Array.from(navButtons).map(btn => {
+    const selector = btn.getAttribute('data-scroll');
+    const section  = document.querySelector(selector);
+    if (!section) return null;
+    return { btn, section };
+  }).filter(Boolean);
+
+  function updateActiveNav() {
+    const scrollPos = window.scrollY + SCROLLSPY_OFFSET;
+
+    let current = sectionMap[0];
+    for (const item of sectionMap) {
+      if (item.section.offsetTop <= scrollPos) {
+        current = item;
+      }
+    }
+
+    navButtons.forEach(b => b.classList.remove('is-active'));
+    if (current && current.btn) {
+      current.btn.classList.add('is-active');
+    }
+  }
+
+  // Ocultar header al hacer scroll hacia abajo
+  function handleHeaderVisibility() {
+    if (!headerEl) return;
+
+    const currentY = window.scrollY;
+
+    if (currentY > lastScrollY && currentY > HIDE_THRESHOLD) {
+      headerEl.classList.add('header-hidden');
+    } else {
+      headerEl.classList.remove('header-hidden');
+    }
+
+    lastScrollY = currentY;
+  }
+
+  window.addEventListener('scroll', () => {
+    updateActiveNav();
+    handleHeaderVisibility();
+  });
+
+  window.addEventListener('resize', updateActiveNav);
+  updateActiveNav();
+
+  /* ---------- BUSCADOR INTERNO ---------- */
   const searchForm  = document.getElementById("nav-search-form");
   const searchInput = document.getElementById("nav-search-input");
 
@@ -1367,7 +1452,6 @@ const navToggle = document.getElementById('nav-toggle');
     const query = searchInput.value.trim().toLowerCase();
     if (!query) return;
 
-    // candidatos a buscar: secciones + tarjetas de marca
     const candidates = Array.from(
       document.querySelectorAll("section, .brand-card")
     );
@@ -1382,56 +1466,24 @@ const navToggle = document.getElementById('nav-toggle');
     }
 
     if (found) {
-      // quitar resaltados anteriores
       document
         .querySelectorAll(".search-highlight")
         .forEach((el) => el.classList.remove("search-highlight"));
 
-      // resaltar el nuevo
       found.classList.add("search-highlight");
 
-      // scroll suave hasta el bloque, compensando el header
-      const HEADER_OFFSET = 140;
       const rect = found.getBoundingClientRect();
-      const offsetTop = rect.top + window.scrollY - HEADER_OFFSET;
+      const offsetTop = rect.top + window.scrollY - SCROLLSPY_OFFSET;
 
       window.scrollTo({
         top: offsetTop,
-        behavior: "smooth",
-      
-        // ====== OCULTAR HEADER AL HACER SCROLL HACIA ABAJO ======
-  const headerEl = document.querySelector("header");
-  let lastScrollY = window.scrollY;
-
-  function handleHeaderOnScroll() {
-    if (!headerEl) return;
-
-    const currentY = window.scrollY;
-
-    // solo empezamos a ocultar a partir de cierto punto (por ejemplo 150px)
-    const THRESHOLD = 150;
-
-    if (currentY > lastScrollY && currentY > THRESHOLD) {
-      // desplazándose hacia abajo
-      headerEl.classList.add("header-hidden");
-    } else {
-      // hacia arriba o muy arriba de la página
-      headerEl.classList.remove("header-hidden");
-    }
-
-    lastScrollY = currentY;
-  }
-
-  window.addEventListener("scroll", handleHeaderOnScroll);
-
+        behavior: "smooth"
       });
 
-      // cerrar menú en móvil si está abierto
       if (window.innerWidth <= 768 && nav) {
         nav.classList.remove("is-open");
       }
 
-      // quitar resaltado después de unos segundos (opcional)
       setTimeout(() => {
         found.classList.remove("search-highlight");
       }, 6000);
@@ -1444,479 +1496,410 @@ const navToggle = document.getElementById('nav-toggle');
     searchForm.addEventListener("submit", handleInternalSearch);
   }
 
+  /* ---------- DATA DE MARCAS ---------- */
 
-// Scroll suave al hacer clic
-navButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const selector = btn.getAttribute('data-scroll');
-    const target   = document.querySelector(selector);
-
-    if (target) {
-      const HEADER_OFFSET = 120; // altura aproximada del header
-      const rect      = target.getBoundingClientRect();
-      const offsetTop = rect.top + window.scrollY - HEADER_OFFSET;
-
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
+  const brands = [
+    {
+      slug: "burgercraft",
+      name: "BurgerCraft",
+      tagline: "Gourmet Burgers · Hand Eating",
+      longDesc:
+        "BurgerCraft nació para demostrar que una burger puede ser fast y a la vez muy cuidada. Proveedores locales, carnes seleccionadas y panes diseñados para aguantar el jugo sin deshacerse. El formato está optimizado para delivery y consumo con las manos.",
+      rating: 4.8,
+      locations: 25,
+      specialties: ["Hamburguesas gourmet", "Patatas hand-cut", "Milkshakes artesanales"],
+      address: "Calle Principal 123, Madrid",
+      hours: "Lunes–Domingo: 12:00–23:00",
+      phone: "+34 912 345 678",
+      email: "info@burgercraft.com",
+      coverage: {
+        "28001": "Cocina central Barrio Salamanca (Madrid)",
+        "28002": "Cocina Goya (Madrid)",
+        "08001": "Dark kitchen Barcelona Centro"
+      },
+      menu: [
+        { name: "Classic Burger", desc: "Carne 100% vacuno, lechuga, tomate, cebolla caramelizada.", price: 12 },
+        { name: "Truffle Burger", desc: "Carne premium, trufa negra, queso brie, rúcula.", price: 18 },
+        { name: "Veggie Burger", desc: "Hamburguesa vegetal casera, aguacate, espinacas.", price: 14 },
+        { name: "Hand-cut Fries", desc: "Patatas cortadas a mano, fritas en aceite de girasol.", price: 6 },
+        { name: "Craft Milkshake", desc: "Helado artesanal con sabores rotativos.", price: 8 }
+      ]
+    },
+    {
+      slug: "tacoexpress",
+      name: "Taco Express",
+      tagline: "Mexican Street Food",
+      longDesc:
+        "Taco Express trae la experiencia de un puesto callejero mexicano a locales compactos y pensados para delivery. Tortillas hechas a diario, marinados propios y salsas con diferentes niveles de picante. El formato está optimizado para comer con las manos y moverse mientras se disfruta.",
+      rating: 4.7,
+      locations: 18,
+      specialties: ["Tacos al pastor", "Guacamole fresco", "Salsas caseras"],
+      address: "Avenida México 456, Barcelona",
+      hours: "Lunes–Domingo: 13:00–24:00",
+      phone: "+34 934 567 890",
+      email: "hola@tacoexpress.com",
+      coverage: {
+        "08001": "Cocina Raval (Barcelona)",
+        "08002": "Cocina Gótico (Barcelona)",
+        "46001": "Dark kitchen Ciutat Vella (Valencia)"
+      },
+      menu: [
+        { name: "Tacos al Pastor", desc: "Carne marinada, piña, cebolla, cilantro.", price: 4 },
+        { name: "Tacos de Carnitas", desc: "Cerdo confitado, cebolla morada, lima.", price: 4 },
+        { name: "Guacamole Fresco", desc: "Aguacate, jitomate, cebolla, cilantro.", price: 8 },
+        { name: "Churros con Chocolate", desc: "Churros recién hechos con chocolate caliente.", price: 6 },
+        { name: "Agua de Jamaica", desc: "Bebida tradicional mexicana.", price: 4 }
+      ]
+    },
+    {
+      slug: "wingmasters",
+      name: "Wing Masters",
+      tagline: "Chicken Wings Bar",
+      longDesc:
+        "Wing Masters es un formato pensado para la noche: partidos, gaming, reuniones en casa. Porciones para compartir, alitas crujientes y una carta de salsas propia que genera recurrencia. Packaging diseñado para no manchar sofás ni mesas.",
+      rating: 4.6,
+      locations: 32,
+      specialties: ["Alitas Buffalo", "Salsa BBQ secreta", "Nuggets especiales"],
+      address: "Plaza Deportiva 789, Valencia",
+      hours: "Martes–Domingo: 18:00–02:00",
+      phone: "+34 961 234 567",
+      email: "wings@wingmasters.com",
+      coverage: {
+        "46001": "Cocina Centro (Valencia)",
+        "46002": "Cocina Puerto (Valencia)",
+        "29001": "Dark kitchen Málaga Centro"
+      },
+      menu: [
+        { name: "Classic Wings (6 uds.)", desc: "Alitas crujientes con salsa Buffalo clásica.", price: 12 },
+        { name: "BBQ Wings (6 uds.)", desc: "Nuestra salsa BBQ secreta con toque ahumado.", price: 14 },
+        { name: "Honey Sriracha (6 uds.)", desc: "Dulce y picante, nuestra especialidad.", price: 15 },
+        { name: "Nuggets Especiales", desc: "Pollo empanado con especias exclusivas.", price: 10 },
+        { name: "Celery & Ranch", desc: "Apio fresco y salsa ranch cremosa.", price: 6 }
+      ]
+    },
+    {
+      slug: "pizzafingers",
+      name: "Pizza Fingers",
+      tagline: "Italian Pizza Rolls",
+      longDesc:
+        "Pizza Fingers reinterpreta la pizza tradicional en un formato enrollado y fácil de llevar. Pensado para oficinas, caterings y grupos, permite compartir sin necesidad de platos ni cubiertos.",
+      rating: 4.5,
+      locations: 15,
+      specialties: ["Pizza rolls", "Sticks de queso", "Dips exclusivos"],
+      address: "Calle Italiana 321, Sevilla",
+      hours: "Lunes–Domingo: 12:00–22:00",
+      phone: "+34 954 321 098",
+      email: "pizza@pizzafingers.com",
+      coverage: {
+        "41001": "Cocina Centro (Sevilla)",
+        "41002": "Dark kitchen Alameda (Sevilla)",
+        "18001": "Dark kitchen Granada Centro"
+      },
+      menu: [
+        { name: "Margherita Roll", desc: "Salsa de tomate, mozzarella, albahaca fresca.", price: 8 },
+        { name: "Pepperoni Roll", desc: "Pepperoni, mozzarella, toque picante.", price: 10 },
+        { name: "Vegetarian Roll", desc: "Pimientos, cebolla, champiñones, espinacas.", price: 9 },
+        { name: "Cheese Sticks", desc: "Palitos de mozzarella con hierbas.", price: 7 },
+        { name: "Garlic Dip", desc: "Salsa de ajo casera.", price: 3 }
+      ]
+    },
+    {
+      slug: "sandwichclub",
+      name: "Sandwich Club",
+      tagline: "Gourmet Sandwiches",
+      longDesc:
+        "Sandwich Club eleva el sándwich a una propuesta gourmet. Panaderos artesanos, combinaciones muy pensadas y un envoltorio que permite comer en movilidad sin mancharse.",
+      rating: 4.4,
+      locations: 22,
+      specialties: ["Club sandwiches", "Wraps especiales", "Baguettes artesanales"],
+      address: "Paseo Gourmet 654, Bilbao",
+      hours: "Lunes–Sábado: 08:00–20:00",
+      phone: "+34 944 567 890",
+      email: "hello@sandwichclub.com",
+      coverage: {
+        "48001": "Local Gran Vía (Bilbao)",
+        "48002": "Punto de recogida Plaza Circular",
+        "39001": "Dark kitchen Santander Centro"
+      },
+      menu: [
+        { name: "Club Deluxe", desc: "Pechuga de pollo, bacon, aguacate, lechuga.", price: 14 },
+        { name: "Mediterranean Wrap", desc: "Hummus, verduras asadas, queso feta.", price: 12 },
+        { name: "Italian Baguette", desc: "Jamón serrano, mozzarella, tomate seco.", price: 13 },
+        { name: "Vegan Power", desc: "Falafel, aguacate, espinacas, hummus.", price: 11 },
+        { name: "Homemade Chips", desc: "Patatas fritas caseras con especias.", price: 5 }
+      ]
+    },
+    {
+      slug: "donuthands",
+      name: "Donut Hands",
+      tagline: "Artisanal Donuts",
+      longDesc:
+        "Donut Hands combina pastelería artesanal con diseño de producto. Donuts pensados para agarrar bien, toppings muy visuales y un packaging que vive bien en Instagram y TikTok.",
+      rating: 4.9,
+      locations: 12,
+      specialties: ["Donuts gourmet", "Mini donuts", "Bebidas especiales"],
+      address: "Calle Dulce 987, Málaga",
+      hours: "Martes–Domingo: 09:00–20:00",
+      phone: "+34 952 123 456",
+      email: "sweet@donuthands.com",
+      coverage: {
+        "29001": "Tienda Centro Histórico (Málaga)",
+        "29002": "Punto de recogida Muelle Uno",
+        "11001": "Dark kitchen Cádiz Centro"
+      },
+      menu: [
+        { name: "Classic Glazed", desc: "Donut clásico con glaseado de vainilla.", price: 3 },
+        { name: "Chocolate Lover", desc: "Donut relleno de chocolate con topping de cacao.", price: 4 },
+        { name: "Strawberry Dream", desc: "Glaseado de fresa con frutas.", price: 4 },
+        { name: "Mini Donut Box (6 uds.)", desc: "Selección de mini donuts variados.", price: 15 },
+        { name: "Specialty Coffee", desc: "Café de especialidad con leche de almendra.", price: 4 }
+      ]
     }
+  ];
 
-    // cerrar menú en móvil
-    if (window.innerWidth <= 768 && nav) {
-      nav.classList.remove('is-open');
-    }
-  });
-});
+  /* ---------- ELEMENTOS DETALLE Y MODAL ---------- */
 
-// Botón hamburguesa (móvil)
-if (navToggle) {
-  navToggle.addEventListener('click', () => {
-    nav.classList.toggle('is-open');
-  });
-}
+  const landingEl = document.getElementById("landing");
+  const detailEl  = document.getElementById("brand-detail");
 
-// -------- Scrollspy: mover la barra amarilla según sección visible --------
-const sectionMap = Array.from(navButtons).map(btn => {
-  const selector = btn.getAttribute('data-scroll');
-  const section  = document.querySelector(selector);
-  if (!section) return null;
-  return { btn, section };
-}).filter(Boolean);
+  const detailBackBtn      = document.getElementById("detail-back");
+  const detailTagline      = document.getElementById("detail-tagline");
+  const detailName         = document.getElementById("detail-name");
+  const detailDesc         = document.getElementById("detail-desc");
+  const detailRating       = document.getElementById("detail-rating");
+  const detailLocations    = document.getElementById("detail-locations");
+  const detailCoverage     = document.getElementById("detail-coverage");
 
-// cuanto desplazamos para compensar el header
-const SCROLLSPY_OFFSET = 140;
+  const menuList           = document.getElementById("menu-list");
+  const locAddress         = document.getElementById("loc-address");
+  const locHours           = document.getElementById("loc-hours");
+  const locPhone           = document.getElementById("loc-phone");
+  const locEmail           = document.getElementById("loc-email");
+  const detailSpecialties  = document.getElementById("detail-specialties");
 
-function updateActiveNav() {
-  const scrollPos = window.scrollY + SCROLLSPY_OFFSET;
+  const orderForm          = document.getElementById("order-form");
+  const orderTotalItems    = document.getElementById("order-total-items");
+  const orderTotalAmount   = document.getElementById("order-total-amount");
 
-  let current = sectionMap[0];
-  for (const item of sectionMap) {
-    if (item.section.offsetTop <= scrollPos) {
-      current = item;
-    }
+  const postalModal  = document.getElementById("postal-modal");
+  const postalForm   = document.getElementById("postal-form");
+  const postalInput  = document.getElementById("postal-input");
+  const postalError  = document.getElementById("postal-error");
+  const postalClose  = document.getElementById("postal-close");
+
+  let activeBrand = null;
+  let orderState  = [];
+
+  function openPostalModal(brand) {
+    activeBrand = brand;
+    postalInput.value = "";
+    postalError.textContent = "";
+    postalError.style.display = "none";
+    postalModal.classList.add("is-visible");
+    document.body.style.overflow = "hidden";
   }
 
-  // aplicar clase is-active al botón correspondiente
-  navButtons.forEach(b => b.classList.remove('is-active'));
-  if (current && current.btn) {
-    current.btn.classList.add('is-active');
+  function closePostalModal() {
+    postalModal.classList.remove("is-visible");
+    document.body.style.overflow = "";
   }
-}
 
-// actualizar al hacer scroll, resize y al cargar
-window.addEventListener('scroll', updateActiveNav);
-window.addEventListener('resize', updateActiveNav);
-window.addEventListener('load', updateActiveNav);
-</script>
+  function buildMenu(brand) {
+    orderState = brand.menu.map((item) => ({
+      qty: 0,
+      price: item.price
+    }));
 
+    menuList.innerHTML = "";
 
-    /* ---------- DATA DE MARCAS ---------- */
+    brand.menu.forEach((item, index) => {
+      const row  = document.createElement("div");
+      row.className = "menu-item";
 
-    const brands = [
-      {
-        slug: "burgercraft",
-        name: "BurgerCraft",
-        tagline: "Gourmet Burgers · Hand Eating",
-        longDesc:
-          "BurgerCraft nació para demostrar que una burger puede ser fast y a la vez muy cuidada. Proveedores locales, carnes seleccionadas y panes diseñados para aguantar el jugo sin deshacerse. El formato está optimizado para delivery y consumo con las manos.",
-        rating: 4.8,
-        locations: 25,
-        specialties: ["Hamburguesas gourmet", "Patatas hand-cut", "Milkshakes artesanales"],
-        address: "Calle Principal 123, Madrid",
-        hours: "Lunes–Domingo: 12:00–23:00",
-        phone: "+34 912 345 678",
-        email: "info@burgercraft.com",
-        coverage: {
-          "28001": "Cocina central Barrio Salamanca (Madrid)",
-          "28002": "Cocina Goya (Madrid)",
-          "08001": "Dark kitchen Barcelona Centro"
-        },
-        menu: [
-          { name: "Classic Burger", desc: "Carne 100% vacuno, lechuga, tomate, cebolla caramelizada.", price: 12 },
-          { name: "Truffle Burger", desc: "Carne premium, trufa negra, queso brie, rúcula.", price: 18 },
-          { name: "Veggie Burger", desc: "Hamburguesa vegetal casera, aguacate, espinacas.", price: 14 },
-          { name: "Hand-cut Fries", desc: "Patatas cortadas a mano, fritas en aceite de girasol.", price: 6 },
-          { name: "Craft Milkshake", desc: "Helado artesanal con sabores rotativos.", price: 8 }
-        ]
-      },
-      {
-        slug: "tacoexpress",
-        name: "Taco Express",
-        tagline: "Mexican Street Food",
-        longDesc:
-          "Taco Express trae la experiencia de un puesto callejero mexicano a locales compactos y pensados para delivery. Tortillas hechas a diario, marinados propios y salsas con diferentes niveles de picante. El formato está optimizado para comer con las manos y moverse mientras se disfruta.",
-        rating: 4.7,
-        locations: 18,
-        specialties: ["Tacos al pastor", "Guacamole fresco", "Salsas caseras"],
-        address: "Avenida México 456, Barcelona",
-        hours: "Lunes–Domingo: 13:00–24:00",
-        phone: "+34 934 567 890",
-        email: "hola@tacoexpress.com",
-        coverage: {
-          "08001": "Cocina Raval (Barcelona)",
-          "08002": "Cocina Gótico (Barcelona)",
-          "46001": "Dark kitchen Ciutat Vella (Valencia)"
-        },
-        menu: [
-          { name: "Tacos al Pastor", desc: "Carne marinada, piña, cebolla, cilantro.", price: 4 },
-          { name: "Tacos de Carnitas", desc: "Cerdo confitado, cebolla morada, lima.", price: 4 },
-          { name: "Guacamole Fresco", desc: "Aguacate, jitomate, cebolla, cilantro.", price: 8 },
-          { name: "Churros con Chocolate", desc: "Churros recién hechos con chocolate caliente.", price: 6 },
-          { name: "Agua de Jamaica", desc: "Bebida tradicional mexicana.", price: 4 }
-        ]
-      },
-      {
-        slug: "wingmasters",
-        name: "Wing Masters",
-        tagline: "Chicken Wings Bar",
-        longDesc:
-          "Wing Masters es un formato pensado para la noche: partidos, gaming, reuniones en casa. Porciones para compartir, alitas crujientes y una carta de salsas propia que genera recurrencia. Packaging diseñado para no manchar sofás ni mesas.",
-        rating: 4.6,
-        locations: 32,
-        specialties: ["Alitas Buffalo", "Salsa BBQ secreta", "Nuggets especiales"],
-        address: "Plaza Deportiva 789, Valencia",
-        hours: "Martes–Domingo: 18:00–02:00",
-        phone: "+34 961 234 567",
-        email: "wings@wingmasters.com",
-        coverage: {
-          "46001": "Cocina Centro (Valencia)",
-          "46002": "Cocina Puerto (Valencia)",
-          "29001": "Dark kitchen Málaga Centro"
-        },
-        menu: [
-          { name: "Classic Wings (6 uds.)", desc: "Alitas crujientes con salsa Buffalo clásica.", price: 12 },
-          { name: "BBQ Wings (6 uds.)", desc: "Nuestra salsa BBQ secreta con toque ahumado.", price: 14 },
-          { name: "Honey Sriracha (6 uds.)", desc: "Dulce y picante, nuestra especialidad.", price: 15 },
-          { name: "Nuggets Especiales", desc: "Pollo empanado con especias exclusivas.", price: 10 },
-          { name: "Celery & Ranch", desc: "Apio fresco y salsa ranch cremosa.", price: 6 }
-        ]
-      },
-      {
-        slug: "pizzafingers",
-        name: "Pizza Fingers",
-        tagline: "Italian Pizza Rolls",
-        longDesc:
-          "Pizza Fingers reinterpreta la pizza tradicional en un formato enrollado y fácil de llevar. Pensado para oficinas, caterings y grupos, permite compartir sin necesidad de platos ni cubiertos.",
-        rating: 4.5,
-        locations: 15,
-        specialties: ["Pizza rolls", "Sticks de queso", "Dips exclusivos"],
-        address: "Calle Italiana 321, Sevilla",
-        hours: "Lunes–Domingo: 12:00–22:00",
-        phone: "+34 954 321 098",
-        email: "pizza@pizzafingers.com",
-        coverage: {
-          "41001": "Cocina Centro (Sevilla)",
-          "41002": "Dark kitchen Alameda (Sevilla)",
-          "18001": "Dark kitchen Granada Centro"
-        },
-        menu: [
-          { name: "Margherita Roll", desc: "Salsa de tomate, mozzarella, albahaca fresca.", price: 8 },
-          { name: "Pepperoni Roll", desc: "Pepperoni, mozzarella, toque picante.", price: 10 },
-          { name: "Vegetarian Roll", desc: "Pimientos, cebolla, champiñones, espinacas.", price: 9 },
-          { name: "Cheese Sticks", desc: "Palitos de mozzarella con hierbas.", price: 7 },
-          { name: "Garlic Dip", desc: "Salsa de ajo casera.", price: 3 }
-        ]
-      },
-      {
-        slug: "sandwichclub",
-        name: "Sandwich Club",
-        tagline: "Gourmet Sandwiches",
-        longDesc:
-          "Sandwich Club eleva el sándwich a una propuesta gourmet. Panaderos artesanos, combinaciones muy pensadas y un envoltorio que permite comer en movilidad sin mancharse.",
-        rating: 4.4,
-        locations: 22,
-        specialties: ["Club sandwiches", "Wraps especiales", "Baguettes artesanales"],
-        address: "Paseo Gourmet 654, Bilbao",
-        hours: "Lunes–Sábado: 08:00–20:00",
-        phone: "+34 944 567 890",
-        email: "hello@sandwichclub.com",
-        coverage: {
-          "48001": "Local Gran Vía (Bilbao)",
-          "48002": "Punto de recogida Plaza Circular",
-          "39001": "Dark kitchen Santander Centro"
-        },
-        menu: [
-          { name: "Club Deluxe", desc: "Pechuga de pollo, bacon, aguacate, lechuga.", price: 14 },
-          { name: "Mediterranean Wrap", desc: "Hummus, verduras asadas, queso feta.", price: 12 },
-          { name: "Italian Baguette", desc: "Jamón serrano, mozzarella, tomate seco.", price: 13 },
-          { name: "Vegan Power", desc: "Falafel, aguacate, espinacas, hummus.", price: 11 },
-          { name: "Homemade Chips", desc: "Patatas fritas caseras con especias.", price: 5 }
-        ]
-      },
-      {
-        slug: "donuthands",
-        name: "Donut Hands",
-        tagline: "Artisanal Donuts",
-        longDesc:
-          "Donut Hands combina pastelería artesanal con diseño de producto. Donuts pensados para agarrar bien, toppings muy visuales y un packaging que vive bien en Instagram y TikTok.",
-        rating: 4.9,
-        locations: 12,
-        specialties: ["Donuts gourmet", "Mini donuts", "Bebidas especiales"],
-        address: "Calle Dulce 987, Málaga",
-        hours: "Martes–Domingo: 09:00–20:00",
-        phone: "+34 952 123 456",
-        email: "sweet@donuthands.com",
-        coverage: {
-          "29001": "Tienda Centro Histórico (Málaga)",
-          "29002": "Punto de recogida Muelle Uno",
-          "11001": "Dark kitchen Cádiz Centro"
-        },
-        menu: [
-          { name: "Classic Glazed", desc: "Donut clásico con glaseado de vainilla.", price: 3 },
-          { name: "Chocolate Lover", desc: "Donut relleno de chocolate con topping de cacao.", price: 4 },
-          { name: "Strawberry Dream", desc: "Glaseado de fresa con frutas.", price: 4 },
-          { name: "Mini Donut Box (6 uds.)", desc: "Selección de mini donuts variados.", price: 15 },
-          { name: "Specialty Coffee", desc: "Café de especialidad con leche de almendra.", price: 4 }
-        ]
-      }
-    ];
+      const left  = document.createElement("div");
+      const right = document.createElement("div");
+      right.className = "menu-item-right";
 
-    /* ---------- ELEMENTOS DETALLE Y MODAL ---------- */
+      const title = document.createElement("div");
+      title.className = "menu-item-title";
+      title.textContent = item.name;
 
-    const landingEl = document.getElementById("landing");
-    const detailEl = document.getElementById("brand-detail");
+      const desc  = document.createElement("div");
+      desc.className = "menu-item-desc";
+      desc.textContent = item.desc;
 
-    const detailBackBtn = document.getElementById("detail-back");
-    const detailTagline = document.getElementById("detail-tagline");
-    const detailName = document.getElementById("detail-name");
-    const detailDesc = document.getElementById("detail-desc");
-    const detailRating = document.getElementById("detail-rating");
-    const detailLocations = document.getElementById("detail-locations");
-    const detailCoverage = document.getElementById("detail-coverage");
+      left.appendChild(title);
+      left.appendChild(desc);
 
-    const menuList = document.getElementById("menu-list");
-    const locAddress = document.getElementById("loc-address");
-    const locHours = document.getElementById("loc-hours");
-    const locPhone = document.getElementById("loc-phone");
-    const locEmail = document.getElementById("loc-email");
-    const detailSpecialties = document.getElementById("detail-specialties");
+      const price = document.createElement("div");
+      price.className = "menu-item-price";
+      price.textContent = item.price.toFixed(2) + "€";
 
-    const orderForm = document.getElementById("order-form");
-    const orderTotalItems = document.getElementById("order-total-items");
-    const orderTotalAmount = document.getElementById("order-total-amount");
+      const qty = document.createElement("div");
+      qty.className = "qty-control";
+      qty.innerHTML = `
+        <button type="button" data-action="minus">-</button>
+        <span class="qty-value">0</span>
+        <button type="button" data-action="plus">+</button>
+      `;
 
-    const postalModal = document.getElementById("postal-modal");
-    const postalForm = document.getElementById("postal-form");
-    const postalInput = document.getElementById("postal-input");
-    const postalError = document.getElementById("postal-error");
-    const postalClose = document.getElementById("postal-close");
+      right.appendChild(price);
+      right.appendChild(qty);
 
-    let activeBrand = null;
-    let orderState = [];
+      row.appendChild(left);
+      row.appendChild(right);
+      menuList.appendChild(row);
 
-    function openPostalModal(brand) {
-      activeBrand = brand;
-      postalInput.value = "";
-      postalError.textContent = "";
-      postalError.style.display = "none";
-      postalModal.classList.add("is-visible");
-      document.body.style.overflow = "hidden";
-    }
+      const minusBtn = qty.querySelector('[data-action="minus"]');
+      const plusBtn  = qty.querySelector('[data-action="plus"]');
+      const valueEl  = qty.querySelector(".qty-value");
 
-    function closePostalModal() {
-      postalModal.classList.remove("is-visible");
-      document.body.style.overflow = "";
-    }
-
-    function openBrandDetail(brand, coverageLocationText) {
-      activeBrand = brand;
-
-      detailTagline.textContent = brand.tagline;
-      detailName.textContent = brand.name;
-      detailDesc.textContent = brand.longDesc;
-      detailRating.textContent = `★ ${brand.rating.toFixed(1)} · valoración media`;
-      detailLocations.textContent = `${brand.locations} locales operativos`;
-      detailCoverage.textContent = coverageLocationText
-        ? "Servicio disponible desde: " + coverageLocationText + "."
-        : "";
-
-      locAddress.textContent = brand.address;
-      locHours.textContent = brand.hours;
-      locPhone.textContent = brand.phone;
-      locEmail.textContent = brand.email;
-
-      detailSpecialties.innerHTML = "";
-      brand.specialties.forEach((s) => {
-        const li = document.createElement("li");
-        li.textContent = s;
-        detailSpecialties.appendChild(li);
+      minusBtn.addEventListener("click", () => {
+        const current = orderState[index].qty;
+        const next    = Math.max(0, current - 1);
+        orderState[index].qty = next;
+        valueEl.textContent   = next;
+        updateTotals();
       });
 
-      buildMenu(brand);
-
-      landingEl.style.display = "none";
-      detailEl.style.display = "block";
-      window.scrollTo({ top: 0, behavior: "auto" });
-    }
-
-    function buildMenu(brand) {
-      orderState = brand.menu.map((item) => ({
-        qty: 0,
-        price: item.price
-      }));
-
-      menuList.innerHTML = "";
-
-      brand.menu.forEach((item, index) => {
-        const row = document.createElement("div");
-        row.className = "menu-item";
-
-        const left = document.createElement("div");
-        const right = document.createElement("div");
-        right.className = "menu-item-right";
-
-        const title = document.createElement("div");
-        title.className = "menu-item-title";
-        title.textContent = item.name;
-
-        const desc = document.createElement("div");
-        desc.className = "menu-item-desc";
-        desc.textContent = item.desc;
-
-        left.appendChild(title);
-        left.appendChild(desc);
-
-        const price = document.createElement("div");
-        price.className = "menu-item-price";
-        price.textContent = item.price.toFixed(2) + "€";
-
-        const qty = document.createElement("div");
-        qty.className = "qty-control";
-        qty.innerHTML = `
-          <button type="button" data-action="minus">-</button>
-          <span class="qty-value">0</span>
-          <button type="button" data-action="plus">+</button>
-        `;
-
-        right.appendChild(price);
-        right.appendChild(qty);
-
-        row.appendChild(left);
-        row.appendChild(right);
-        menuList.appendChild(row);
-
-        const minusBtn = qty.querySelector('[data-action="minus"]');
-        const plusBtn = qty.querySelector('[data-action="plus"]');
-        const valueEl = qty.querySelector(".qty-value");
-
-        minusBtn.addEventListener("click", () => {
-          const current = orderState[index].qty;
-          const next = Math.max(0, current - 1);
-          orderState[index].qty = next;
-          valueEl.textContent = next;
-          updateTotals();
-        });
-
-        plusBtn.addEventListener("click", () => {
-          const current = orderState[index].qty;
-          const next = current + 1;
-          orderState[index].qty = next;
-          valueEl.textContent = next;
-          updateTotals();
-        });
-      });
-
-      updateTotals();
-    }
-
-    function updateTotals() {
-      let items = 0;
-      let amount = 0;
-      orderState.forEach((entry) => {
-        items += entry.qty;
-        amount += entry.qty * entry.price;
-      });
-      orderTotalItems.textContent = items;
-      orderTotalAmount.textContent = amount.toFixed(2) + "€";
-    }
-
-    function closeDetail() {
-      detailEl.style.display = "none";
-      landingEl.style.display = "block";
-      window.scrollTo({ top: 0, behavior: "auto" });
-    }
-
-    document.querySelectorAll(".brand-card").forEach((card) => {
-      card.addEventListener("click", () => {
-        const slug = card.getAttribute("data-slug");
-        const brand = brands.find((b) => b.slug === slug);
-        if (!brand) return;
-        openPostalModal(brand);
+      plusBtn.addEventListener("click", () => {
+        const current = orderState[index].qty;
+        const next    = current + 1;
+        orderState[index].qty = next;
+        valueEl.textContent   = next;
+        updateTotals();
       });
     });
 
-    detailBackBtn.addEventListener("click", closeDetail);
+    updateTotals();
+  }
 
-    postalForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (!activeBrand) return;
+  function updateTotals() {
+    let items  = 0;
+    let amount = 0;
+    orderState.forEach((entry) => {
+      items  += entry.qty;
+      amount += entry.qty * entry.price;
+    });
+    orderTotalItems.textContent  = items;
+    orderTotalAmount.textContent = amount.toFixed(2) + "€";
+  }
 
-      const code = postalInput.value.trim();
-      postalError.textContent = "";
-      postalError.style.display = "none";
-      detailCoverage.textContent = "";
+  function openBrandDetail(brand, coverageLocationText) {
+    activeBrand = brand;
 
-      if (!/^\d{5}$/.test(code)) {
-        postalError.textContent = "Introduce un código postal válido de 5 dígitos.";
-        postalError.style.display = "block";
-        return;
-      }
+    detailTagline.textContent  = brand.tagline;
+    detailName.textContent     = brand.name;
+    detailDesc.textContent     = brand.longDesc;
+    detailRating.textContent   = `★ ${brand.rating.toFixed(1)} · valoración media`;
+    detailLocations.textContent= `${brand.locations} locales operativos`;
+    detailCoverage.textContent = coverageLocationText
+      ? "Servicio disponible desde: " + coverageLocationText + "."
+      : "";
 
-      const location = activeBrand.coverage[code];
-      if (!location) {
-        postalError.textContent =
-          "De momento esta marca no sirve pedidos en ese código postal. Prueba con otro CP cercano o contáctanos.";
-        postalError.style.display = "block";
-        return;
-      }
+    locAddress.textContent = brand.address;
+    locHours.textContent   = brand.hours;
+    locPhone.textContent   = brand.phone;
+    locEmail.textContent   = brand.email;
 
-      closePostalModal();
-      openBrandDetail(activeBrand, location);
+    detailSpecialties.innerHTML = "";
+    brand.specialties.forEach((s) => {
+      const li = document.createElement("li");
+      li.textContent = s;
+      detailSpecialties.appendChild(li);
     });
 
-    postalClose.addEventListener("click", () => {
+    buildMenu(brand);
+
+    landingEl.style.display = "none";
+    detailEl.style.display  = "block";
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }
+
+  function closeDetail() {
+    detailEl.style.display  = "none";
+    landingEl.style.display = "block";
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }
+
+  // Click en tarjetas de marca
+  document.querySelectorAll(".brand-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      const slug  = card.getAttribute("data-slug");
+      const brand = brands.find((b) => b.slug === slug);
+      if (!brand) return;
+      openPostalModal(brand);
+    });
+  });
+
+  detailBackBtn.addEventListener("click", closeDetail);
+
+  // Modal código postal
+  postalForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!activeBrand) return;
+
+    const code = postalInput.value.trim();
+    postalError.textContent = "";
+    postalError.style.display = "none";
+    detailCoverage.textContent = "";
+
+    if (!/^\d{5}$/.test(code)) {
+      postalError.textContent = "Introduce un código postal válido de 5 dígitos.";
+      postalError.style.display = "block";
+      return;
+    }
+
+    const location = activeBrand.coverage[code];
+    if (!location) {
+      postalError.textContent =
+        "De momento esta marca no sirve pedidos en ese código postal. Prueba con otro CP cercano o contáctanos.";
+      postalError.style.display = "block";
+      return;
+    }
+
+    closePostalModal();
+    openBrandDetail(activeBrand, location);
+  });
+
+  postalClose.addEventListener("click", () => {
+    closePostalModal();
+    activeBrand = null;
+  });
+
+  postalModal.addEventListener("click", (e) => {
+    if (e.target === postalModal) {
       closePostalModal();
       activeBrand = null;
-    });
-
-    postalModal.addEventListener("click", (e) => {
-      if (e.target === postalModal) {
-        closePostalModal();
-        activeBrand = null;
-      }
-    });
-
-    orderForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const items = parseInt(orderTotalItems.textContent || "0", 10);
-      if (!items) {
-        alert("Añade al menos un producto al pedido.");
-        return;
-      }
-      if (!orderForm.reportValidity()) {
-        return;
-      }
-      alert("Hemos recibido tu solicitud de pedido. Te contactaremos para confirmarlo.");
-      orderForm.reset();
-      if (activeBrand) buildMenu(activeBrand);
-      closeDetail();
-    });
-
-    /* ---------- FORM CONTACTO (dummy) ---------- */
-    const contactForm = document.getElementById("contact-form");
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (!contactForm.reportValidity()) return;
-      alert("Gracias por tu mensaje. Nos pondremos en contacto contigo en breve.");
-      contactForm.reset();
-    });
+    }
   });
+
+  // Pedido
+  orderForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const items = parseInt(orderTotalItems.textContent || "0", 10);
+    if (!items) {
+      alert("Añade al menos un producto al pedido.");
+      return;
+    }
+    if (!orderForm.reportValidity()) {
+      return;
+    }
+    alert("Hemos recibido tu solicitud de pedido. Te contactaremos para confirmarlo.");
+    orderForm.reset();
+    if (activeBrand) buildMenu(activeBrand);
+    closeDetail();
+  });
+
+  /* ---------- FORM CONTACTO (dummy) ---------- */
+  const contactForm = document.getElementById("contact-form");
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!contactForm.reportValidity()) return;
+    alert("Gracias por tu mensaje. Nos pondremos en contacto contigo en breve.");
+    contactForm.reset();
+  });
+});
 </script>
 </body>
 </html>
-
-
-
-
-
