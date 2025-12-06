@@ -2,10 +2,10 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Sebbro Foods – Franquicias food & hand eating</title>
+  <title>Sebbro Foods – Marcas de finger food & delivery</title>
   <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <meta name="description" content="Sebbro Foods gestiona franquicias de comida diseñada para comer con las manos: burgers, tacos, wings, pizza rolls, sandwiches y donuts gourmet." />
+  <meta name="description" content="Sebbro Foods es la casa de varias marcas de finger food: burgers, tacos, wings, pizza rolls, sándwiches y donuts. Descubre nuestras marcas y haz tu pedido para delivery o recogida." />
 
   <style>
     :root {
@@ -38,7 +38,7 @@
 
     a { color: inherit; text-decoration: none; }
 
-    /* ============== HEADER ESTILO ATHLEAD ============== */
+    /* ============== HEADER ============== */
 
     header {
       position: sticky;
@@ -47,7 +47,6 @@
       background: transparent;
       border-bottom: none;
       color: #f9fafb;
-
       transform: translateY(0);
       transition: transform 0.25s ease, opacity 0.25s ease;
     }
@@ -62,15 +61,12 @@
       margin: 0 auto;
       margin-top: 0.25rem;
       margin-bottom: 0.35rem;
-
       max-width: 1100px;
       width: 100%;
-
       display: flex;
       align-items: center;
       gap: 1.5rem;
       padding: 0.55rem 1.6rem;
-
       border-radius: 999px;
       background: #020617;
       border: 1px solid rgba(31,41,55,0.9);
@@ -255,29 +251,22 @@
     main { padding-bottom: 4rem; }
     section { scroll-margin-top: 88px; }
 
-    /* ================== HERO / LANDING ================== */
+    /* ================== HERO ================== */
 
     .hero {
       position: relative;
       text-align: center;
-
-      /* subimos el hero por detrás de la barra */
       margin-top: -90px;
       padding-top: calc(3.5rem + 90px);
       padding-bottom: 3.4rem;
-
-      /* foto de fondo solo en el hero */
-      background-image: url("img/hero-sebbro.jpg");
+      background-image: url("img/hero-sebbro.jpg"); /* cambia por tu foto real */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-
-      /* ocupa toda la primera pantalla */
       min-height: calc(100vh + 40px);
       display: flex;
       align-items: center;
       justify-content: center;
-
       color: #f9fafb;
     }
 
@@ -285,7 +274,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.45); /* oscurece un poco la foto */
+      background: rgba(0, 0, 0, 0.45);
       z-index: 0;
     }
 
@@ -423,7 +412,7 @@
 
     #brands {
       padding: 3.4rem 0;
-      background: #ffffff;  /* fondo blanco limpio */
+      background: #ffffff;
     }
 
     .brands-grid {
@@ -615,6 +604,10 @@
     }
 
     .form-group label {
+      color: #4b5563;
+    }
+
+    .contact-card label {
       color: #e5e7eb;
     }
 
@@ -635,7 +628,7 @@
       .contact-grid { grid-template-columns: minmax(0, 1fr); }
     }
 
-    /* ================== BOTONES Y FORMULARIOS GENERALES ================== */
+    /* ================== BOTONES Y FORMULARIOS ================== */
 
     .btn-primary {
       border-radius: 999px;
@@ -659,13 +652,6 @@
 
     .form-group { margin-bottom: 0.9rem; }
 
-    .form-group label {
-      display: block;
-      font-size: 0.8rem;
-      margin-bottom: 0.25rem;
-      color: #4b5563;
-    }
-
     .form-group input,
     .form-group textarea {
       width: 100%;
@@ -687,7 +673,7 @@
       margin-top: 0.2rem;
     }
 
-    /* ================== DETALLE FRANQUICIA ================== */
+    /* ================== DETALLE MARCA ================== */
 
     #brand-detail {
       display: none;
@@ -951,6 +937,21 @@
       flex-wrap: wrap;
     }
 
+    .footer-links {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #9ca3af;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
     .search-highlight {
       outline: 2px solid #facc15;
       border-radius: 18px;
@@ -968,15 +969,15 @@
         <div class="brand-logo">S</div>
         <div class="brand-text">
           <h1>Sebbro Foods</h1>
-          <p>Finger food franchise management</p>
+          <p>House of finger food brands</p>
         </div>
       </div>
 
       <nav class="main-nav" id="main-nav">
         <button type="button" data-scroll="#landing" class="is-active">Inicio</button>
-        <button type="button" data-scroll="#about">Sobre nosotros</button>
-        <button type="button" data-scroll="#brands">Marcas</button>
-        <button type="button" data-scroll="#map-section">Mapa</button>
+        <button type="button" data-scroll="#about">Quiénes somos</button>
+        <button type="button" data-scroll="#brands">Nuestras marcas</button>
+        <button type="button" data-scroll="#map-section">Dónde estamos</button>
         <button type="button" data-scroll="#contact">Contacto</button>
       </nav>
 
@@ -999,10 +1000,11 @@
   <div id="landing">
     <section class="hero">
       <div class="container">
-        <h2>Marcas pensadas para comer con las manos</h2>
+        <h2>Tu comida favorita, para comer con las manos</h2>
         <p>
-          Gestionamos un porfolio de franquicias de comida diseñadas para disfrutarse sin cubiertos:
-          formatos ergonómicos, producto de calidad y operaciones muy afinadas para delivery y take away.
+          Sebbro Foods es la casa de varias marcas especializadas en finger food:
+          burgers, tacos, wings, pizza rolls, sándwiches y donuts. Descubre la marca
+          que más te apetece, mira su menú y haz tu pedido para delivery o recogida.
         </p>
 
         <div class="hero-ctas">
@@ -1022,7 +1024,7 @@
           </div>
           <div>
             <div class="hero-metric-value">8</div>
-            <div class="hero-metric-label">Países en expansión</div>
+            <div class="hero-metric-label">Países con presencia</div>
           </div>
         </div>
       </div>
@@ -1032,34 +1034,34 @@
     <section id="about">
       <div class="container about-grid">
         <div>
-          <h3 class="section-title">Sobre Sebbro Foods</h3>
+          <h3 class="section-title">Quiénes somos</h3>
           <p>
             Sebbro Foods nace de una idea sencilla: los momentos gastronómicos más memorables
             suelen ocurrir cuando comemos con las manos. Tacos, burgers, wings, pizza al corte,
             sándwiches o donuts… todos ellos comparten una cosa en común: la experiencia táctil.
           </p>
           <p>
-            Nuestro equipo combina background en restauración organizada, logística, diseño de
-            producto y data. Desarrollamos marcas propias con un enfoque muy claro: operaciones
-            ligeras, ticket medio sano, cocina optimizada para delivery y una experiencia de marca
-            que se entiende en segundos.
+            Somos un equipo con background en restauración, producto y datos. Creamos y gestionamos
+            marcas que se entienden al segundo, con recetas cuidadas, formatos ergonómicos y
+            packaging pensado para delivery y take away.
           </p>
           <p>
-            Trabajamos con franquiciados y operadores que buscan conceptos claros, escalables y con
-            soporte real en marketing, formación y analítica de negocio.
+            Cada marca tiene su propia personalidad, pero todas comparten lo mismo:
+            producto de calidad, procesos muy trabajados y una experiencia pensada para disfrutar
+            sin cubiertos, en casa o donde tú quieras.
           </p>
         </div>
         <aside class="about-card">
           <h4>Nuestro enfoque</h4>
           <p>
-            Diseñamos conceptos de “hand eating” 360º: desde el producto y el packaging hasta los
-            procesos en cocina y la experiencia digital del cliente.
+            Cuidamos toda la experiencia, desde el primer vistazo al menú hasta el último bocado:
+            producto, packaging, fotos, tiempos de entrega y atención al cliente.
           </p>
           <div class="about-points">
-            <span>• Modelos pensados para locales compactos y dark kitchens.</span>
-            <span>• Recetas replicables y manuales operativos claros.</span>
-            <span>• Branding y fotografía listos para redes sociales.</span>
-            <span>• Soporte en aperturas, formación y análisis de ventas.</span>
+            <span>• Recetas pensadas para aguantar bien en delivery.</span>
+            <span>• Formatos cómodos de sujetar y compartir.</span>
+            <span>• Imagen muy cuidada, lista para vivir en redes sociales.</span>
+            <span>• Operaciones sencillas para locales propios y franquiciados.</span>
           </div>
         </aside>
       </div>
@@ -1068,10 +1070,11 @@
     <!-- MARCAS -->
     <section id="brands">
       <div class="container">
-        <h3 class="section-title">Franquicias Sebbro Foods</h3>
+        <h3 class="section-title">Nuestras marcas de finger food</h3>
         <p class="section-subtitle">
-          Seis conceptos complementarios que cubren los grandes momentos de consumo urbano:
-          comida rápida de alta calidad, con ticket medio optimizado y fuerte vocación delivery.
+          Seis conceptos diferentes para cuando te apetece burger, cocina mexicana, wings para ver el partido,
+          pizza en formato roll, sándwiches gourmet o donuts que entran por los ojos.
+          Haz clic sobre una marca para ver su historia, su menú y hacer tu pedido.
         </p>
 
         <div class="brands-grid">
@@ -1081,13 +1084,13 @@
               <p class="brand-card-tagline">Gourmet Burgers · Hand Eating</p>
               <h4 class="brand-card-name">BurgerCraft</h4>
               <p class="brand-card-desc">
-                Hamburguesas artesanales con ingredientes premium y panes pensados para no romperse al comer con las manos.
+                Hamburguesas artesanales con ingredientes premium y panes pensados para no romperse al comerlas con las manos.
               </p>
               <div class="brand-card-meta">
                 <div class="brand-card-rating">
                   <span>★</span><span>4.8</span><span>· 25 locales</span>
                 </div>
-                <button class="brand-card-cta" type="button">Obtener más información</button>
+                <button class="brand-card-cta" type="button">Ver menú y pedir</button>
               </div>
             </div>
           </article>
@@ -1098,13 +1101,13 @@
               <p class="brand-card-tagline">Mexican Street Food</p>
               <h4 class="brand-card-name">Taco Express</h4>
               <p class="brand-card-desc">
-                Tacos auténticos con tortillas hechas a mano y recetas tradicionales, pensados para comer de pie o sobre la marcha.
+                Tacos inspirados en los puestos callejeros mexicanos, tortillas hechas a diario y salsas con distintos niveles de picante.
               </p>
               <div class="brand-card-meta">
                 <div class="brand-card-rating">
                   <span>★</span><span>4.7</span><span>· 18 locales</span>
                 </div>
-                <button class="brand-card-cta" type="button">Obtener más información</button>
+                <button class="brand-card-cta" type="button">Ver menú y pedir</button>
               </div>
             </div>
           </article>
@@ -1115,13 +1118,13 @@
               <p class="brand-card-tagline">Chicken Wings Bar</p>
               <h4 class="brand-card-name">Wing Masters</h4>
               <p class="brand-card-desc">
-                Alitas marinadas y 12 salsas exclusivas para compartir en grupo, con foco en take away y delivery nocturno.
+                Alitas crujientes, 12 salsas exclusivas y raciones pensadas para compartir en casa, viendo una serie o un partido.
               </p>
               <div class="brand-card-meta">
                 <div class="brand-card-rating">
                   <span>★</span><span>4.6</span><span>· 32 locales</span>
                 </div>
-                <button class="brand-card-cta" type="button">Obtener más información</button>
+                <button class="brand-card-cta" type="button">Ver menú y pedir</button>
               </div>
             </div>
           </article>
@@ -1132,13 +1135,13 @@
               <p class="brand-card-tagline">Italian Pizza Rolls</p>
               <h4 class="brand-card-name">Pizza Fingers</h4>
               <p class="brand-card-desc">
-                Pizza enrollada en formato “finger food” para comer sin platos, perfecta para oficinas, eventos y ocio nocturno.
+                Pizza enrollada en formato “finger food” para comer sin platos ni cubiertos, perfecta para oficinas, eventos y noches con amigos.
               </p>
               <div class="brand-card-meta">
                 <div class="brand-card-rating">
                   <span>★</span><span>4.5</span><span>· 15 locales</span>
                 </div>
-                <button class="brand-card-cta" type="button">Obtener más información</button>
+                <button class="brand-card-cta" type="button">Ver menú y pedir</button>
               </div>
             </div>
           </article>
@@ -1149,13 +1152,13 @@
               <p class="brand-card-tagline">Gourmet Sandwiches</p>
               <h4 class="brand-card-name">Sandwich Club</h4>
               <p class="brand-card-desc">
-                Sándwiches y wraps premium, envueltos en papel técnico para un consumo limpio en oficinas, trenes y aeropuertos.
+                Sándwiches y wraps gourmet, envueltos para poder comer de camino al trabajo, en el tren o en la oficina sin mancharte.
               </p>
               <div class="brand-card-meta">
                 <div class="brand-card-rating">
                   <span>★</span><span>4.4</span><span>· 22 locales</span>
                 </div>
-                <button class="brand-card-cta" type="button">Obtener más información</button>
+                <button class="brand-card-cta" type="button">Ver menú y pedir</button>
               </div>
             </div>
           </article>
@@ -1166,13 +1169,13 @@
               <p class="brand-card-tagline">Artisanal Donuts</p>
               <h4 class="brand-card-name">Donut Hands</h4>
               <p class="brand-card-desc">
-                Donuts artesanales con diseño ergonómico, pensados para llevar, compartir y viralizar en redes sociales.
+                Donuts artesanales muy instagrameables, con toppings llamativos y cajas pensadas para compartir y fotografiar.
               </p>
               <div class="brand-card-meta">
                 <div class="brand-card-rating">
                   <span>★</span><span>4.9</span><span>· 12 locales</span>
                 </div>
-                <button class="brand-card-cta" type="button">Obtener más información</button>
+                <button class="brand-card-cta" type="button">Ver menú y pedir</button>
               </div>
             </div>
           </article>
@@ -1183,10 +1186,10 @@
     <!-- MAPA -->
     <section id="map-section">
       <div class="container">
-        <h3 class="section-title">Mapa de locales</h3>
+        <h3 class="section-title">Dónde estamos</h3>
         <p class="section-subtitle">
-          Mapa aproximado de operación actual y expansión prevista. Cada nueva apertura se
-          integra en nuestro ecosistema de datos y soporte centralizado.
+          Operamos a través de locales propios, franquicias y dark kitchens.
+          Busca tu ciudad en el mapa y descubre qué marcas de Sebbro Foods tienes más cerca.
         </p>
 
         <div class="map-wrapper">
@@ -1213,26 +1216,32 @@
     <section id="contact">
       <div class="container">
         <div class="contact-heading">
-          <h3>Contacto y expansión</h3>
+          <h3>Contacto</h3>
           <p>
-            Si estás valorando abrir una franquicia o integrar una de nuestras marcas en tu
-            portfolio de F&B, cuéntanos un poco sobre tu proyecto y te contactaremos.
+            ¿Tienes dudas sobre un pedido, sugerencias para alguna de nuestras marcas,
+            quieres proponernos una colaboración o contar con nosotros para un evento?
+            Escríbenos y te responderemos lo antes posible.
           </p>
         </div>
 
         <div class="contact-grid">
           <div class="contact-text">
             <p>
-              Trabajamos tanto con operadores individuales como con grupos que gestionan varias
-              ubicaciones. Nos interesan ubicaciones urbanas, zonas de oficinas, centros
-              comerciales y entornos con fuerte componente delivery.
+              Clientes finales: si has tenido alguna incidencia con tu pedido,
+              quieres hacer una sugerencia o simplemente contarnos tu experiencia,
+              nos encantará leerte.
             </p>
             <p>
-              Además del modelo de franquicia, podemos estudiar acuerdos de licencia o joint
-              venture en mercados estratégicos.
+              Eventos y empresas: también podemos estudiar propuestas para caterings,
+              acciones puntuales o colaboraciones de marca.
+            </p>
+            <p>
+              Profesionales de hostelería y franquiciados: si gestionas locales y quieres
+              saber más sobre cómo trabajamos con nuestras marcas, cuéntanos brevemente tu
+              perfil y tu ciudad.
             </p>
             <p class="helper">
-              Respuesta habitual en menos de 48 horas laborables.
+              Suelen responderte desde nuestro equipo en un plazo corto de tiempo.
             </p>
           </div>
 
@@ -1252,8 +1261,8 @@
                 <input id="cf-location" type="text" placeholder="Ej. Madrid, España" />
               </div>
               <div class="form-group">
-                <label for="cf-message">Cuéntanos tu proyecto</label>
-                <textarea id="cf-message" required placeholder="Tipo de ubicación, plazos, experiencia previa…"></textarea>
+                <label for="cf-message">¿En qué podemos ayudarte?</label>
+                <textarea id="cf-message" required placeholder="Pedido, sugerencia, evento, colaboración, información para hostelería…"></textarea>
               </div>
               <button class="btn-primary btn-full" type="submit">Enviar mensaje</button>
             </form>
@@ -1263,7 +1272,7 @@
     </section>
   </div>
 
-  <!-- DETALLE DE FRANQUICIA -->
+  <!-- DETALLE DE MARCA -->
   <section id="brand-detail">
     <div class="container">
       <button type="button" id="detail-back" class="detail-back">← Volver a todas las marcas</button>
@@ -1317,7 +1326,7 @@
             <h3>Tu pedido</h3>
             <form id="order-form">
               <p class="helper">
-                Completa tus datos y te contactaremos para confirmar el pedido y la franja de entrega.
+                Completa tus datos y te contactaremos desde el local para confirmar el pedido y la franja de entrega o recogida.
               </p>
               <div class="form-group">
                 <label for="order-name">Nombre</label>
@@ -1337,7 +1346,7 @@
               </div>
               <div class="form-group">
                 <label for="order-notes">Comentarios adicionales</label>
-                <textarea id="order-notes" placeholder="Piso, timbre, alergias, horario preferente…"></textarea>
+                <textarea id="order-notes" placeholder="Piso, timbre, alergias, horario preferente, recogida en local…"></textarea>
               </div>
 
               <div class="order-summary">
@@ -1382,7 +1391,12 @@
 <footer>
   <div class="container inner">
     <span>© 2025 Sebbro Foods. Todos los derechos reservados.</span>
-    <span>Operaciones, data &amp; expansión de franquicias de comida “hand eating”.</span>
+    <div class="footer-links">
+      <span>Sebbro Foods es la casa de varias marcas de comida “hand eating”.</span>
+      <a href="#">Aviso legal</a>
+      <a href="#">Política de privacidad</a>
+      <a href="#">Política de cookies</a>
+    </div>
   </div>
 </footer>
 
@@ -1410,13 +1424,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({
       top: offsetTop,
       behavior: 'smooth'
-    });
-  }
-
-  const heroSeeBrands = document.getElementById("hero-see-brands");
-  if (heroSeeBrands) {
-    heroSeeBrands.addEventListener("click", () => {
-      scrollToSection("#brands");
     });
   }
 
@@ -1565,7 +1572,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "BurgerCraft",
       tagline: "Gourmet Burgers · Hand Eating",
       longDesc:
-        "BurgerCraft nació para demostrar que una burger puede ser fast y a la vez muy cuidada. Proveedores locales, carnes seleccionadas y panes diseñados para aguantar el jugo sin deshacerse. El formato está optimizado para delivery y consumo con las manos.",
+        "BurgerCraft nació para demostrar que una burger puede ser rápida y a la vez muy cuidada. Proveedores locales, carnes seleccionadas y panes diseñados para aguantar el jugo sin deshacerse. El formato está optimizado para delivery y para comer con las manos sin complicaciones.",
       rating: 4.8,
       locations: 25,
       specialties: ["Hamburguesas gourmet", "Patatas hand-cut", "Milkshakes artesanales"],
@@ -1579,9 +1586,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "08001": "Dark kitchen Barcelona Centro"
       },
       menu: [
-        { name: "Classic Burger", desc: "Carne 100% vacuno, lechuga, tomate, cebolla caramelizada.", price: 12 },
-        { name: "Truffle Burger", desc: "Carne premium, trufa negra, queso brie, rúcula.", price: 18 },
-        { name: "Veggie Burger", desc: "Hamburguesa vegetal casera, aguacate, espinacas.", price: 14 },
+        { name: "Classic Burger", desc: "Carne 100% vacuno, lechuga, tomate y cebolla caramelizada.", price: 12 },
+        { name: "Truffle Burger", desc: "Carne premium, trufa negra, queso brie y rúcula.", price: 18 },
+        { name: "Veggie Burger", desc: "Hamburguesa vegetal casera con aguacate y espinacas.", price: 14 },
         { name: "Hand-cut Fries", desc: "Patatas cortadas a mano, fritas en aceite de girasol.", price: 6 },
         { name: "Craft Milkshake", desc: "Helado artesanal con sabores rotativos.", price: 8 }
       ]
@@ -1591,7 +1598,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Taco Express",
       tagline: "Mexican Street Food",
       longDesc:
-        "Taco Express trae la experiencia de un puesto callejero mexicano a locales compactos y pensados para delivery. Tortillas hechas a diario, marinados propios y salsas con diferentes niveles de picante. El formato está optimizado para comer con las manos y moverse mientras se disfruta.",
+        "Taco Express trae la experiencia de un puesto callejero mexicano a locales compactos y pensados para delivery. Tortillas hechas a diario, marinados propios y salsas con diferentes niveles de picante. Todo pensado para comer con las manos, de pie o en movimiento.",
       rating: 4.7,
       locations: 18,
       specialties: ["Tacos al pastor", "Guacamole fresco", "Salsas caseras"],
@@ -1605,9 +1612,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "46001": "Dark kitchen Ciutat Vella (Valencia)"
       },
       menu: [
-        { name: "Tacos al Pastor", desc: "Carne marinada, piña, cebolla, cilantro.", price: 4 },
-        { name: "Tacos de Carnitas", desc: "Cerdo confitado, cebolla morada, lima.", price: 4 },
-        { name: "Guacamole Fresco", desc: "Aguacate, jitomate, cebolla, cilantro.", price: 8 },
+        { name: "Tacos al Pastor", desc: "Carne marinada, piña, cebolla y cilantro.", price: 4 },
+        { name: "Tacos de Carnitas", desc: "Cerdo confitado con cebolla morada y lima.", price: 4 },
+        { name: "Guacamole Fresco", desc: "Aguacate, jitomate, cebolla y cilantro.", price: 8 },
         { name: "Churros con Chocolate", desc: "Churros recién hechos con chocolate caliente.", price: 6 },
         { name: "Agua de Jamaica", desc: "Bebida tradicional mexicana.", price: 4 }
       ]
@@ -1617,7 +1624,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Wing Masters",
       tagline: "Chicken Wings Bar",
       longDesc:
-        "Wing Masters es un formato pensado para la noche: partidos, gaming, reuniones en casa. Porciones para compartir, alitas crujientes y una carta de salsas propia que genera recurrencia. Packaging diseñado para no manchar sofás ni mesas.",
+        "Wing Masters es un formato pensado para la noche: partidos, gaming, reuniones en casa. Porciones para compartir, alitas crujientes y una carta de salsas propia que engancha. El packaging está diseñado para no manchar sofás ni mesas.",
       rating: 4.6,
       locations: 32,
       specialties: ["Alitas Buffalo", "Salsa BBQ secreta", "Nuggets especiales"],
@@ -1657,9 +1664,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "18001": "Dark kitchen Granada Centro"
       },
       menu: [
-        { name: "Margherita Roll", desc: "Salsa de tomate, mozzarella, albahaca fresca.", price: 8 },
-        { name: "Pepperoni Roll", desc: "Pepperoni, mozzarella, toque picante.", price: 10 },
-        { name: "Vegetarian Roll", desc: "Pimientos, cebolla, champiñones, espinacas.", price: 9 },
+        { name: "Margherita Roll", desc: "Salsa de tomate, mozzarella y albahaca fresca.", price: 8 },
+        { name: "Pepperoni Roll", desc: "Pepperoni, mozzarella y toque picante.", price: 10 },
+        { name: "Vegetarian Roll", desc: "Pimientos, cebolla, champiñones y espinacas.", price: 9 },
         { name: "Cheese Sticks", desc: "Palitos de mozzarella con hierbas.", price: 7 },
         { name: "Garlic Dip", desc: "Salsa de ajo casera.", price: 3 }
       ]
@@ -1669,7 +1676,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Sandwich Club",
       tagline: "Gourmet Sandwiches",
       longDesc:
-        "Sandwich Club eleva el sándwich a una propuesta gourmet. Panaderos artesanos, combinaciones muy pensadas y un envoltorio que permite comer en movilidad sin mancharse.",
+        "Sandwich Club eleva el sándwich a una propuesta gourmet. Panadería artesanal, combinaciones muy pensadas y un envoltorio que permite comer en movilidad sin mancharse.",
       rating: 4.4,
       locations: 22,
       specialties: ["Club sandwiches", "Wraps especiales", "Baguettes artesanales"],
@@ -1683,10 +1690,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "39001": "Dark kitchen Santander Centro"
       },
       menu: [
-        { name: "Club Deluxe", desc: "Pechuga de pollo, bacon, aguacate, lechuga.", price: 14 },
-        { name: "Mediterranean Wrap", desc: "Hummus, verduras asadas, queso feta.", price: 12 },
-        { name: "Italian Baguette", desc: "Jamón serrano, mozzarella, tomate seco.", price: 13 },
-        { name: "Vegan Power", desc: "Falafel, aguacate, espinacas, hummus.", price: 11 },
+        { name: "Club Deluxe", desc: "Pechuga de pollo, bacon, aguacate y lechuga.", price: 14 },
+        { name: "Mediterranean Wrap", desc: "Hummus, verduras asadas y queso feta.", price: 12 },
+        { name: "Italian Baguette", desc: "Jamón serrano, mozzarella y tomate seco.", price: 13 },
+        { name: "Vegan Power", desc: "Falafel, aguacate, espinacas y hummus.", price: 11 },
         { name: "Homemade Chips", desc: "Patatas fritas caseras con especias.", price: 5 }
       ]
     },
@@ -1872,12 +1879,11 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: "auto" });
   }
 
- function closeDetailFromOutside() {
-  detailEl.style.display  = "none";
-  landingEl.style.display = "block";
-  // ir directamente a la sección de marcas
-  scrollToSection('#brands');
-}
+  function closeDetailFromOutside() {
+    detailEl.style.display  = "none";
+    landingEl.style.display = "block";
+    scrollToSection('#brands');
+  }
 
   document.querySelectorAll(".brand-card").forEach((card) => {
     card.addEventListener("click", () => {
@@ -1939,21 +1945,22 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!orderForm.reportValidity()) {
       return;
     }
-    alert("Hemos recibido tu solicitud de pedido. Te contactaremos para confirmarlo.");
+    alert("Hemos recibido tu solicitud de pedido. Te contactaremos para confirmarla desde el local.");
     orderForm.reset();
     if (activeBrand) buildMenu(activeBrand);
     closeDetailFromOutside();
   });
 
   const contactForm = document.getElementById("contact-form");
-  contactForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    if (!contactForm.reportValidity()) return;
-    alert("Gracias por tu mensaje. Nos pondremos en contacto contigo en breve.");
-    contactForm.reset();
-  });
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!contactForm.reportValidity()) return;
+      alert("Gracias por tu mensaje. Nos pondremos en contacto contigo en breve.");
+      contactForm.reset();
+    });
+  }
 });
 </script>
 </body>
 </html>
-
