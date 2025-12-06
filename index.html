@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <title>Sebbro Foods – Franquicias food & hand eating</title>
- <meta name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <meta name="description" content="Sebbro Foods gestiona franquicias de comida diseñada para comer con las manos: burgers, tacos, wings, pizza rolls, sandwiches y donuts gourmet." />
 
   <style>
     :root {
-      --bg: #f5f5f7;
+      --bg: #ffffff;        /* fondo general en blanco */
       --text: #111827;
       --muted: #6b7280;
       --accent: #111827;
@@ -20,12 +20,12 @@
 
     * { box-sizing: border-box; }
 
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
 
     img { max-width: 100%; display: block; }
 
@@ -48,19 +48,16 @@ body {
       border-bottom: none;
       color: #f9fafb;
 
-      /* para animar al ocultar/mostrar */
       transform: translateY(0);
       transition: transform 0.25s ease, opacity 0.25s ease;
     }
 
-    /* Header oculto al hacer scroll hacia abajo */
     .header-hidden {
       transform: translateY(-140%);
       opacity: 0;
       pointer-events: none;
     }
 
-    /* pastilla larga y fina, centrada */
     .header-inner {
       margin: 0 auto;
       margin-top: 0.25rem;
@@ -80,14 +77,13 @@ body {
       box-shadow: 0 18px 40px rgba(15,23,42,0.6);
     }
 
-    /* logo + texto */
-   .brand-mark {
-  display: inline-flex;
-  gap: 0.6rem;
-  align-items: center;
-  min-width: 0;
-  cursor: pointer;  
-}
+    .brand-mark {
+      display: inline-flex;
+      gap: 0.6rem;
+      align-items: center;
+      min-width: 0;
+      cursor: pointer;
+    }
 
     .brand-logo {
       width: 30px;
@@ -103,23 +99,22 @@ body {
     }
 
     .brand-text h1 {
-  margin: 0;
-  font-size: 0.95rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  color: #f9fafb;   /* texto blanco */
-}
-   .brand-text p {
-  margin: 0;
-  font-size: 0.7rem;
-  color: #e5e7eb;   /* gris muy claro casi blanco */
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
+      margin: 0;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: #f9fafb;
+    }
 
+    .brand-text p {
+      margin: 0;
+      font-size: 0.7rem;
+      color: #e5e7eb;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
 
-    /* nav horizontal */
     .main-nav {
       display: flex;
       align-items: center;
@@ -134,8 +129,6 @@ body {
       padding: 0;
       font-size: 0.86rem;
       font-weight: 400;
-      text-transform: none;
-      letter-spacing: 0;
       cursor: pointer;
       position: relative;
     }
@@ -157,10 +150,9 @@ body {
       width: 100%;
       height: 2px;
       border-radius: 999px;
-      background: #facc15; /* barra amarilla */
+      background: #facc15;
     }
 
-    /* buscador a la derecha */
     .nav-search {
       margin-left: auto;
       display: block;
@@ -180,7 +172,6 @@ body {
       color: #6b7280;
     }
 
-    /* botón hamburguesa, oculto en desktop */
     .nav-toggle {
       display: none;
       border: none;
@@ -190,7 +181,6 @@ body {
       cursor: pointer;
     }
 
-    /* ============== VERSIÓN MÓVIL ============== */
     @media (max-width: 768px) {
       .header-inner {
         max-width: none;
@@ -234,7 +224,6 @@ body {
       }
     }
 
-    /* ===== Ajustes de tamaño SOLO escritorio ===== */
     @media (min-width: 1024px) {
       .header-inner {
         max-width: 1240px;
@@ -264,76 +253,46 @@ body {
     /* ================== ESTRUCTURA GENERAL ================== */
 
     main { padding-bottom: 4rem; }
-
     section { scroll-margin-top: 88px; }
 
     /* ================== HERO / LANDING ================== */
 
-    #landing {
-  position: relative;
-  /* subimos el landing por detrás del header (ajusta si hace falta) */
-  margin-top: -90px;
-  /* compensamos el espacio que hemos restado */
-  padding-top: calc(3.5rem + 90px);
+    .hero {
+      position: relative;
+      text-align: center;
 
-  color: #ffffff; /* texto en blanco */
-  background-image: url("images/hero-food.jpg"); /* tu foto */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+      /* subimos el hero por detrás de la barra */
+      margin-top: -90px;
+      padding-top: calc(3.5rem + 90px);
+      padding-bottom: 3.4rem;
 
-/* capa oscura por encima de la foto para que se lea bien el texto */
-#landing::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.55),
-    rgba(0, 0, 0, 0.55)
-  );
-  z-index: 0;
-}
+      /* foto de fondo solo en el hero */
+      background-image: url("img/hero-sebbro.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
 
-/* el contenido del hero por encima de la capa oscura */
-.hero {
-  position: relative;
-  z-index: 1;
-}
+      /* ocupa toda la primera pantalla */
+      min-height: calc(100vh + 40px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  .hero {
-  position: relative;
-  padding: 4.2rem 0 3.4rem;
-  text-align: center;
+      color: #f9fafb;
+    }
 
-  /* 👇 Fondo con foto (usa el nombre real de tu archivo) */
-  background-image: url("img/hero-sebbro.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  /* Que ocupe casi toda la primera pantalla */
-  min-height: calc(100vh - 120px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  /* Texto en blanco encima de la foto */
-  color: #f9fafb;
-}
     .hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45); /* oscurece la foto para que se lea bien */
-  z-index: 0;
-}
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45); /* oscurece un poco la foto */
+      z-index: 0;
+    }
 
-.hero > .container {
-  position: relative;
-  z-index: 1;
-}
+    .hero > .container {
+      position: relative;
+      z-index: 1;
+    }
 
     .hero h2 {
       margin: 0 0 0.9rem;
@@ -342,19 +301,19 @@ body {
     }
 
     .hero p {
-    margin: 0 auto;
-    max-width: 640px;
-    font-size: 1rem;
-    color: #e5e7eb;   /* texto clarito sobre la foto */
-    line-height: 1.8;
-}
+      margin: 0 auto;
+      max-width: 640px;
+      font-size: 1rem;
+      color: #e5e7eb;
+      line-height: 1.8;
+    }
 
-.hero-ctas {
-  margin-top: 2.5rem;      /* espacio hacia abajo desde el texto */
-  margin-bottom: 2.5rem;   /* espacio hacia arriba antes de las métricas */
-  display: flex;
-  justify-content: center;
-}
+    .hero-ctas {
+      margin-top: 2.5rem;
+      margin-bottom: 2.5rem;
+      display: flex;
+      justify-content: center;
+    }
 
     .hero-metrics {
       margin-top: 2.6rem;
@@ -376,14 +335,16 @@ body {
     }
 
     @media (max-width: 900px) {
-      .hero { padding-top: 3.4rem; }
+      .hero { padding-top: calc(3rem + 90px); }
       .hero h2 { font-size: 2.1rem; }
       .hero-metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
 
     @media (max-width: 640px) {
-      #landing { padding-top: 2.7rem; }
-      .hero { padding: 2.8rem 0 2.6rem; }
+      .hero {
+        padding-top: calc(2.6rem + 90px);
+        padding-bottom: 2.6rem;
+      }
       .hero h2 { font-size: 1.9rem; }
       .hero-metrics { grid-template-columns: 1fr 1fr; }
     }
@@ -460,10 +421,10 @@ body {
 
     /* ================== BRANDS GRID ================== */
 
-   #brands {
-  padding: 3.4rem 0;
-  background: #ffffff;  /* fondo blanco limpio detrás de las tarjetas */
-}
+    #brands {
+      padding: 3.4rem 0;
+      background: #ffffff;  /* fondo blanco limpio */
+    }
 
     .brands-grid {
       display: grid;
@@ -990,7 +951,6 @@ body {
       flex-wrap: wrap;
     }
 
-    /* === Resaltado de resultado de búsqueda === */
     .search-highlight {
       outline: 2px solid #facc15;
       border-radius: 18px;
@@ -1044,12 +1004,12 @@ body {
           Gestionamos un porfolio de franquicias de comida diseñadas para disfrutarse sin cubiertos:
           formatos ergonómicos, producto de calidad y operaciones muy afinadas para delivery y take away.
         </p>
-        
-      <div class="hero-ctas">
-      <button class="btn-primary" type="button" data-scroll="#brands">
-        Ver marcas y pedir
-      </button>
-    </div>
+
+        <div class="hero-ctas">
+          <button class="btn-primary" type="button" data-scroll="#brands">
+            Ver marcas y pedir
+          </button>
+        </div>
 
         <div class="hero-metrics">
           <div>
@@ -1452,7 +1412,7 @@ document.addEventListener("DOMContentLoaded", () => {
       behavior: 'smooth'
     });
   }
-    // Botón del hero: bajar a las marcas
+
   const heroSeeBrands = document.getElementById("hero-see-brands");
   if (heroSeeBrands) {
     heroSeeBrands.addEventListener("click", () => {
@@ -1460,28 +1420,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-    // -------- Click en el logo: volver a la página principal --------
   const brandMark = document.querySelector('.brand-mark');
+  const landingEl = document.getElementById("landing");
+  const detailEl  = document.getElementById("brand-detail");
+
+  function closeDetail() {
+    detailEl.style.display  = "none";
+    landingEl.style.display = "block";
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }
 
   if (brandMark) {
     brandMark.addEventListener('click', () => {
-      // Si estamos viendo el detalle de una marca, volvemos al listado
       if (detailEl.style.display === 'block') {
-        closeDetail();              // ya definida más abajo en el script
+        closeDetail();
       } else {
-        // Si ya estamos en la home, solo hacemos scroll suave al inicio
         scrollToSection('#landing');
       }
     });
   }
 
-
-   scrollButtons.forEach(btn => {
+  scrollButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const selector = btn.getAttribute('data-scroll');
       if (selector) scrollToSection(selector);
 
-      // solo tiene efecto real cuando el menú móvil está abierto
       if (window.innerWidth <= 768 && nav) {
         nav.classList.remove('is-open');
       }
@@ -1494,7 +1457,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Scrollspy: qué sección está activa
   const sectionMap = Array.from(navButtons).map(btn => {
     const selector = btn.getAttribute('data-scroll');
     const section  = document.querySelector(selector);
@@ -1518,7 +1480,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Ocultar header al hacer scroll hacia abajo
   function handleHeaderVisibility() {
     if (!headerEl) return;
 
@@ -1757,11 +1718,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
-  /* ---------- ELEMENTOS DETALLE Y MODAL ---------- */
-
-  const landingEl = document.getElementById("landing");
-  const detailEl  = document.getElementById("brand-detail");
-
   const detailBackBtn      = document.getElementById("detail-back");
   const detailTagline      = document.getElementById("detail-tagline");
   const detailName         = document.getElementById("detail-name");
@@ -1916,13 +1872,12 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: "auto" });
   }
 
-  function closeDetail() {
+  function closeDetailFromOutside() {
     detailEl.style.display  = "none";
     landingEl.style.display = "block";
     window.scrollTo({ top: 0, behavior: "auto" });
   }
 
-  // Click en tarjetas de marca
   document.querySelectorAll(".brand-card").forEach((card) => {
     card.addEventListener("click", () => {
       const slug  = card.getAttribute("data-slug");
@@ -1932,9 +1887,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  detailBackBtn.addEventListener("click", closeDetail);
+  detailBackBtn.addEventListener("click", closeDetailFromOutside);
 
-  // Modal código postal
   postalForm.addEventListener("submit", (e) => {
     e.preventDefault();
     if (!activeBrand) return;
@@ -1974,7 +1928,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Pedido
   orderForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const items = parseInt(orderTotalItems.textContent || "0", 10);
@@ -1988,10 +1941,9 @@ document.addEventListener("DOMContentLoaded", () => {
     alert("Hemos recibido tu solicitud de pedido. Te contactaremos para confirmarlo.");
     orderForm.reset();
     if (activeBrand) buildMenu(activeBrand);
-    closeDetail();
+    closeDetailFromOutside();
   });
 
-  /* ---------- FORM CONTACTO (dummy) ---------- */
   const contactForm = document.getElementById("contact-form");
   contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -2003,12 +1955,3 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
