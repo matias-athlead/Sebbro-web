@@ -1371,25 +1371,61 @@
 
           <div class="contact-card">
             <h4>Escríbenos</h4>
-            <form id="contact-form">
-              <div class="form-group">
-                <label for="cf-name">Nombre</label>
-                <input id="cf-name" type="text" required placeholder="Tu nombre completo" />
-              </div>
-              <div class="form-group">
-                <label for="cf-email">Email</label>
-                <input id="cf-email" type="email" required placeholder="tu@email.com" />
-              </div>
-              <div class="form-group">
-                <label for="cf-location">Ciudad / país</label>
-                <input id="cf-location" type="text" placeholder="Ej. Madrid, España" />
-              </div>
-              <div class="form-group">
-                <label for="cf-message">Cuéntanos tu proyecto</label>
-                <textarea id="cf-message" required placeholder="Tipo de ubicación, plazos, experiencia previa…"></textarea>
-              </div>
-              <button class="btn-primary btn-full" type="submit">Enviar mensaje</button>
-            </form>
+        <form
+  id="contact-form"
+  action="https://formspree.io/f/mpwvleoy"
+  method="POST"
+>
+  <div class="form-group">
+    <label for="cf-name">Nombre</label>
+    <input
+      id="cf-name"
+      name="name"
+      type="text"
+      required
+      placeholder="Tu nombre completo"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="cf-email">Email</label>
+    <input
+      id="cf-email"
+      name="email"
+      type="email"
+      required
+      placeholder="tu@email.com"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="cf-location">Ciudad / país</label>
+    <input
+      id="cf-location"
+      name="location"
+      type="text"
+      placeholder="Ej. Madrid, España"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="cf-message">Cuéntanos tu proyecto</label>
+    <textarea
+      id="cf-message"
+      name="message"
+      required
+      placeholder="Tipo de ubicación, plazos, experiencia previa…"
+    ></textarea>
+  </div>
+
+  <!-- Asunto del email que recibirás -->
+  <input type="hidden" name="_subject" value="Nuevo contacto desde Sebbro Foods" />
+
+  <!-- (Opcional) Redirigir de vuelta a tu web tras enviar -->
+  <input type="hidden" name="_redirect" value="https://sebbro-web.vercel.app/" />
+
+  <button class="btn-primary btn-full" type="submit">Enviar mensaje</button>
+</form>
           </div>
         </div>
       </div>
@@ -2328,14 +2364,6 @@ document.addEventListener("DOMContentLoaded", () => {
     closeDetailFromOutside();
   });
 
-  const contactForm = document.getElementById("contact-form");
-  contactForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    if (!contactForm.reportValidity()) return;
-    alert("Gracias por tu mensaje. Nos pondremos en contacto contigo en breve.");
-    contactForm.reset();
-  });
-
   /* ---------- MODALES LEGALES ---------- */
   const legalLinks = document.querySelectorAll(".footer-legal-link");
   const legalModals = {
@@ -2375,6 +2403,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
