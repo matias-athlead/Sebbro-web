@@ -272,10 +272,38 @@
       padding-top: 3.5rem;
     }
 
-    .hero {
-      padding: 4.2rem 0 3.4rem;
-      text-align: center;
-    }
+  .hero {
+  position: relative;
+  padding: 4.2rem 0 3.4rem;
+  text-align: center;
+
+  /* 👇 Fondo con foto (usa el nombre real de tu archivo) */
+  background-image: url("img/hero-sebbro.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Que ocupe casi toda la primera pantalla */
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Texto en blanco encima de la foto */
+  color: #f9fafb;
+}
+    .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* oscurece la foto para que se lea bien */
+  z-index: 0;
+}
+
+.hero > .container {
+  position: relative;
+  z-index: 1;
+}
 
     .hero h2 {
       margin: 0 0 0.9rem;
@@ -1943,6 +1971,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
