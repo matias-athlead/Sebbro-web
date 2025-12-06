@@ -1872,11 +1872,12 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: "auto" });
   }
 
-  function closeDetailFromOutside() {
-    detailEl.style.display  = "none";
-    landingEl.style.display = "block";
-    window.scrollTo({ top: 0, behavior: "auto" });
-  }
+ function closeDetailFromOutside() {
+  detailEl.style.display  = "none";
+  landingEl.style.display = "block";
+  // ir directamente a la sección de marcas
+  scrollToSection('#brands');
+}
 
   document.querySelectorAll(".brand-card").forEach((card) => {
     card.addEventListener("click", () => {
@@ -1955,3 +1956,4 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
