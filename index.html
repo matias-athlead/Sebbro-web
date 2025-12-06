@@ -253,26 +253,30 @@
 
     /* ================== HERO / LANDING ================== */
 
- .hero {
+.hero {
   position: relative;
   text-align: center;
 
-  /* sube la imagen por detrás de la barra */
-  margin-top: -80px;
-  padding-top: calc(6.5rem + 80px);
-
+  /* subimos el hero por detrás de TODA la barra */
+  margin-top: -200px;                      /* antes -90px o similar */
+  padding-top: calc(3.5rem + 200px);       /* antes calc(3.5rem + 90px) */
   padding-bottom: 3.4rem;
+
+  /* foto de fondo solo en el hero */
   background-image: url("img/hero-sebbro.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: calc(100vh - 40px);
+
+  /* ocupa toda la primera pantalla (compensamos el margen negativo) */
+  min-height: calc(100vh + 200px);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   color: #f9fafb;
 }
-
 
 
     .hero::before {
@@ -2371,6 +2375,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
