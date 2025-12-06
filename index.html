@@ -40,18 +40,16 @@
 
     /* ============== HEADER ============== */
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      background-image: url("img/hero-sebbro.jpg"); /* imagen hasta arriba */
-      background-size: cover;
-      background-position: center top;
-      border-bottom: none;
-      color: #f9fafb;
-      transform: translateY(0);
-      transition: transform 0.25s ease, opacity 0.25s ease;
-    }
+  header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: transparent;      /* <<< antes tenías fondo/foto, ponlo transparente */
+  border-bottom: none;
+  color: #f9fafb;
+  transform: translateY(0);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
 
     .header-hidden {
       transform: translateY(-140%);
@@ -255,22 +253,23 @@
 
     /* ================== HERO / LANDING ================== */
 
-    .hero {
-      position: relative;
-      text-align: center;
-      margin-top: 0;
-      padding-top: 6.5rem;         /* deja hueco para el header */
-      padding-bottom: 3.4rem;
-      background-image: url("img/hero-sebbro.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      min-height: calc(100vh - 40px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #f9fafb;
-    }
+   .hero {
+  position: relative;
+  text-align: center;
+  /* NUEVO: sube la imagen por detrás de la barra */
+  margin-top: -80px;
+  padding-top: calc(6.5rem + 80px);  /* mantiene el título a la misma altura */
+  padding-bottom: 3.4rem;
+  background-image: url("img/hero-sebbro.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: calc(100vh - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f9fafb;
+}
 
     .hero::before {
       content: "";
@@ -2368,3 +2367,4 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
