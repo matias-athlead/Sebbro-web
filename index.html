@@ -9,7 +9,7 @@
 
   <style>
     :root {
-      --bg: #ffffff;        /* fondo general en blanco */
+      --bg: #ffffff;
       --text: #111827;
       --muted: #6b7280;
       --accent: #111827;
@@ -42,7 +42,7 @@
 
     header {
       position: sticky;
-      top: 0.75rem;
+      top: 0;              /* QUITA EL ESPACIO EN BLANCO ARRIBA */
       z-index: 40;
       background: transparent;
       border-bottom: none;
@@ -259,7 +259,7 @@
       margin-top: -90px;
       padding-top: calc(3.5rem + 90px);
       padding-bottom: 3.4rem;
-      background-image: url("img/hero-sebbro.jpg"); /* cambia por tu foto real */
+      background-image: url("img/hero-sebbro.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -603,12 +603,30 @@
       color: #e5e7eb;
     }
 
+    .form-group { margin-bottom: 0.9rem; }
+
     .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      margin-bottom: 0.25rem;
       color: #4b5563;
     }
 
     .contact-card label {
       color: #e5e7eb;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      border-radius: 0.6rem;
+      border: 1px solid #d4d4d8;
+      padding: 0.55rem 0.7rem;
+      font-size: 0.9rem;
+      font-family: inherit;
+      resize: vertical;
+      background: #ffffff;
+      color: #111827;
     }
 
     .contact-card input,
@@ -624,11 +642,19 @@
       border-color: #e5e7eb;
     }
 
+    .form-group textarea { min-height: 80px; }
+
+    .helper {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-top: 0.2rem;
+    }
+
     @media (max-width: 900px) {
       .contact-grid { grid-template-columns: minmax(0, 1fr); }
     }
 
-    /* ================== BOTONES Y FORMULARIOS ================== */
+    /* ================== BOTONES GENERALES ================== */
 
     .btn-primary {
       border-radius: 999px;
@@ -649,29 +675,6 @@
     .btn-primary:hover { background: #000000; }
 
     .btn-full { width: 100%; }
-
-    .form-group { margin-bottom: 0.9rem; }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      border-radius: 0.6rem;
-      border: 1px solid #d4d4d8;
-      padding: 0.55rem 0.7rem;
-      font-size: 0.9rem;
-      font-family: inherit;
-      resize: vertical;
-      background: #ffffff;
-      color: #111827;
-    }
-
-    .form-group textarea { min-height: 80px; }
-
-    .helper {
-      font-size: 0.75rem;
-      color: #9ca3af;
-      margin-top: 0.2rem;
-    }
 
     /* ================== DETALLE MARCA ================== */
 
@@ -919,6 +922,97 @@
       margin-top: 0.25rem;
     }
 
+    /* ================== SECCIÓN LEGAL ================== */
+
+    #legal {
+      padding: 3rem 0 3.4rem;
+      background: #f9fafb;
+    }
+
+    .legal-intro {
+      max-width: 640px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1.8rem;
+    }
+
+    .legal-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .legal-btn {
+      border-radius: 999px;
+      border: 1px solid #111827;
+      background: #ffffff;
+      color: #111827;
+      padding: 0.55rem 1.2rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .legal-btn:hover {
+      background: #111827;
+      color: #ffffff;
+    }
+
+    .legal-panel {
+      display: none;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      background: #ffffff;
+      padding: 1.3rem 1.4rem;
+      font-size: 0.86rem;
+      line-height: 1.7;
+      color: var(--muted);
+      max-height: 380px;
+      overflow: auto;
+    }
+
+    .legal-panel.is-open { display: block; }
+
+    .legal-panel h4 {
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+      color: #111827;
+    }
+
+    .legal-panel h5 {
+      margin: 0.9rem 0 0.4rem;
+      font-size: 0.86rem;
+      color: #111827;
+    }
+
+    .legal-panel p {
+      margin: 0 0 0.5rem;
+    }
+
+    .legal-panel ul {
+      margin: 0.2rem 0 0.6rem 1.1rem;
+      padding: 0;
+    }
+
+    .legal-panel li {
+      margin-bottom: 0.3rem;
+    }
+
+    .legal-note {
+      margin-top: 0.6rem;
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 640px) {
+      .legal-panel {
+        max-height: none;
+      }
+    }
+
     /* ================== FOOTER ================== */
 
     footer {
@@ -935,21 +1029,6 @@
       align-items: center;
       gap: 1rem;
       flex-wrap: wrap;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 0.8rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      text-decoration: none;
-      color: #9ca3af;
-    }
-
-    .footer-links a:hover {
-      text-decoration: underline;
     }
 
     .search-highlight {
@@ -1361,42 +1440,328 @@
       </div>
     </div>
   </section>
-</main>
 
-<!-- MODAL CÓDIGO POSTAL -->
-<div class="modal-backdrop" id="postal-modal" aria-hidden="true">
-  <div class="modal-panel" role="dialog" aria-modal="true">
-    <div class="modal-header">
-      <h3>Zona de servicio</h3>
-      <button class="modal-close" id="postal-close" type="button">×</button>
-    </div>
-    <div class="modal-body">
-      <p>
-        Antes de mostrarte el menú completo, comprobamos si esta marca sirve pedidos en tu zona.
-        Introduce tu código postal:
+  <!-- INFORMACIÓN LEGAL -->
+  <section id="legal">
+    <div class="container">
+      <h3 class="section-title">Información legal</h3>
+      <p class="legal-intro">
+        Aquí puedes consultar el aviso legal, la política de privacidad, la política de cookies
+        y las condiciones aplicables a los pedidos realizados a través de las marcas de Sebbro Foods.
+        Pulsa en cada botón para ver el contenido.
       </p>
-      <form id="postal-form" novalidate>
-        <div class="form-group">
-          <label for="postal-input">Código postal (España)</label>
-          <input id="postal-input" type="text" maxlength="5" inputmode="numeric" placeholder="Ej. 08001" required />
-          <p class="helper">Solo lo usamos para localizar la cocina o punto de venta que te servirá.</p>
-          <p id="postal-error" class="postal-error" style="display:none;"></p>
-        </div>
-        <button class="btn-primary btn-full" type="submit">Continuar</button>
-      </form>
+
+      <div class="legal-actions">
+        <button class="legal-btn" data-target="panel-aviso">Aviso legal y condiciones de uso</button>
+        <button class="legal-btn" data-target="panel-privacidad">Política de privacidad</button>
+        <button class="legal-btn" data-target="panel-cookies">Política de cookies</button>
+        <button class="legal-btn" data-target="panel-pedidos">Condiciones de pedidos y contratación</button>
+      </div>
+
+      <!-- AVISO LEGAL -->
+      <div class="legal-panel" id="panel-aviso">
+        <h4>Aviso legal y condiciones de uso</h4>
+        <p>
+          Este sitio web (en adelante, el “Sitio”) es titularidad de
+          <strong>SEBBRO FOODS, S.L.</strong> (en adelante, “Sebbro Foods”), con domicilio social en
+          [DIRECCIÓN COMPLETA], CIF [CIF/NIF] y correo electrónico de contacto
+          <a href="mailto:info@sebbrofoods.com">info@sebbrofoods.com</a>.
+        </p>
+
+        <h5>1. Objeto</h5>
+        <p>
+          El presente aviso legal regula el acceso y uso del Sitio, así como de los contenidos y servicios
+          puestos a disposición de los usuarios (en adelante, los “Usuarios”).
+          El acceso al Sitio implica la aceptación plena de este aviso legal.
+        </p>
+
+        <h5>2. Uso correcto del Sitio</h5>
+        <p>
+          El Usuario se compromete a utilizar el Sitio, sus contenidos y servicios de conformidad con la ley,
+          la buena fe, las buenas costumbres y el presente aviso legal. Queda expresamente prohibido:
+        </p>
+        <ul>
+          <li>Hacer un uso no autorizado o fraudulento del Sitio.</li>
+          <li>Introducir o difundir virus informáticos o cualesquiera otros sistemas que puedan dañar los sistemas de Sebbro Foods o de terceros.</li>
+          <li>Acceder sin autorización a secciones restringidas del Sitio o a sistemas de terceros.</li>
+        </ul>
+
+        <h5>3. Propiedad intelectual e industrial</h5>
+        <p>
+          Todos los derechos de propiedad intelectual e industrial sobre el Sitio, su diseño gráfico, logotipos,
+          nombres comerciales, textos, imágenes y demás contenidos pertenecen a Sebbro Foods o a terceros
+          autorizantes. Queda prohibida la reproducción, distribución, comunicación pública o cualquier
+          otra forma de explotación, salvo autorización previa y por escrito de Sebbro Foods.
+        </p>
+
+        <h5>4. Enlaces</h5>
+        <p>
+          El Sitio puede contener enlaces a páginas web de terceros. Sebbro Foods no se hace responsable de los
+          contenidos ni de las condiciones de uso o políticas de privacidad de dichos sitios, que corresponderán
+          en exclusiva a sus titulares.
+        </p>
+
+        <h5>5. Responsabilidad</h5>
+        <p>
+          Sebbro Foods no garantiza la disponibilidad ininterrumpida del Sitio ni la ausencia de errores. No obstante,
+          realizará sus mejores esfuerzos para garantizar la continuidad y buen funcionamiento del mismo.
+        </p>
+        <p>
+          Sebbro Foods no se hace responsable de los daños y perjuicios que pudieran derivarse de:
+        </p>
+        <ul>
+          <li>Interferencias, interrupciones, virus informáticos, averías o desconexiones motivadas por causas ajenas a Sebbro Foods.</li>
+          <li>Actuaciones ilícitas o contrarias al presente aviso legal realizadas por los Usuarios.</li>
+        </ul>
+
+        <h5>6. Modificaciones</h5>
+        <p>
+          Sebbro Foods se reserva el derecho a modificar, en cualquier momento y sin previo aviso, la presentación
+          y configuración del Sitio, así como el presente aviso legal.
+        </p>
+
+        <h5>7. Legislación aplicable y jurisdicción</h5>
+        <p>
+          El presente aviso legal se rige por la legislación española. Para la resolución de cualquier conflicto,
+          las partes se someten a los juzgados y tribunales de la ciudad de [CIUDAD], salvo que la normativa
+          de protección de consumidores y usuarios disponga otro fuero imperativo.
+        </p>
+
+        <p class="legal-note">
+          Este texto es un modelo general y debe ser adaptado a la situación real de Sebbro Foods con el
+          asesoramiento de un profesional jurídico.
+        </p>
+      </div>
+
+      <!-- PRIVACIDAD -->
+      <div class="legal-panel" id="panel-privacidad">
+        <h4>Política de privacidad</h4>
+        <p>
+          De conformidad con el Reglamento (UE) 2016/679 (RGPD) y la normativa española de protección de datos,
+          se informa al Usuario sobre el tratamiento de sus datos personales cuando utiliza este Sitio o
+          contacta con Sebbro Foods.
+        </p>
+
+        <h5>1. Responsable del tratamiento</h5>
+        <p>
+          Responsable: <strong>SEBBRO FOODS, S.L.</strong><br>
+          Dirección: [DIRECCIÓN COMPLETA]<br>
+          Email: <a href="mailto:privacidad@sebbrofoods.com">privacidad@sebbrofoods.com</a>
+        </p>
+
+        <h5>2. Datos tratados</h5>
+        <p>
+          Sebbro Foods puede tratar las siguientes categorías de datos:
+        </p>
+        <ul>
+          <li>Datos de identificación: nombre y apellidos.</li>
+          <li>Datos de contacto: teléfono, email, dirección de entrega.</li>
+          <li>Datos de pedido: productos solicitados, importes, horarios de entrega.</li>
+          <li>Datos de navegación y uso del Sitio (cookies, estadísticas, etc.).</li>
+        </ul>
+
+        <h5>3. Finalidades del tratamiento</h5>
+        <ul>
+          <li>Gestionar y tramitar los pedidos realizados a través del Sitio.</li>
+          <li>Atender consultas, sugerencias o reclamaciones enviadas mediante los formularios de contacto.</li>
+          <li>Enviar comunicaciones comerciales relativas a las marcas de Sebbro Foods (si el Usuario lo ha autorizado).</li>
+          <li>Realizar análisis internos y estadísticas sobre el uso del Sitio y los productos más demandados.</li>
+        </ul>
+
+        <h5>4. Base jurídica</h5>
+        <ul>
+          <li>
+            Ejecución de un contrato o aplicación de medidas precontractuales (gestión de pedidos y consultas).
+          </li>
+          <li>
+            Cumplimiento de obligaciones legales (obligaciones fiscales, contables y de consumo).
+          </li>
+          <li>
+            Consentimiento del Usuario (envío de comunicaciones comerciales, cookies no técnicas).
+          </li>
+          <li>
+            Interés legítimo de Sebbro Foods (mejora de servicios y experiencia de usuario).
+          </li>
+        </ul>
+
+        <h5>5. Destinatarios</h5>
+        <p>
+          Los datos del Usuario podrán ser comunicados a:
+        </p>
+        <ul>
+          <li>
+            Empresas de reparto o establecimientos franquiciados que preparen y entreguen el pedido.
+          </li>
+          <li>
+            Proveedores de servicios necesarios para la prestación del servicio (plataformas de pago, hosting, herramientas de email marketing).
+          </li>
+          <li>
+            Administraciones públicas cuando así lo exija la ley.
+          </li>
+        </ul>
+
+        <h5>6. Plazo de conservación</h5>
+        <p>
+          Los datos se conservarán mientras exista relación contractual o comercial con el Usuario y, posteriormente,
+          durante los plazos necesarios para atender posibles responsabilidades legales.
+        </p>
+
+        <h5>7. Derechos del Usuario</h5>
+        <p>
+          El Usuario puede ejercitar sus derechos de acceso, rectificación, supresión, oposición, limitación
+          del tratamiento y portabilidad, así como retirar el consentimiento prestado en cualquier momento,
+          enviando una solicitud junto con copia de su documento identificativo a:
+          <a href="mailto:privacidad@sebbrofoods.com">privacidad@sebbrofoods.com</a>.
+        </p>
+        <p>
+          Asimismo, tiene derecho a presentar una reclamación ante la autoridad de control competente
+          (en España, la Agencia Española de Protección de Datos).
+        </p>
+
+        <p class="legal-note">
+          Este resumen de política de privacidad es orientativo y debe ser revisado y adaptado a los
+          tratamientos de datos reales de Sebbro Foods.
+        </p>
+      </div>
+
+      <!-- COOKIES -->
+      <div class="legal-panel" id="panel-cookies">
+        <h4>Política de cookies</h4>
+        <p>
+          Este Sitio utiliza cookies y tecnologías similares para permitir su funcionamiento, medir el uso
+          que hacen los Usuarios y, en su caso, mostrar contenidos personalizados.
+        </p>
+
+        <h5>1. ¿Qué son las cookies?</h5>
+        <p>
+          Las cookies son pequeños archivos que se descargan en el dispositivo del Usuario al acceder
+          a determinadas páginas web. Permiten, entre otras cosas, almacenar y recuperar información
+          sobre hábitos de navegación.
+        </p>
+
+        <h5>2. Tipos de cookies utilizadas</h5>
+        <ul>
+          <li>
+            <strong>Cookies técnicas:</strong> necesarias para la navegación y el correcto funcionamiento del Sitio.
+            Permiten, por ejemplo, recordar los productos añadidos al pedido.
+          </li>
+          <li>
+            <strong>Cookies de análisis:</strong> permiten medir el número de visitas y analizar el uso que se hace del Sitio
+            (por ejemplo, páginas más visitadas).
+          </li>
+          <li>
+            <strong>Cookies de personalización o marketing (si se utilizan):</strong> permiten adaptar la experiencia
+            o mostrar contenidos promocionales relacionados con los intereses del Usuario.
+          </li>
+        </ul>
+
+        <h5>3. Gestión de cookies</h5>
+        <p>
+          El Usuario puede configurar su navegador para aceptar o rechazar todas las cookies, o para priorizar
+          determinadas categorías. Los principales navegadores ofrecen opciones de configuración en sus menús
+          de “Opciones” o “Preferencias”.
+        </p>
+        <p>
+          Desactivar determinadas cookies puede afectar al funcionamiento de algunas funcionalidades del Sitio,
+          especialmente las relacionadas con el proceso de pedido.
+        </p>
+
+        <p class="legal-note">
+          Si Sebbro Foods implementa un banner de gestión de cookies, esta política deberá alinearse con la
+          configuración real y el listado de cookies utilizadas.
+        </p>
+      </div>
+
+      <!-- CONDICIONES DE PEDIDOS -->
+      <div class="legal-panel" id="panel-pedidos">
+        <h4>Condiciones de pedidos y contratación</h4>
+        <p>
+          Estas condiciones regulan los pedidos realizados por los Usuarios a través del Sitio y de los canales
+          de pedido online asociados a las marcas de Sebbro Foods.
+        </p>
+
+        <h5>1. Proceso de pedido</h5>
+        <ul>
+          <li>
+            El Usuario selecciona la marca, consulta el menú y añade productos al pedido.
+          </li>
+          <li>
+            Antes de confirmar el pedido, se muestra un resumen con el detalle de productos, cantidades,
+            precio aproximado e impuestos aplicables.
+          </li>
+          <li>
+            El pedido se considera realizado cuando el Usuario envía sus datos de contacto y recibe
+            confirmación por parte del establecimiento que lo preparará.
+          </li>
+        </ul>
+
+        <h5>2. Precios e impuestos</h5>
+        <p>
+          Los precios mostrados en el Sitio son precios de venta al público e incluyen los impuestos
+          indirectos aplicables (IVA u otros), salvo indicación en contrario. Los gastos de envío,
+          comisiones de plataformas o recargos por servicio se indicarán, en su caso, antes de finalizar el pedido.
+        </p>
+
+        <h5>3. Formas de pago</h5>
+        <p>
+          Las formas de pago disponibles pueden variar en función de la marca o del establecimiento
+          (pago online, pago en entrega, etc.). En todo caso, se informará al Usuario de las opciones
+          disponibles antes de confirmar el pedido.
+        </p>
+
+        <h5>4. Entrega y recogida</h5>
+        <ul>
+          <li>
+            El pedido podrá entregarse en la dirección indicada por el Usuario o recogerse en el local,
+            según la opción seleccionada.
+          </li>
+          <li>
+            Los tiempos de entrega son estimados y pueden verse afectados por factores externos
+            (tráfico, climatología, volumen de pedidos, etc.).
+          </li>
+        </ul>
+
+        <h5>5. Modificación o cancelación</h5>
+        <p>
+          Una vez confirmada la preparación del pedido por el establecimiento, solo podrá modificarse
+          o cancelarse contactando directamente con el mismo y siempre que el estado de preparación lo permita.
+        </p>
+
+        <h5>6. Reclamaciones e incidencias</h5>
+        <p>
+          En caso de incidencia con el pedido (producto incorrecto, falta de producto, retraso significativo,
+          etc.), el Usuario deberá contactar con el establecimiento o con Sebbro Foods a través de los
+          canales de contacto indicados en este Sitio para valorar la solución (reposición, vale, devolución, etc.).
+        </p>
+
+        <h5>7. Información sobre alérgenos</h5>
+        <p>
+          Las cartas de las marcas pueden incluir información sobre alérgenos. En caso de alergia o intolerancia,
+          el Usuario debe consultar siempre con el establecimiento antes de realizar el pedido.
+          Sebbro Foods no se hace responsable de reacciones derivadas de información incompleta o de la falta de
+          comunicación de alergias por parte del Usuario.
+        </p>
+
+        <h5>8. Legislación aplicable</h5>
+        <p>
+          Las presentes condiciones se rigen por la legislación española sobre consumidores y usuarios,
+          sin perjuicio de la normativa imperativa que resulte aplicable al Usuario en función de su
+          lugar de residencia.
+        </p>
+
+        <p class="legal-note">
+          Estas condiciones son un modelo genérico y deben ajustarse a los procesos y medios de pago
+          reales de cada marca y establecimiento asociado.
+        </p>
+      </div>
     </div>
-  </div>
-</div>
+  </section>
+</main>
 
 <footer>
   <div class="container inner">
     <span>© 2025 Sebbro Foods. Todos los derechos reservados.</span>
-    <div class="footer-links">
-      <span>Sebbro Foods es la casa de varias marcas de comida “hand eating”.</span>
-      <a href="#">Aviso legal</a>
-      <a href="#">Política de privacidad</a>
-      <a href="#">Política de cookies</a>
-    </div>
+    <span>Sebbro Foods es la casa de varias marcas de comida “hand eating”.</span>
   </div>
 </footer>
 
@@ -1960,6 +2325,33 @@ document.addEventListener("DOMContentLoaded", () => {
       contactForm.reset();
     });
   }
+
+  /* ---------- BOTONES LEGALES ---------- */
+  const legalButtons = document.querySelectorAll(".legal-btn");
+  const legalPanels  = document.querySelectorAll(".legal-panel");
+
+  legalButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const targetId = btn.getAttribute("data-target");
+      const panel = document.getElementById(targetId);
+      if (!panel) return;
+
+      const isOpen = panel.classList.contains("is-open");
+
+      legalPanels.forEach(p => p.classList.remove("is-open"));
+
+      if (!isOpen) {
+        panel.classList.add("is-open");
+
+        const rect = panel.getBoundingClientRect();
+        const offsetTop = rect.top + window.scrollY - SCROLL_OFFSET;
+        window.scrollTo({
+          top: offsetTop,
+          behavior: "smooth"
+        });
+      }
+    });
+  });
 });
 </script>
 </body>
