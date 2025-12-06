@@ -2,10 +2,10 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Sebbro Foods – Marcas de finger food & delivery</title>
+  <title>Sebbro Foods – House of finger food brands</title>
   <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <meta name="description" content="Sebbro Foods es la casa de varias marcas de finger food: burgers, tacos, wings, pizza rolls, sándwiches y donuts. Descubre nuestras marcas y haz tu pedido para delivery o recogida." />
+  <meta name="description" content="Sebbro Foods gestiona marcas de comida diseñada para comer con las manos: burgers, tacos, wings, pizza rolls, sandwiches y donuts gourmet." />
 
   <style>
     :root {
@@ -42,9 +42,11 @@
 
     header {
       position: sticky;
-      top: 0;              /* QUITA EL ESPACIO EN BLANCO ARRIBA */
+      top: 0;
       z-index: 40;
-      background: transparent;
+      background-image: url("img/hero-sebbro.jpg"); /* imagen hasta arriba */
+      background-size: cover;
+      background-position: center top;
       border-bottom: none;
       color: #f9fafb;
       transform: translateY(0);
@@ -59,8 +61,8 @@
 
     .header-inner {
       margin: 0 auto;
-      margin-top: 0.25rem;
-      margin-bottom: 0.35rem;
+      margin-top: 0.9rem;      /* separación respecto al borde superior */
+      margin-bottom: 0.9rem;
       max-width: 1100px;
       width: 100%;
       display: flex;
@@ -251,19 +253,19 @@
     main { padding-bottom: 4rem; }
     section { scroll-margin-top: 88px; }
 
-    /* ================== HERO ================== */
+    /* ================== HERO / LANDING ================== */
 
     .hero {
       position: relative;
       text-align: center;
-      margin-top: -90px;
-      padding-top: calc(3.5rem + 90px);
+      margin-top: 0;
+      padding-top: 6.5rem;         /* deja hueco para el header */
       padding-bottom: 3.4rem;
       background-image: url("img/hero-sebbro.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      min-height: calc(100vh + 40px);
+      min-height: calc(100vh - 40px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -324,14 +326,14 @@
     }
 
     @media (max-width: 900px) {
-      .hero { padding-top: calc(3rem + 90px); }
+      .hero { padding-top: 5.5rem; }
       .hero h2 { font-size: 2.1rem; }
       .hero-metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
 
     @media (max-width: 640px) {
       .hero {
-        padding-top: calc(2.6rem + 90px);
+        padding-top: 5rem;
         padding-bottom: 2.6rem;
       }
       .hero h2 { font-size: 1.9rem; }
@@ -603,30 +605,8 @@
       color: #e5e7eb;
     }
 
-    .form-group { margin-bottom: 0.9rem; }
-
     .form-group label {
-      display: block;
-      font-size: 0.8rem;
-      margin-bottom: 0.25rem;
-      color: #4b5563;
-    }
-
-    .contact-card label {
       color: #e5e7eb;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      border-radius: 0.6rem;
-      border: 1px solid #d4d4d8;
-      padding: 0.55rem 0.7rem;
-      font-size: 0.9rem;
-      font-family: inherit;
-      resize: vertical;
-      background: #ffffff;
-      color: #111827;
     }
 
     .contact-card input,
@@ -642,19 +622,11 @@
       border-color: #e5e7eb;
     }
 
-    .form-group textarea { min-height: 80px; }
-
-    .helper {
-      font-size: 0.75rem;
-      color: #9ca3af;
-      margin-top: 0.2rem;
-    }
-
     @media (max-width: 900px) {
       .contact-grid { grid-template-columns: minmax(0, 1fr); }
     }
 
-    /* ================== BOTONES GENERALES ================== */
+    /* ================== BOTONES Y FORMULARIOS GENERALES ================== */
 
     .btn-primary {
       border-radius: 999px;
@@ -676,7 +648,37 @@
 
     .btn-full { width: 100%; }
 
-    /* ================== DETALLE MARCA ================== */
+    .form-group { margin-bottom: 0.9rem; }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      margin-bottom: 0.25rem;
+      color: #4b5563;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      border-radius: 0.6rem;
+      border: 1px solid #d4d4d8;
+      padding: 0.55rem 0.7rem;
+      font-size: 0.9rem;
+      font-family: inherit;
+      resize: vertical;
+      background: #ffffff;
+      color: #111827;
+    }
+
+    .form-group textarea { min-height: 80px; }
+
+    .helper {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-top: 0.2rem;
+    }
+
+    /* ================== DETALLE FRANQUICIA ================== */
 
     #brand-detail {
       display: none;
@@ -922,82 +924,142 @@
       margin-top: 0.25rem;
     }
 
-    /* ================== SECCIÓN LEGAL ================== */
+    /* ================== FOOTER ================== */
 
-    #legal {
-      padding: 3rem 0 3.4rem;
-      background: #f9fafb;
+    footer {
+      background: #020617;
+      color: #9ca3af;
+      padding: 2.1rem 0 2.4rem;
+      font-size: 0.8rem;
+      border-top: 1px solid #111827;
     }
 
-    .legal-intro {
-      max-width: 640px;
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 1.8rem;
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
     }
 
-    .legal-actions {
+    .footer-nav,
+    .footer-legal {
       display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.3rem;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 1.6rem;
+      margin-bottom: 0.8rem;
     }
 
-    .legal-btn {
-      border-radius: 999px;
-      border: 1px solid #111827;
-      background: #ffffff;
-      color: #111827;
-      padding: 0.55rem 1.2rem;
-      font-size: 0.82rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+    .footer-nav a {
+      color: #e5e7eb;
+      font-size: 0.78rem;
+    }
+
+    .footer-nav a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-copy {
+      margin: 0 0 0.6rem;
+      color: #9ca3af;
+    }
+
+    .footer-legal-link {
+      border: none;
+      background: transparent;
+      color: #9ca3af;
+      font-size: 0.78rem;
       cursor: pointer;
-    }
-
-    .legal-btn:hover {
-      background: #111827;
-      color: #ffffff;
-    }
-
-    .legal-panel {
-      display: none;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border-subtle);
-      background: #ffffff;
-      padding: 1.3rem 1.4rem;
-      font-size: 0.86rem;
-      line-height: 1.7;
-      color: var(--muted);
-      max-height: 380px;
-      overflow: auto;
-    }
-
-    .legal-panel.is-open { display: block; }
-
-    .legal-panel h4 {
-      margin-top: 0;
-      margin-bottom: 0.6rem;
-      font-size: 0.95rem;
-      color: #111827;
-    }
-
-    .legal-panel h5 {
-      margin: 0.9rem 0 0.4rem;
-      font-size: 0.86rem;
-      color: #111827;
-    }
-
-    .legal-panel p {
-      margin: 0 0 0.5rem;
-    }
-
-    .legal-panel ul {
-      margin: 0.2rem 0 0.6rem 1.1rem;
       padding: 0;
     }
 
-    .legal-panel li {
+    .footer-legal-link:hover {
+      text-decoration: underline;
+    }
+
+    .footer-tagline {
+      margin: 0.4rem 0 0;
+      font-size: 0.78rem;
+      color: #6b7280;
+    }
+
+    /* ================== MODALES LEGALES ================== */
+
+    .legal-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 60;
+    }
+
+    .legal-modal.is-visible {
+      display: flex;
+    }
+
+    .legal-modal-panel {
+      background: #111827;
+      color: #e5e7eb;
+      max-width: 720px;
+      width: 100%;
+      max-height: 80vh;
+      border-radius: 18px;
+      padding: 1.6rem 1.8rem 1.5rem;
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.7);
+      overflow: auto;
+      font-size: 0.86rem;
+      line-height: 1.7;
+    }
+
+    .legal-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .legal-modal-header h3 {
+      margin: 0;
+      font-size: 1rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .legal-modal-close {
+      border: none;
+      background: transparent;
+      color: #9ca3af;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .legal-modal-content h4 {
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+      color: #ffffff;
+    }
+
+    .legal-modal-content h5 {
+      margin: 0.9rem 0 0.4rem;
+      font-size: 0.86rem;
+      color: #e5e7eb;
+    }
+
+    .legal-modal-content p {
+      margin: 0 0 0.5rem;
+      color: #d1d5db;
+    }
+
+    .legal-modal-content ul {
+      margin: 0.2rem 0 0.7rem 1.1rem;
+      padding: 0;
+    }
+
+    .legal-modal-content li {
       margin-bottom: 0.3rem;
     }
 
@@ -1008,27 +1070,10 @@
     }
 
     @media (max-width: 640px) {
-      .legal-panel {
-        max-height: none;
+      .legal-modal-panel {
+        max-height: 90vh;
+        padding: 1.3rem 1.2rem 1.2rem;
       }
-    }
-
-    /* ================== FOOTER ================== */
-
-    footer {
-      border-top: 1px solid #e5e7eb;
-      padding: 1.4rem 0 1.6rem;
-      font-size: 0.8rem;
-      color: #9ca3af;
-      background: #ffffff;
-    }
-
-    footer .inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
     }
 
     .search-highlight {
@@ -1081,9 +1126,9 @@
       <div class="container">
         <h2>Tu comida favorita, para comer con las manos</h2>
         <p>
-          Sebbro Foods es la casa de varias marcas especializadas en finger food:
-          burgers, tacos, wings, pizza rolls, sándwiches y donuts. Descubre la marca
-          que más te apetece, mira su menú y haz tu pedido para delivery o recogida.
+          Sebbro Foods es la casa de varias marcas especializadas en finger food: burgers, tacos,
+          wings, pizza rolls, sándwiches y donuts. Descubre la marca que más te apetece, mira su
+          menú y haz tu pedido para delivery o recogida.
         </p>
 
         <div class="hero-ctas">
@@ -1113,34 +1158,34 @@
     <section id="about">
       <div class="container about-grid">
         <div>
-          <h3 class="section-title">Quiénes somos</h3>
+          <h3 class="section-title">Sobre Sebbro Foods</h3>
           <p>
             Sebbro Foods nace de una idea sencilla: los momentos gastronómicos más memorables
             suelen ocurrir cuando comemos con las manos. Tacos, burgers, wings, pizza al corte,
             sándwiches o donuts… todos ellos comparten una cosa en común: la experiencia táctil.
           </p>
           <p>
-            Somos un equipo con background en restauración, producto y datos. Creamos y gestionamos
-            marcas que se entienden al segundo, con recetas cuidadas, formatos ergonómicos y
-            packaging pensado para delivery y take away.
+            Nuestro equipo combina background en restauración organizada, logística, diseño de
+            producto y data. Desarrollamos marcas propias con un enfoque muy claro: operaciones
+            ligeras, ticket medio sano, cocina optimizada para delivery y una experiencia de marca
+            que se entiende en segundos.
           </p>
           <p>
-            Cada marca tiene su propia personalidad, pero todas comparten lo mismo:
-            producto de calidad, procesos muy trabajados y una experiencia pensada para disfrutar
-            sin cubiertos, en casa o donde tú quieras.
+            Trabajamos con franquiciados y operadores que buscan conceptos claros, escalables y con
+            soporte real en marketing, formación y analítica de negocio.
           </p>
         </div>
         <aside class="about-card">
           <h4>Nuestro enfoque</h4>
           <p>
-            Cuidamos toda la experiencia, desde el primer vistazo al menú hasta el último bocado:
-            producto, packaging, fotos, tiempos de entrega y atención al cliente.
+            Diseñamos conceptos de “hand eating” 360º: desde el producto y el packaging hasta los
+            procesos en cocina y la experiencia digital del cliente.
           </p>
           <div class="about-points">
-            <span>• Recetas pensadas para aguantar bien en delivery.</span>
-            <span>• Formatos cómodos de sujetar y compartir.</span>
-            <span>• Imagen muy cuidada, lista para vivir en redes sociales.</span>
-            <span>• Operaciones sencillas para locales propios y franquiciados.</span>
+            <span>• Modelos pensados para locales compactos y dark kitchens.</span>
+            <span>• Recetas replicables y manuales operativos claros.</span>
+            <span>• Branding y fotografía listos para redes sociales.</span>
+            <span>• Soporte en aperturas, formación y análisis de ventas.</span>
           </div>
         </aside>
       </div>
@@ -1149,11 +1194,10 @@
     <!-- MARCAS -->
     <section id="brands">
       <div class="container">
-        <h3 class="section-title">Nuestras marcas de finger food</h3>
+        <h3 class="section-title">Nuestras marcas</h3>
         <p class="section-subtitle">
-          Seis conceptos diferentes para cuando te apetece burger, cocina mexicana, wings para ver el partido,
-          pizza en formato roll, sándwiches gourmet o donuts que entran por los ojos.
-          Haz clic sobre una marca para ver su historia, su menú y hacer tu pedido.
+          Seis conceptos complementarios que cubren los grandes momentos de consumo urbano:
+          comida rápida de alta calidad, con ticket medio optimizado y fuerte vocación delivery.
         </p>
 
         <div class="brands-grid">
@@ -1163,13 +1207,13 @@
               <p class="brand-card-tagline">Gourmet Burgers · Hand Eating</p>
               <h4 class="brand-card-name">BurgerCraft</h4>
               <p class="brand-card-desc">
-                Hamburguesas artesanales con ingredientes premium y panes pensados para no romperse al comerlas con las manos.
+                Hamburguesas artesanales con ingredientes premium y panes pensados para no romperse al comer con las manos.
               </p>
               <div class="brand-card-meta">
                 <div class="brand-card-rating">
                   <span>★</span><span>4.8</span><span>· 25 locales</span>
                 </div>
-                <button class="brand-card-cta" type="button">Ver menú y pedir</button>
+                <button class="brand-card-cta" type="button">Obtener más información</button>
               </div>
             </div>
           </article>
@@ -1180,13 +1224,13 @@
               <p class="brand-card-tagline">Mexican Street Food</p>
               <h4 class="brand-card-name">Taco Express</h4>
               <p class="brand-card-desc">
-                Tacos inspirados en los puestos callejeros mexicanos, tortillas hechas a diario y salsas con distintos niveles de picante.
+                Tacos auténticos con tortillas hechas a mano y recetas tradicionales, pensados para comer de pie o sobre la marcha.
               </p>
               <div class="brand-card-meta">
                 <div class="brand-card-rating">
                   <span>★</span><span>4.7</span><span>· 18 locales</span>
                 </div>
-                <button class="brand-card-cta" type="button">Ver menú y pedir</button>
+                <button class="brand-card-cta" type="button">Obtener más información</button>
               </div>
             </div>
           </article>
@@ -1197,13 +1241,13 @@
               <p class="brand-card-tagline">Chicken Wings Bar</p>
               <h4 class="brand-card-name">Wing Masters</h4>
               <p class="brand-card-desc">
-                Alitas crujientes, 12 salsas exclusivas y raciones pensadas para compartir en casa, viendo una serie o un partido.
+                Alitas marinadas y 12 salsas exclusivas para compartir en grupo, con foco en take away y delivery nocturno.
               </p>
               <div class="brand-card-meta">
                 <div class="brand-card-rating">
                   <span>★</span><span>4.6</span><span>· 32 locales</span>
                 </div>
-                <button class="brand-card-cta" type="button">Ver menú y pedir</button>
+                <button class="brand-card-cta" type="button">Obtener más información</button>
               </div>
             </div>
           </article>
@@ -1214,13 +1258,13 @@
               <p class="brand-card-tagline">Italian Pizza Rolls</p>
               <h4 class="brand-card-name">Pizza Fingers</h4>
               <p class="brand-card-desc">
-                Pizza enrollada en formato “finger food” para comer sin platos ni cubiertos, perfecta para oficinas, eventos y noches con amigos.
+                Pizza enrollada en formato “finger food” para comer sin platos, perfecta para oficinas, eventos y ocio nocturno.
               </p>
               <div class="brand-card-meta">
                 <div class="brand-card-rating">
                   <span>★</span><span>4.5</span><span>· 15 locales</span>
                 </div>
-                <button class="brand-card-cta" type="button">Ver menú y pedir</button>
+                <button class="brand-card-cta" type="button">Obtener más información</button>
               </div>
             </div>
           </article>
@@ -1231,13 +1275,13 @@
               <p class="brand-card-tagline">Gourmet Sandwiches</p>
               <h4 class="brand-card-name">Sandwich Club</h4>
               <p class="brand-card-desc">
-                Sándwiches y wraps gourmet, envueltos para poder comer de camino al trabajo, en el tren o en la oficina sin mancharte.
+                Sándwiches y wraps premium, envueltos en papel técnico para un consumo limpio en oficinas, trenes y aeropuertos.
               </p>
               <div class="brand-card-meta">
                 <div class="brand-card-rating">
                   <span>★</span><span>4.4</span><span>· 22 locales</span>
                 </div>
-                <button class="brand-card-cta" type="button">Ver menú y pedir</button>
+                <button class="brand-card-cta" type="button">Obtener más información</button>
               </div>
             </div>
           </article>
@@ -1248,13 +1292,13 @@
               <p class="brand-card-tagline">Artisanal Donuts</p>
               <h4 class="brand-card-name">Donut Hands</h4>
               <p class="brand-card-desc">
-                Donuts artesanales muy instagrameables, con toppings llamativos y cajas pensadas para compartir y fotografiar.
+                Donuts artesanales con diseño ergonómico, pensados para llevar, compartir y viralizar en redes sociales.
               </p>
               <div class="brand-card-meta">
                 <div class="brand-card-rating">
                   <span>★</span><span>4.9</span><span>· 12 locales</span>
                 </div>
-                <button class="brand-card-cta" type="button">Ver menú y pedir</button>
+                <button class="brand-card-cta" type="button">Obtener más información</button>
               </div>
             </div>
           </article>
@@ -1265,10 +1309,10 @@
     <!-- MAPA -->
     <section id="map-section">
       <div class="container">
-        <h3 class="section-title">Dónde estamos</h3>
+        <h3 class="section-title">Mapa de locales</h3>
         <p class="section-subtitle">
-          Operamos a través de locales propios, franquicias y dark kitchens.
-          Busca tu ciudad en el mapa y descubre qué marcas de Sebbro Foods tienes más cerca.
+          Mapa aproximado de operación actual y expansión prevista. Cada nueva apertura se
+          integra en nuestro ecosistema de datos y soporte centralizado.
         </p>
 
         <div class="map-wrapper">
@@ -1295,32 +1339,26 @@
     <section id="contact">
       <div class="container">
         <div class="contact-heading">
-          <h3>Contacto</h3>
+          <h3>¿Tienes dudas?</h3>
           <p>
-            ¿Tienes dudas sobre un pedido, sugerencias para alguna de nuestras marcas,
-            quieres proponernos una colaboración o contar con nosotros para un evento?
-            Escríbenos y te responderemos lo antes posible.
+            Escríbenos. Estamos construyendo Sebbro Foods contigo y queremos escuchar lo
+            que necesitas para que tu finger food llegue más lejos.
           </p>
         </div>
 
         <div class="contact-grid">
           <div class="contact-text">
             <p>
-              Clientes finales: si has tenido alguna incidencia con tu pedido,
-              quieres hacer una sugerencia o simplemente contarnos tu experiencia,
-              nos encantará leerte.
+              Trabajamos tanto con operadores individuales como con grupos que gestionan varias
+              ubicaciones. Nos interesan ubicaciones urbanas, zonas de oficinas, centros
+              comerciales y entornos con fuerte componente delivery.
             </p>
             <p>
-              Eventos y empresas: también podemos estudiar propuestas para caterings,
-              acciones puntuales o colaboraciones de marca.
-            </p>
-            <p>
-              Profesionales de hostelería y franquiciados: si gestionas locales y quieres
-              saber más sobre cómo trabajamos con nuestras marcas, cuéntanos brevemente tu
-              perfil y tu ciudad.
+              Además del modelo de franquicia, podemos estudiar acuerdos de licencia o joint
+              venture en mercados estratégicos.
             </p>
             <p class="helper">
-              Suelen responderte desde nuestro equipo en un plazo corto de tiempo.
+              Respuesta habitual en menos de 48 horas laborables.
             </p>
           </div>
 
@@ -1340,8 +1378,8 @@
                 <input id="cf-location" type="text" placeholder="Ej. Madrid, España" />
               </div>
               <div class="form-group">
-                <label for="cf-message">¿En qué podemos ayudarte?</label>
-                <textarea id="cf-message" required placeholder="Pedido, sugerencia, evento, colaboración, información para hostelería…"></textarea>
+                <label for="cf-message">Cuéntanos tu proyecto</label>
+                <textarea id="cf-message" required placeholder="Tipo de ubicación, plazos, experiencia previa…"></textarea>
               </div>
               <button class="btn-primary btn-full" type="submit">Enviar mensaje</button>
             </form>
@@ -1351,7 +1389,7 @@
     </section>
   </div>
 
-  <!-- DETALLE DE MARCA -->
+  <!-- DETALLE DE MARCA / PEDIDO -->
   <section id="brand-detail">
     <div class="container">
       <button type="button" id="detail-back" class="detail-back">← Volver a todas las marcas</button>
@@ -1405,7 +1443,7 @@
             <h3>Tu pedido</h3>
             <form id="order-form">
               <p class="helper">
-                Completa tus datos y te contactaremos desde el local para confirmar el pedido y la franja de entrega o recogida.
+                Completa tus datos y te contactaremos para confirmar el pedido y la franja de entrega.
               </p>
               <div class="form-group">
                 <label for="order-name">Nombre</label>
@@ -1425,7 +1463,7 @@
               </div>
               <div class="form-group">
                 <label for="order-notes">Comentarios adicionales</label>
-                <textarea id="order-notes" placeholder="Piso, timbre, alergias, horario preferente, recogida en local…"></textarea>
+                <textarea id="order-notes" placeholder="Piso, timbre, alergias, horario preferente…"></textarea>
               </div>
 
               <div class="order-summary">
@@ -1440,330 +1478,290 @@
       </div>
     </div>
   </section>
-
-  <!-- INFORMACIÓN LEGAL -->
-  <section id="legal">
-    <div class="container">
-      <h3 class="section-title">Información legal</h3>
-      <p class="legal-intro">
-        Aquí puedes consultar el aviso legal, la política de privacidad, la política de cookies
-        y las condiciones aplicables a los pedidos realizados a través de las marcas de Sebbro Foods.
-        Pulsa en cada botón para ver el contenido.
-      </p>
-
-      <div class="legal-actions">
-        <button class="legal-btn" data-target="panel-aviso">Aviso legal y condiciones de uso</button>
-        <button class="legal-btn" data-target="panel-privacidad">Política de privacidad</button>
-        <button class="legal-btn" data-target="panel-cookies">Política de cookies</button>
-        <button class="legal-btn" data-target="panel-pedidos">Condiciones de pedidos y contratación</button>
-      </div>
-
-      <!-- AVISO LEGAL -->
-      <div class="legal-panel" id="panel-aviso">
-        <h4>Aviso legal y condiciones de uso</h4>
-        <p>
-          Este sitio web (en adelante, el “Sitio”) es titularidad de
-          <strong>SEBBRO FOODS, S.L.</strong> (en adelante, “Sebbro Foods”), con domicilio social en
-          [DIRECCIÓN COMPLETA], CIF [CIF/NIF] y correo electrónico de contacto
-          <a href="mailto:info@sebbrofoods.com">info@sebbrofoods.com</a>.
-        </p>
-
-        <h5>1. Objeto</h5>
-        <p>
-          El presente aviso legal regula el acceso y uso del Sitio, así como de los contenidos y servicios
-          puestos a disposición de los usuarios (en adelante, los “Usuarios”).
-          El acceso al Sitio implica la aceptación plena de este aviso legal.
-        </p>
-
-        <h5>2. Uso correcto del Sitio</h5>
-        <p>
-          El Usuario se compromete a utilizar el Sitio, sus contenidos y servicios de conformidad con la ley,
-          la buena fe, las buenas costumbres y el presente aviso legal. Queda expresamente prohibido:
-        </p>
-        <ul>
-          <li>Hacer un uso no autorizado o fraudulento del Sitio.</li>
-          <li>Introducir o difundir virus informáticos o cualesquiera otros sistemas que puedan dañar los sistemas de Sebbro Foods o de terceros.</li>
-          <li>Acceder sin autorización a secciones restringidas del Sitio o a sistemas de terceros.</li>
-        </ul>
-
-        <h5>3. Propiedad intelectual e industrial</h5>
-        <p>
-          Todos los derechos de propiedad intelectual e industrial sobre el Sitio, su diseño gráfico, logotipos,
-          nombres comerciales, textos, imágenes y demás contenidos pertenecen a Sebbro Foods o a terceros
-          autorizantes. Queda prohibida la reproducción, distribución, comunicación pública o cualquier
-          otra forma de explotación, salvo autorización previa y por escrito de Sebbro Foods.
-        </p>
-
-        <h5>4. Enlaces</h5>
-        <p>
-          El Sitio puede contener enlaces a páginas web de terceros. Sebbro Foods no se hace responsable de los
-          contenidos ni de las condiciones de uso o políticas de privacidad de dichos sitios, que corresponderán
-          en exclusiva a sus titulares.
-        </p>
-
-        <h5>5. Responsabilidad</h5>
-        <p>
-          Sebbro Foods no garantiza la disponibilidad ininterrumpida del Sitio ni la ausencia de errores. No obstante,
-          realizará sus mejores esfuerzos para garantizar la continuidad y buen funcionamiento del mismo.
-        </p>
-        <p>
-          Sebbro Foods no se hace responsable de los daños y perjuicios que pudieran derivarse de:
-        </p>
-        <ul>
-          <li>Interferencias, interrupciones, virus informáticos, averías o desconexiones motivadas por causas ajenas a Sebbro Foods.</li>
-          <li>Actuaciones ilícitas o contrarias al presente aviso legal realizadas por los Usuarios.</li>
-        </ul>
-
-        <h5>6. Modificaciones</h5>
-        <p>
-          Sebbro Foods se reserva el derecho a modificar, en cualquier momento y sin previo aviso, la presentación
-          y configuración del Sitio, así como el presente aviso legal.
-        </p>
-
-        <h5>7. Legislación aplicable y jurisdicción</h5>
-        <p>
-          El presente aviso legal se rige por la legislación española. Para la resolución de cualquier conflicto,
-          las partes se someten a los juzgados y tribunales de la ciudad de [CIUDAD], salvo que la normativa
-          de protección de consumidores y usuarios disponga otro fuero imperativo.
-        </p>
-
-        <p class="legal-note">
-          Este texto es un modelo general y debe ser adaptado a la situación real de Sebbro Foods con el
-          asesoramiento de un profesional jurídico.
-        </p>
-      </div>
-
-      <!-- PRIVACIDAD -->
-      <div class="legal-panel" id="panel-privacidad">
-        <h4>Política de privacidad</h4>
-        <p>
-          De conformidad con el Reglamento (UE) 2016/679 (RGPD) y la normativa española de protección de datos,
-          se informa al Usuario sobre el tratamiento de sus datos personales cuando utiliza este Sitio o
-          contacta con Sebbro Foods.
-        </p>
-
-        <h5>1. Responsable del tratamiento</h5>
-        <p>
-          Responsable: <strong>SEBBRO FOODS, S.L.</strong><br>
-          Dirección: [DIRECCIÓN COMPLETA]<br>
-          Email: <a href="mailto:privacidad@sebbrofoods.com">privacidad@sebbrofoods.com</a>
-        </p>
-
-        <h5>2. Datos tratados</h5>
-        <p>
-          Sebbro Foods puede tratar las siguientes categorías de datos:
-        </p>
-        <ul>
-          <li>Datos de identificación: nombre y apellidos.</li>
-          <li>Datos de contacto: teléfono, email, dirección de entrega.</li>
-          <li>Datos de pedido: productos solicitados, importes, horarios de entrega.</li>
-          <li>Datos de navegación y uso del Sitio (cookies, estadísticas, etc.).</li>
-        </ul>
-
-        <h5>3. Finalidades del tratamiento</h5>
-        <ul>
-          <li>Gestionar y tramitar los pedidos realizados a través del Sitio.</li>
-          <li>Atender consultas, sugerencias o reclamaciones enviadas mediante los formularios de contacto.</li>
-          <li>Enviar comunicaciones comerciales relativas a las marcas de Sebbro Foods (si el Usuario lo ha autorizado).</li>
-          <li>Realizar análisis internos y estadísticas sobre el uso del Sitio y los productos más demandados.</li>
-        </ul>
-
-        <h5>4. Base jurídica</h5>
-        <ul>
-          <li>
-            Ejecución de un contrato o aplicación de medidas precontractuales (gestión de pedidos y consultas).
-          </li>
-          <li>
-            Cumplimiento de obligaciones legales (obligaciones fiscales, contables y de consumo).
-          </li>
-          <li>
-            Consentimiento del Usuario (envío de comunicaciones comerciales, cookies no técnicas).
-          </li>
-          <li>
-            Interés legítimo de Sebbro Foods (mejora de servicios y experiencia de usuario).
-          </li>
-        </ul>
-
-        <h5>5. Destinatarios</h5>
-        <p>
-          Los datos del Usuario podrán ser comunicados a:
-        </p>
-        <ul>
-          <li>
-            Empresas de reparto o establecimientos franquiciados que preparen y entreguen el pedido.
-          </li>
-          <li>
-            Proveedores de servicios necesarios para la prestación del servicio (plataformas de pago, hosting, herramientas de email marketing).
-          </li>
-          <li>
-            Administraciones públicas cuando así lo exija la ley.
-          </li>
-        </ul>
-
-        <h5>6. Plazo de conservación</h5>
-        <p>
-          Los datos se conservarán mientras exista relación contractual o comercial con el Usuario y, posteriormente,
-          durante los plazos necesarios para atender posibles responsabilidades legales.
-        </p>
-
-        <h5>7. Derechos del Usuario</h5>
-        <p>
-          El Usuario puede ejercitar sus derechos de acceso, rectificación, supresión, oposición, limitación
-          del tratamiento y portabilidad, así como retirar el consentimiento prestado en cualquier momento,
-          enviando una solicitud junto con copia de su documento identificativo a:
-          <a href="mailto:privacidad@sebbrofoods.com">privacidad@sebbrofoods.com</a>.
-        </p>
-        <p>
-          Asimismo, tiene derecho a presentar una reclamación ante la autoridad de control competente
-          (en España, la Agencia Española de Protección de Datos).
-        </p>
-
-        <p class="legal-note">
-          Este resumen de política de privacidad es orientativo y debe ser revisado y adaptado a los
-          tratamientos de datos reales de Sebbro Foods.
-        </p>
-      </div>
-
-      <!-- COOKIES -->
-      <div class="legal-panel" id="panel-cookies">
-        <h4>Política de cookies</h4>
-        <p>
-          Este Sitio utiliza cookies y tecnologías similares para permitir su funcionamiento, medir el uso
-          que hacen los Usuarios y, en su caso, mostrar contenidos personalizados.
-        </p>
-
-        <h5>1. ¿Qué son las cookies?</h5>
-        <p>
-          Las cookies son pequeños archivos que se descargan en el dispositivo del Usuario al acceder
-          a determinadas páginas web. Permiten, entre otras cosas, almacenar y recuperar información
-          sobre hábitos de navegación.
-        </p>
-
-        <h5>2. Tipos de cookies utilizadas</h5>
-        <ul>
-          <li>
-            <strong>Cookies técnicas:</strong> necesarias para la navegación y el correcto funcionamiento del Sitio.
-            Permiten, por ejemplo, recordar los productos añadidos al pedido.
-          </li>
-          <li>
-            <strong>Cookies de análisis:</strong> permiten medir el número de visitas y analizar el uso que se hace del Sitio
-            (por ejemplo, páginas más visitadas).
-          </li>
-          <li>
-            <strong>Cookies de personalización o marketing (si se utilizan):</strong> permiten adaptar la experiencia
-            o mostrar contenidos promocionales relacionados con los intereses del Usuario.
-          </li>
-        </ul>
-
-        <h5>3. Gestión de cookies</h5>
-        <p>
-          El Usuario puede configurar su navegador para aceptar o rechazar todas las cookies, o para priorizar
-          determinadas categorías. Los principales navegadores ofrecen opciones de configuración en sus menús
-          de “Opciones” o “Preferencias”.
-        </p>
-        <p>
-          Desactivar determinadas cookies puede afectar al funcionamiento de algunas funcionalidades del Sitio,
-          especialmente las relacionadas con el proceso de pedido.
-        </p>
-
-        <p class="legal-note">
-          Si Sebbro Foods implementa un banner de gestión de cookies, esta política deberá alinearse con la
-          configuración real y el listado de cookies utilizadas.
-        </p>
-      </div>
-
-      <!-- CONDICIONES DE PEDIDOS -->
-      <div class="legal-panel" id="panel-pedidos">
-        <h4>Condiciones de pedidos y contratación</h4>
-        <p>
-          Estas condiciones regulan los pedidos realizados por los Usuarios a través del Sitio y de los canales
-          de pedido online asociados a las marcas de Sebbro Foods.
-        </p>
-
-        <h5>1. Proceso de pedido</h5>
-        <ul>
-          <li>
-            El Usuario selecciona la marca, consulta el menú y añade productos al pedido.
-          </li>
-          <li>
-            Antes de confirmar el pedido, se muestra un resumen con el detalle de productos, cantidades,
-            precio aproximado e impuestos aplicables.
-          </li>
-          <li>
-            El pedido se considera realizado cuando el Usuario envía sus datos de contacto y recibe
-            confirmación por parte del establecimiento que lo preparará.
-          </li>
-        </ul>
-
-        <h5>2. Precios e impuestos</h5>
-        <p>
-          Los precios mostrados en el Sitio son precios de venta al público e incluyen los impuestos
-          indirectos aplicables (IVA u otros), salvo indicación en contrario. Los gastos de envío,
-          comisiones de plataformas o recargos por servicio se indicarán, en su caso, antes de finalizar el pedido.
-        </p>
-
-        <h5>3. Formas de pago</h5>
-        <p>
-          Las formas de pago disponibles pueden variar en función de la marca o del establecimiento
-          (pago online, pago en entrega, etc.). En todo caso, se informará al Usuario de las opciones
-          disponibles antes de confirmar el pedido.
-        </p>
-
-        <h5>4. Entrega y recogida</h5>
-        <ul>
-          <li>
-            El pedido podrá entregarse en la dirección indicada por el Usuario o recogerse en el local,
-            según la opción seleccionada.
-          </li>
-          <li>
-            Los tiempos de entrega son estimados y pueden verse afectados por factores externos
-            (tráfico, climatología, volumen de pedidos, etc.).
-          </li>
-        </ul>
-
-        <h5>5. Modificación o cancelación</h5>
-        <p>
-          Una vez confirmada la preparación del pedido por el establecimiento, solo podrá modificarse
-          o cancelarse contactando directamente con el mismo y siempre que el estado de preparación lo permita.
-        </p>
-
-        <h5>6. Reclamaciones e incidencias</h5>
-        <p>
-          En caso de incidencia con el pedido (producto incorrecto, falta de producto, retraso significativo,
-          etc.), el Usuario deberá contactar con el establecimiento o con Sebbro Foods a través de los
-          canales de contacto indicados en este Sitio para valorar la solución (reposición, vale, devolución, etc.).
-        </p>
-
-        <h5>7. Información sobre alérgenos</h5>
-        <p>
-          Las cartas de las marcas pueden incluir información sobre alérgenos. En caso de alergia o intolerancia,
-          el Usuario debe consultar siempre con el establecimiento antes de realizar el pedido.
-          Sebbro Foods no se hace responsable de reacciones derivadas de información incompleta o de la falta de
-          comunicación de alergias por parte del Usuario.
-        </p>
-
-        <h5>8. Legislación aplicable</h5>
-        <p>
-          Las presentes condiciones se rigen por la legislación española sobre consumidores y usuarios,
-          sin perjuicio de la normativa imperativa que resulte aplicable al Usuario en función de su
-          lugar de residencia.
-        </p>
-
-        <p class="legal-note">
-          Estas condiciones son un modelo genérico y deben ajustarse a los procesos y medios de pago
-          reales de cada marca y establecimiento asociado.
-        </p>
-      </div>
-    </div>
-  </section>
 </main>
 
+<!-- MODAL CÓDIGO POSTAL -->
+<div class="modal-backdrop" id="postal-modal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true">
+    <div class="modal-header">
+      <h3>Zona de servicio</h3>
+      <button class="modal-close" id="postal-close" type="button">×</button>
+    </div>
+    <div class="modal-body">
+      <p>
+        Antes de mostrarte el menú completo, comprobamos si esta marca sirve pedidos en tu zona.
+        Introduce tu código postal:
+      </p>
+      <form id="postal-form" novalidate>
+        <div class="form-group">
+          <label for="postal-input">Código postal (España)</label>
+          <input id="postal-input" type="text" maxlength="5" inputmode="numeric" placeholder="Ej. 08001" required />
+          <p class="helper">Solo lo usamos para localizar la cocina o punto de venta que te servirá.</p>
+          <p id="postal-error" class="postal-error" style="display:none;"></p>
+        </div>
+        <button class="btn-primary btn-full" type="submit">Continuar</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
 <footer>
-  <div class="container inner">
-    <span>© 2025 Sebbro Foods. Todos los derechos reservados.</span>
-    <span>Sebbro Foods es la casa de varias marcas de comida “hand eating”.</span>
+  <div class="container footer-inner">
+    <nav class="footer-nav">
+      <a href="#about">Quiénes somos</a>
+      <a href="#brands">Nuestras marcas</a>
+      <a href="#map-section">Dónde estamos</a>
+      <a href="#contact">Contacto</a>
+    </nav>
+
+    <p class="footer-copy">© 2025 Sebbro Foods. Todos los derechos reservados.</p>
+
+    <div class="footer-legal">
+      <button type="button" class="footer-legal-link" data-legal="privacidad">
+        Política de Privacidad
+      </button>
+      <button type="button" class="footer-legal-link" data-legal="terminos">
+        Términos y Condiciones
+      </button>
+      <button type="button" class="footer-legal-link" data-legal="cookies">
+        Política de Cookies
+      </button>
+      <button type="button" class="footer-legal-link" data-legal="datos">
+        Protección de Datos
+      </button>
+    </div>
+
+    <p class="footer-tagline">Tu comida favorita, para comer con las manos.</p>
   </div>
 </footer>
+
+<!-- MODAL: POLÍTICA DE PRIVACIDAD -->
+<div id="legal-modal-privacidad" class="legal-modal">
+  <div class="legal-modal-panel">
+    <div class="legal-modal-header">
+      <h3>Política de Privacidad</h3>
+      <button type="button" class="legal-modal-close" data-close-legal>&times;</button>
+    </div>
+    <div class="legal-modal-content">
+      <p>
+        De conformidad con el Reglamento (UE) 2016/679 (RGPD) y la normativa española
+        de protección de datos, informamos sobre el tratamiento de los datos personales
+        recogidos a través de esta web.
+      </p>
+
+      <h5>1. Responsable del tratamiento</h5>
+      <p>
+        Responsable: <strong>SEBBRO FOODS, S.L.</strong><br>
+        Dirección: [DIRECCIÓN COMPLETA]<br>
+        Email: <a href="mailto:privacidad@sebbrofoods.com">privacidad@sebbrofoods.com</a>
+      </p>
+
+      <h5>2. Datos tratados</h5>
+      <ul>
+        <li>Datos de identificación (nombre y apellidos).</li>
+        <li>Datos de contacto (teléfono, email, dirección de entrega).</li>
+        <li>Datos de pedido (productos, importes, horarios, incidencias).</li>
+        <li>Datos de navegación obtenidos mediante cookies.</li>
+      </ul>
+
+      <h5>3. Finalidades</h5>
+      <ul>
+        <li>Gestionar pedidos y consultas realizadas por el usuario.</li>
+        <li>Dar respuesta a reclamaciones o sugerencias.</li>
+        <li>Enviar comunicaciones comerciales si el usuario lo ha autorizado.</li>
+        <li>Realizar análisis internos y estadísticas sobre el uso del servicio.</li>
+      </ul>
+
+      <h5>4. Base jurídica</h5>
+      <ul>
+        <li>Ejecución de contrato o aplicación de medidas precontractuales.</li>
+        <li>Cumplimiento de obligaciones legales.</li>
+        <li>Consentimiento del usuario (newsletter, comunicaciones comerciales, cookies no técnicas).</li>
+        <li>Interés legítimo de Sebbro Foods en mejorar sus servicios.</li>
+      </ul>
+
+      <h5>5. Destinatarios</h5>
+      <p>
+        Los datos podrán comunicarse a establecimientos franquiciados, empresas de reparto,
+        proveedores tecnológicos (pasarelas de pago, hosting, emailing) y Administraciones
+        Públicas cuando exista obligación legal.
+      </p>
+
+      <h5>6. Conservación</h5>
+      <p>
+        Los datos se conservarán mientras se mantenga la relación con el usuario y durante los
+        plazos necesarios para cumplir obligaciones legales o atender posibles responsabilidades.
+      </p>
+
+      <h5>7. Derechos</h5>
+      <p>
+        El usuario puede ejercer sus derechos de acceso, rectificación, supresión, oposición,
+        limitación y portabilidad, así como retirar el consentimiento en cualquier momento,
+        enviando un email a
+        <a href="mailto:privacidad@sebbrofoods.com">privacidad@sebbrofoods.com</a>.
+        También puede presentar una reclamación ante la Agencia Española de Protección de Datos.
+      </p>
+
+      <p class="legal-note">
+        Este texto es orientativo y debe revisarse y adaptarse a los tratamientos reales de datos
+        personales de Sebbro Foods.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: TÉRMINOS Y CONDICIONES -->
+<div id="legal-modal-terminos" class="legal-modal">
+  <div class="legal-modal-panel">
+    <div class="legal-modal-header">
+      <h3>Términos y Condiciones de Uso</h3>
+      <button type="button" class="legal-modal-close" data-close-legal>&times;</button>
+    </div>
+    <div class="legal-modal-content">
+      <h4>1. Titular del sitio web</h4>
+      <p>
+        Este sitio web es titularidad de <strong>SEBBRO FOODS, S.L.</strong>, con domicilio en
+        [DIRECCIÓN COMPLETA] y CIF [CIF/NIF]. El email de contacto general es
+        <a href="mailto:info@sebbrofoods.com">info@sebbrofoods.com</a>.
+      </p>
+
+      <h5>2. Objeto del sitio</h5>
+      <p>
+        El sitio permite a los usuarios conocer las marcas de Sebbro Foods y contactar para
+        realizar pedidos, resolver dudas o solicitar información sobre franquicias u otros
+        modelos de colaboración.
+      </p>
+
+      <h5>3. Buen uso del servicio</h5>
+      <p>El usuario se compromete a:</p>
+      <ul>
+        <li>Usar la web conforme a la ley, la buena fe y las presentes condiciones.</li>
+        <li>No introducir virus, malware o cualquier sistema que pueda dañar el sitio.</li>
+        <li>No intentar acceder a áreas restringidas sin autorización.</li>
+      </ul>
+
+      <h5>4. Propiedad intelectual e industrial</h5>
+      <p>
+        Las marcas, logotipos, textos, imágenes y diseños de esta web están protegidos por
+        derechos de propiedad intelectual e industrial y pertenecen a Sebbro Foods o a terceros
+        licenciantes. Queda prohibida su reproducción o explotación sin autorización expresa.
+      </p>
+
+      <h5>5. Limitación de responsabilidad</h5>
+      <p>
+        Sebbro Foods no garantiza la disponibilidad ininterrumpida del sitio ni la ausencia total
+        de errores, aunque se compromete a adoptar medidas razonables para su correcta
+        funcionalidad. No será responsable de daños derivados de:
+      </p>
+      <ul>
+        <li>Interrupciones del servicio por causas ajenas (fallos de red, proveedores, etc.).</li>
+        <li>Uso indebido del sitio por parte de los usuarios.</li>
+        <li>Información o contenidos de terceros enlazados desde la web.</li>
+      </ul>
+
+      <h5>6. Modificación de las condiciones</h5>
+      <p>
+        Sebbro Foods podrá modificar estas condiciones en cualquier momento. Las nuevas
+        condiciones serán aplicables desde su publicación en la web.
+      </p>
+
+      <h5>7. Ley aplicable y jurisdicción</h5>
+      <p>
+        Estas condiciones se rigen por la legislación española. Para cualquier controversia,
+        las partes se someten a los juzgados y tribunales de [CIUDAD], salvo que la normativa
+        de consumidores establezca otro fuero imperativo.
+      </p>
+
+      <p class="legal-note">
+        Redacción básica que debería revisarse por tu asesoría jurídica antes de publicar.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: POLÍTICA DE COOKIES -->
+<div id="legal-modal-cookies" class="legal-modal">
+  <div class="legal-modal-panel">
+    <div class="legal-modal-header">
+      <h3>Política de Cookies</h3>
+      <button type="button" class="legal-modal-close" data-close-legal>&times;</button>
+    </div>
+    <div class="legal-modal-content">
+      <p>
+        Esta web utiliza cookies propias y de terceros para permitir su funcionamiento,
+        recordar preferencias y obtener estadísticas de uso.
+      </p>
+
+      <h5>1. ¿Qué son las cookies?</h5>
+      <p>
+        Son pequeños archivos que se descargan en el dispositivo del usuario al visitar
+        determinadas páginas web. Permiten almacenar y recuperar información sobre la
+        navegación.
+      </p>
+
+      <h5>2. Tipos de cookies que podemos usar</h5>
+      <ul>
+        <li><strong>Técnicas:</strong> necesarias para el funcionamiento básico del sitio y del proceso de pedido.</li>
+        <li><strong>De análisis:</strong> nos ayudan a entender cómo se usa la web (páginas más visitadas, tiempos de visita, etc.).</li>
+        <li><strong>De personalización/marketing (si se activan):</strong> permiten adaptar la experiencia y mostrar contenidos promocionales.</li>
+      </ul>
+
+      <h5>3. Gestión de cookies</h5>
+      <p>
+        El usuario puede configurar su navegador para aceptar o rechazar todas las cookies
+        o para recibir un aviso en pantalla cada vez que se intente guardar una cookie.
+      </p>
+      <p>
+        Desactivar determinadas cookies puede afectar al funcionamiento correcto de algunas
+        funcionalidades, especialmente las relacionadas con el carrito o el proceso de pedido.
+      </p>
+
+      <p class="legal-note">
+        Ajusta esta política al listado real de cookies y al banner de consentimiento que utilices.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: PROTECCIÓN DE DATOS -->
+<div id="legal-modal-datos" class="legal-modal">
+  <div class="legal-modal-panel">
+    <div class="legal-modal-header">
+      <h3>Protección de Datos</h3>
+      <button type="button" class="legal-modal-close" data-close-legal>&times;</button>
+    </div>
+    <div class="legal-modal-content">
+      <p>
+        Sebbro Foods se compromete a tratar los datos personales de forma lícita, leal y
+        transparente, aplicando medidas de seguridad apropiadas para proteger la información
+        frente a accesos no autorizados, pérdida o alteración.
+      </p>
+
+      <h5>Principios aplicados</h5>
+      <ul>
+        <li><strong>Minimización:</strong> solo se recogen los datos estrictamente necesarios.</li>
+        <li><strong>Limitación de la finalidad:</strong> los datos se usan únicamente para los fines indicados al usuario.</li>
+        <li><strong>Exactitud:</strong> se intentará mantener los datos actualizados.</li>
+        <li><strong>Limitación del plazo de conservación:</strong> no se conservarán más tiempo del necesario.</li>
+        <li><strong>Integridad y confidencialidad:</strong> se adoptan medidas técnicas y organizativas para proteger la información.</li>
+      </ul>
+
+      <h5>Ejercicio de derechos</h5>
+      <p>
+        En cualquier momento puedes ejercer tus derechos de protección de datos escribiendo a
+        <a href="mailto:privacidad@sebbrofoods.com">privacidad@sebbrofoods.com</a>,
+        indicando tu nombre, el derecho que quieres ejercer y adjuntando una copia de un
+        documento identificativo.
+      </p>
+
+      <p class="legal-note">
+        Esta sección complementa la Política de Privacidad y no la sustituye. Debe leerse junto
+        con ella.
+      </p>
+    </div>
+  </div>
+</div>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -1789,6 +1787,13 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({
       top: offsetTop,
       behavior: 'smooth'
+    });
+  }
+
+  const heroSeeBrands = document.getElementById("hero-see-brands");
+  if (heroSeeBrands) {
+    heroSeeBrands.addEventListener("click", () => {
+      scrollToSection("#brands");
     });
   }
 
@@ -1937,7 +1942,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "BurgerCraft",
       tagline: "Gourmet Burgers · Hand Eating",
       longDesc:
-        "BurgerCraft nació para demostrar que una burger puede ser rápida y a la vez muy cuidada. Proveedores locales, carnes seleccionadas y panes diseñados para aguantar el jugo sin deshacerse. El formato está optimizado para delivery y para comer con las manos sin complicaciones.",
+        "BurgerCraft nació para demostrar que una burger puede ser fast y a la vez muy cuidada. Proveedores locales, carnes seleccionadas y panes diseñados para aguantar el jugo sin deshacerse. El formato está optimizado para delivery y consumo con las manos.",
       rating: 4.8,
       locations: 25,
       specialties: ["Hamburguesas gourmet", "Patatas hand-cut", "Milkshakes artesanales"],
@@ -1951,9 +1956,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "08001": "Dark kitchen Barcelona Centro"
       },
       menu: [
-        { name: "Classic Burger", desc: "Carne 100% vacuno, lechuga, tomate y cebolla caramelizada.", price: 12 },
-        { name: "Truffle Burger", desc: "Carne premium, trufa negra, queso brie y rúcula.", price: 18 },
-        { name: "Veggie Burger", desc: "Hamburguesa vegetal casera con aguacate y espinacas.", price: 14 },
+        { name: "Classic Burger", desc: "Carne 100% vacuno, lechuga, tomate, cebolla caramelizada.", price: 12 },
+        { name: "Truffle Burger", desc: "Carne premium, trufa negra, queso brie, rúcula.", price: 18 },
+        { name: "Veggie Burger", desc: "Hamburguesa vegetal casera, aguacate, espinacas.", price: 14 },
         { name: "Hand-cut Fries", desc: "Patatas cortadas a mano, fritas en aceite de girasol.", price: 6 },
         { name: "Craft Milkshake", desc: "Helado artesanal con sabores rotativos.", price: 8 }
       ]
@@ -1963,7 +1968,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Taco Express",
       tagline: "Mexican Street Food",
       longDesc:
-        "Taco Express trae la experiencia de un puesto callejero mexicano a locales compactos y pensados para delivery. Tortillas hechas a diario, marinados propios y salsas con diferentes niveles de picante. Todo pensado para comer con las manos, de pie o en movimiento.",
+        "Taco Express trae la experiencia de un puesto callejero mexicano a locales compactos y pensados para delivery. Tortillas hechas a diario, marinados propios y salsas con diferentes niveles de picante. El formato está optimizado para comer con las manos y moverse mientras se disfruta.",
       rating: 4.7,
       locations: 18,
       specialties: ["Tacos al pastor", "Guacamole fresco", "Salsas caseras"],
@@ -1977,9 +1982,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "46001": "Dark kitchen Ciutat Vella (Valencia)"
       },
       menu: [
-        { name: "Tacos al Pastor", desc: "Carne marinada, piña, cebolla y cilantro.", price: 4 },
-        { name: "Tacos de Carnitas", desc: "Cerdo confitado con cebolla morada y lima.", price: 4 },
-        { name: "Guacamole Fresco", desc: "Aguacate, jitomate, cebolla y cilantro.", price: 8 },
+        { name: "Tacos al Pastor", desc: "Carne marinada, piña, cebolla, cilantro.", price: 4 },
+        { name: "Tacos de Carnitas", desc: "Cerdo confitado, cebolla morada, lima.", price: 4 },
+        { name: "Guacamole Fresco", desc: "Aguacate, jitomate, cebolla, cilantro.", price: 8 },
         { name: "Churros con Chocolate", desc: "Churros recién hechos con chocolate caliente.", price: 6 },
         { name: "Agua de Jamaica", desc: "Bebida tradicional mexicana.", price: 4 }
       ]
@@ -1989,7 +1994,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Wing Masters",
       tagline: "Chicken Wings Bar",
       longDesc:
-        "Wing Masters es un formato pensado para la noche: partidos, gaming, reuniones en casa. Porciones para compartir, alitas crujientes y una carta de salsas propia que engancha. El packaging está diseñado para no manchar sofás ni mesas.",
+        "Wing Masters es un formato pensado para la noche: partidos, gaming, reuniones en casa. Porciones para compartir, alitas crujientes y una carta de salsas propia que genera recurrencia. Packaging diseñado para no manchar sofás ni mesas.",
       rating: 4.6,
       locations: 32,
       specialties: ["Alitas Buffalo", "Salsa BBQ secreta", "Nuggets especiales"],
@@ -2029,9 +2034,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "18001": "Dark kitchen Granada Centro"
       },
       menu: [
-        { name: "Margherita Roll", desc: "Salsa de tomate, mozzarella y albahaca fresca.", price: 8 },
-        { name: "Pepperoni Roll", desc: "Pepperoni, mozzarella y toque picante.", price: 10 },
-        { name: "Vegetarian Roll", desc: "Pimientos, cebolla, champiñones y espinacas.", price: 9 },
+        { name: "Margherita Roll", desc: "Salsa de tomate, mozzarella, albahaca fresca.", price: 8 },
+        { name: "Pepperoni Roll", desc: "Pepperoni, mozzarella, toque picante.", price: 10 },
+        { name: "Vegetarian Roll", desc: "Pimientos, cebolla, champiñones, espinacas.", price: 9 },
         { name: "Cheese Sticks", desc: "Palitos de mozzarella con hierbas.", price: 7 },
         { name: "Garlic Dip", desc: "Salsa de ajo casera.", price: 3 }
       ]
@@ -2041,7 +2046,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Sandwich Club",
       tagline: "Gourmet Sandwiches",
       longDesc:
-        "Sandwich Club eleva el sándwich a una propuesta gourmet. Panadería artesanal, combinaciones muy pensadas y un envoltorio que permite comer en movilidad sin mancharse.",
+        "Sandwich Club eleva el sándwich a una propuesta gourmet. Panaderos artesanos, combinaciones muy pensadas y un envoltorio que permite comer en movilidad sin mancharse.",
       rating: 4.4,
       locations: 22,
       specialties: ["Club sandwiches", "Wraps especiales", "Baguettes artesanales"],
@@ -2055,10 +2060,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "39001": "Dark kitchen Santander Centro"
       },
       menu: [
-        { name: "Club Deluxe", desc: "Pechuga de pollo, bacon, aguacate y lechuga.", price: 14 },
-        { name: "Mediterranean Wrap", desc: "Hummus, verduras asadas y queso feta.", price: 12 },
-        { name: "Italian Baguette", desc: "Jamón serrano, mozzarella y tomate seco.", price: 13 },
-        { name: "Vegan Power", desc: "Falafel, aguacate, espinacas y hummus.", price: 11 },
+        { name: "Club Deluxe", desc: "Pechuga de pollo, bacon, aguacate, lechuga.", price: 14 },
+        { name: "Mediterranean Wrap", desc: "Hummus, verduras asadas, queso feta.", price: 12 },
+        { name: "Italian Baguette", desc: "Jamón serrano, mozzarella, tomate seco.", price: 13 },
+        { name: "Vegan Power", desc: "Falafel, aguacate, espinacas, hummus.", price: 11 },
         { name: "Homemade Chips", desc: "Patatas fritas caseras con especias.", price: 5 }
       ]
     },
@@ -2310,45 +2315,52 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!orderForm.reportValidity()) {
       return;
     }
-    alert("Hemos recibido tu solicitud de pedido. Te contactaremos para confirmarla desde el local.");
+    alert("Hemos recibido tu solicitud de pedido. Te contactaremos para confirmarlo.");
     orderForm.reset();
     if (activeBrand) buildMenu(activeBrand);
     closeDetailFromOutside();
   });
 
   const contactForm = document.getElementById("contact-form");
-  if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (!contactForm.reportValidity()) return;
-      alert("Gracias por tu mensaje. Nos pondremos en contacto contigo en breve.");
-      contactForm.reset();
-    });
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!contactForm.reportValidity()) return;
+    alert("Gracias por tu mensaje. Nos pondremos en contacto contigo en breve.");
+    contactForm.reset();
+  });
+
+  /* ---------- MODALES LEGALES ---------- */
+  const legalLinks = document.querySelectorAll(".footer-legal-link");
+  const legalModals = {
+    privacidad: document.getElementById("legal-modal-privacidad"),
+    terminos: document.getElementById("legal-modal-terminos"),
+    cookies: document.getElementById("legal-modal-cookies"),
+    datos: document.getElementById("legal-modal-datos"),
+  };
+
+  function openLegalModal(key) {
+    const modal = legalModals[key];
+    if (!modal) return;
+    modal.classList.add("is-visible");
+    document.body.style.overflow = "hidden";
   }
 
-  /* ---------- BOTONES LEGALES ---------- */
-  const legalButtons = document.querySelectorAll(".legal-btn");
-  const legalPanels  = document.querySelectorAll(".legal-panel");
+  function closeLegalModal(modal) {
+    modal.classList.remove("is-visible");
+    document.body.style.overflow = "";
+  }
 
-  legalButtons.forEach((btn) => {
+  legalLinks.forEach((btn) => {
     btn.addEventListener("click", () => {
-      const targetId = btn.getAttribute("data-target");
-      const panel = document.getElementById(targetId);
-      if (!panel) return;
+      const key = btn.dataset.legal;
+      openLegalModal(key);
+    });
+  });
 
-      const isOpen = panel.classList.contains("is-open");
-
-      legalPanels.forEach(p => p.classList.remove("is-open"));
-
-      if (!isOpen) {
-        panel.classList.add("is-open");
-
-        const rect = panel.getBoundingClientRect();
-        const offsetTop = rect.top + window.scrollY - SCROLL_OFFSET;
-        window.scrollTo({
-          top: offsetTop,
-          behavior: "smooth"
-        });
+  document.querySelectorAll(".legal-modal").forEach((modal) => {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal || e.target.hasAttribute("data-close-legal")) {
+        closeLegalModal(modal);
       }
     });
   });
