@@ -289,6 +289,12 @@
       color: var(--muted);
       line-height: 1.8;
     }
+.hero-ctas {
+  margin-top: 2.5rem;      /* espacio hacia abajo desde el texto */
+  margin-bottom: 2.5rem;   /* espacio hacia arriba antes de las métricas */
+  display: flex;
+  justify-content: center;
+}
 
     .hero-metrics {
       margin-top: 2.6rem;
@@ -978,11 +984,12 @@
           formatos ergonómicos, producto de calidad y operaciones muy afinadas para delivery y take away.
         </p>
         
-        <div class="hero-ctas">
-  <button class="btn-primary" id="hero-see-brands">
-    Ver marcas y pedir
-  </button>
-</div>
+      <div class="hero-ctas">
+      <button class="btn-primary" type="button" data-scroll="#brands">
+        Ver marcas y pedir
+      </button>
+    </div>
+
         <div class="hero-metrics">
           <div>
             <div class="hero-metric-value">6</div>
@@ -1933,6 +1940,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
