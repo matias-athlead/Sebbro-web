@@ -4,8 +4,7 @@
   <meta charset="UTF-8" />
   <title>Sebbro Foods – Franquicias food & hand eating</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" cont
-    ent="Sebbro Foods gestiona franquicias de comida diseñada para comer con las manos: burgers, tacos, wings, pizza rolls, sandwiches y donuts gourmet." />
+  <meta name="description" content="Sebbro Foods gestiona franquicias de comida diseñada para comer con las manos: burgers, tacos, wings, pizza rolls, sandwiches y donuts gourmet." />
 
   <style>
     :root {
@@ -978,6 +977,12 @@
           Gestionamos un porfolio de franquicias de comida diseñadas para disfrutarse sin cubiertos:
           formatos ergonómicos, producto de calidad y operaciones muy afinadas para delivery y take away.
         </p>
+        
+        <div class="hero-ctas">
+  <button class="btn-primary" id="hero-see-brands">
+    Ver marcas y pedir
+  </button>
+</div>
         <div class="hero-metrics">
           <div>
             <div class="hero-metric-value">6</div>
@@ -1378,6 +1383,14 @@ document.addEventListener("DOMContentLoaded", () => {
       behavior: 'smooth'
     });
   }
+    // Botón del hero: bajar a las marcas
+  const heroSeeBrands = document.getElementById("hero-see-brands");
+  if (heroSeeBrands) {
+    heroSeeBrands.addEventListener("click", () => {
+      scrollToSection("#brands");
+    });
+  }
+
     // -------- Click en el logo: volver a la página principal --------
   const brandMark = document.querySelector('.brand-mark');
 
@@ -1920,5 +1933,6 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
